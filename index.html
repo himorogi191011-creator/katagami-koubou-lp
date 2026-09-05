@@ -22,6 +22,7 @@
     --accent-soft: #DCE3EA;
     --thread: #A84E38;
     --focus: #24466B;
+    --on-accent: #FCFCFB;
 
     --content-w: 1080px;
     --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
@@ -44,6 +45,7 @@
       --accent-soft: #223140;
       --thread: #D9866C;
       --focus: #85A7C9;
+      --on-accent: #0D1015;
     }
   }
 
@@ -104,7 +106,7 @@
     padding: 11px 22px; border-radius: 3px; text-decoration: none;
     border: 1px solid var(--accent); white-space: nowrap;
   }
-  .btn-solid { background: var(--accent); color: var(--paper-card); }
+  .btn-solid { background: var(--accent); color: var(--on-accent); }
   .btn-solid:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
   .btn-line { background: transparent; color: var(--accent); }
   .btn-line:hover { background: var(--accent-soft); }
@@ -217,6 +219,31 @@
   }
   .case-quote span { color: var(--ink-faint); font-family: var(--font-mono); font-size: .72rem; display: block; margin-top: 10px; }
 
+  /* ---------- UI mockups (sample, not real client data) ---------- */
+  .ui-mockups { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+  .mock-label { display: block; font-family: var(--font-mono); font-size: .65rem; color: var(--ink-faint); letter-spacing: .06em; margin-bottom: 8px; }
+  .mock-caption { margin-top: 14px; font-family: var(--font-mono); font-size: .68rem; color: var(--ink-faint); letter-spacing: .01em; }
+
+  .mock-phone { width: 176px; border-radius: 20px; border: 2px solid var(--line-strong); background: var(--paper-card-2); padding: 10px 10px 14px; }
+  .mock-status { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: .55rem; color: var(--ink-faint); margin-bottom: 8px; }
+  .mock-title { font-family: var(--font-body); font-weight: 700; font-size: .7rem; margin-bottom: 8px; }
+  .mock-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; margin-bottom: 10px; }
+  .mock-cal span { display: block; aspect-ratio: 1; border-radius: 3px; background: var(--paper-card); border: 1px solid var(--line); }
+  .mock-cal span.on { background: var(--accent); border-color: var(--accent); }
+  .mock-chip-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+  .mock-chip { display: flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: .58rem; border: 1px solid var(--line); border-radius: 5px; padding: 5px 7px; color: var(--ink-soft); }
+  .mock-chip.on { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+  .mock-chip .dot { width: 7px; height: 7px; border-radius: 50%; border: 1.4px solid var(--line-strong); flex-shrink: 0; }
+  .mock-chip.on .dot { background: var(--accent); border-color: var(--accent); }
+  .mock-btn { background: var(--accent); color: var(--paper-card); text-align: center; font-size: .6rem; font-weight: 700; border-radius: 6px; padding: 7px; }
+
+  .mock-payslip { width: 212px; background: var(--paper-card); border: 2px double var(--line-strong); padding: 16px 16px 14px; position: relative; }
+  .mock-stamp { position: absolute; top: 10px; right: 12px; width: 26px; height: 26px; border: 1.4px solid var(--thread); color: var(--thread); font-family: var(--font-display); font-size: .58rem; display: flex; align-items: center; justify-content: center; }
+  .mock-payslip h4 { font-family: var(--font-display); font-size: .82rem; text-align: center; margin-bottom: 12px; }
+  .mock-row { display: flex; justify-content: space-between; gap: 10px; font-size: .62rem; padding: 5px 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
+  .mock-row.total { border-bottom: none; border-top: 1px solid var(--line-strong); margin-top: 2px; padding-top: 8px; font-weight: 700; color: var(--ink); }
+  .mock-blur { filter: blur(3px); user-select: none; }
+
   /* ---------- pricing ---------- */
   .pricing-panel {
     display: grid; grid-template-columns: 1fr; gap: 30px;
@@ -231,17 +258,32 @@
   }
   .pricing-note strong { display: block; font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 10px; }
 
-  /* ---------- contact ---------- */
-  .contact-panel {
-    display: grid; grid-template-columns: 1fr; gap: 36px;
+  /* ---------- contact form ---------- */
+  .contact-form { max-width: 720px; }
+  .form-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 700px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field-wide { grid-column: 1 / -1; }
+  .field span {
+    font-family: var(--font-mono); font-size: .72rem; letter-spacing: .04em;
+    color: var(--ink-soft); display: flex; align-items: center; gap: 8px;
   }
-  @media (min-width: 820px) { .contact-panel { grid-template-columns: 1fr 1fr; } }
-  .contact-list { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-  .contact-list li { display: flex; gap: 10px; font-size: .92rem; color: var(--ink-soft); }
-  .contact-list li::before { content: "・"; color: var(--thread); }
-  .contact-email {
-    display: inline-flex; align-items: center; gap: 10px; margin-top: 22px;
-    font-family: var(--font-mono); font-size: .95rem;
+  .field span em {
+    font-style: normal; font-size: .62rem; color: var(--thread);
+    border: 1px solid var(--thread); border-radius: 2px; padding: 1px 6px;
+  }
+  .field input, .field textarea {
+    font-family: var(--font-body); font-size: .94rem; color: var(--ink);
+    background: var(--paper-card); border: 1px solid var(--line);
+    border-radius: 2px; padding: 11px 13px; resize: vertical;
+  }
+  .field input:focus-visible, .field textarea:focus-visible {
+    outline: 2px solid var(--focus); outline-offset: 1px; border-color: var(--accent);
+  }
+  .form-submit { margin-top: 30px; border: none; cursor: pointer; }
+  .form-thanks {
+    max-width: 720px; margin-top: 4px; background: var(--accent-soft);
+    border: 1px solid var(--line); padding: 20px 24px; font-size: .94rem;
   }
 
   footer { padding: 40px 0 56px; border-top: 1px solid var(--line); }
@@ -385,6 +427,42 @@
           <div class="spec-row"><dt>起動</dt><dd>スマホのホーム画面にアイコンを置いて、アプリのように起動</dd></div>
           <div class="spec-row"><dt>見守り</dt><dd>週2回、自動でシステムの状態を確認し、異常があれば通知</dd></div>
         </dl>
+
+        <div class="ui-mockups">
+          <div>
+            <span class="mock-label">スマホ画面(サンプル)</span>
+            <div class="mock-phone">
+              <div class="mock-status"><span>9:41</span><span>●●●</span></div>
+              <div class="mock-title">③ 施設・担当を選ぶ</div>
+              <div class="mock-cal">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span class="on"></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="mock-chip-row">
+                <div class="mock-chip on"><span class="dot"></span>あいはま荘・イン準備</div>
+                <div class="mock-chip on"><span class="dot"></span>あいはま荘・掃除</div>
+                <div class="mock-chip"><span class="dot"></span>おおぞら苑・イン準備</div>
+              </div>
+              <div class="mock-btn">2件を選択中 → 確認へ</div>
+            </div>
+          </div>
+          <div>
+            <span class="mock-label">給与明細(サンプル)</span>
+            <div class="mock-payslip">
+              <div class="mock-stamp">印</div>
+              <h4>給与明細</h4>
+              <div class="mock-row"><span>氏名</span><span class="mock-blur">○○○○</span></div>
+              <div class="mock-row"><span>対象月</span><span>2026年8月分</span></div>
+              <div class="mock-row"><span>勤務件数</span><span>18件</span></div>
+              <div class="mock-row total"><span>合計支給額</span><span class="mock-blur">¥000,000</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="mock-caption">※実際の稼働画面をもとに再現したイメージです。氏名・金額はサンプルであり、実データではありません。</p>
+
         <p class="case-quote">
           「完成度が素晴らしく、当初のイメージ通りのものができました。」
           <span>— ご利用者様より</span>
@@ -419,27 +497,61 @@
 
   <section id="contact">
     <div class="wrap">
-      <div class="contact-panel">
-        <div>
-          <span class="section-label">Contact</span>
-          <h2>お問い合わせ</h2>
-          <p style="margin-top:14px;color:var(--ink-soft);">下記のメールアドレスまでご連絡ください。折り返しご連絡いたします。</p>
-          <a class="btn btn-solid contact-email" href="mailto:himorogi191011@gmail.com?subject=%E3%81%94%E7%9B%B8%E8%AB%87%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">
-            himorogi191011@gmail.com
-          </a>
-        </div>
-        <div>
-          <span class="section-label">お伝えいただけると助かること</span>
-          <ul class="contact-list">
-            <li>業種・従業員数の目安</li>
-            <li>今お困りのこと、現在お使いのソフトや運用方法</li>
-            <li>ご希望の時期</li>
-          </ul>
-        </div>
+      <div class="section-head">
+        <span class="section-label">Contact</span>
+        <h2>お問い合わせ</h2>
+        <p>下記のフォームからご連絡ください。内容を確認のうえ、折り返しご連絡いたします。</p>
       </div>
+
+      <form class="contact-form" action="https://formspree.io/f/mdeolago" method="POST" id="contact-form">
+        <input type="hidden" name="_subject" value="型紙工房のLPよりお問い合わせ">
+        <input type="hidden" name="_next" value="?sent=true#contact">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-grid">
+          <label class="field">
+            <span>お名前・会社名<em>必須</em></span>
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label class="field">
+            <span>ご連絡先メールアドレス<em>必須</em></span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label class="field">
+            <span>業種</span>
+            <input type="text" name="industry" placeholder="例:介護施設、飲食店 など">
+          </label>
+          <label class="field">
+            <span>従業員数の目安</span>
+            <input type="text" name="company_size" placeholder="例:15名">
+          </label>
+          <label class="field field-wide">
+            <span>今お困りのこと・現在お使いのソフトや運用方法<em>必須</em></span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <label class="field field-wide">
+            <span>ご希望の時期</span>
+            <input type="text" name="timeline" placeholder="例:今年中に、まずは相談だけ など">
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-solid form-submit">送信する</button>
+      </form>
+      <p class="form-thanks" id="form-thanks" hidden>送信ありがとうございます。内容を確認のうえ、折り返しご連絡いたします。</p>
     </div>
   </section>
 </main>
+
+<script>
+  (function () {
+    if (window.location.search.indexOf("sent=true") !== -1) {
+      var form = document.getElementById("contact-form");
+      var thanks = document.getElementById("form-thanks");
+      if (form) form.hidden = true;
+      if (thanks) thanks.hidden = false;
+    }
+  })();
+</script>
 
 <footer>
   <div class="wrap">
