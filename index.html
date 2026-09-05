@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>型紙工房</title>
+<meta name="description" content="市販の業務ソフトに合わないなら、現場の型紙から仕立てます。オーダーメイド業務アプリ制作。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #E7E8EA;
+    --paper-card: #F5F5F3;
+    --paper-card-2: #EEEEEA;
+    --ink: #21242B;
+    --ink-soft: #52565F;
+    --ink-faint: #7B7F87;
+    --line: #C6C9CE;
+    --line-strong: #9BA0A8;
+    --accent: #24466B;
+    --accent-strong: #16324E;
+    --accent-soft: #DCE3EA;
+    --thread: #A84E38;
+    --focus: #24466B;
+
+    --content-w: 1080px;
+    --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    --font-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14171D;
+      --paper-card: #1B1F26;
+      --paper-card-2: #20242D;
+      --ink: #E9EAEC;
+      --ink-soft: #ABB0B9;
+      --ink-faint: #7D828B;
+      --line: #333947;
+      --line-strong: #454C5C;
+      --accent: #85A7C9;
+      --accent-strong: #B0C7DE;
+      --accent-soft: #223140;
+      --thread: #D9866C;
+      --focus: #85A7C9;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14171D;
+    --paper-card: #1B1F26;
+    --paper-card-2: #20242D;
+    --ink: #E9EAEC;
+    --ink-soft: #ABB0B9;
+    --ink-faint: #7D828B;
+    --line: #333947;
+    --line-strong: #454C5C;
+    --accent: #85A7C9;
+    --accent-strong: #B0C7DE;
+    --accent-soft: #223140;
+    --thread: #D9866C;
+    --focus: #85A7C9;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+  img, svg { display: block; max-width: 100%; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  .wrap { max-width: var(--content-w); margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 16px; padding-bottom: 16px; gap: 16px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+  .brand small { font-family: var(--font-mono); font-size: .6rem; color: var(--ink-faint); letter-spacing: .12em; }
+  nav.site-nav { display: flex; align-items: center; gap: 28px; }
+  nav.site-nav a { font-size: .88rem; color: var(--ink-soft); text-decoration: none; }
+  nav.site-nav a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-body); font-weight: 700; font-size: .88rem;
+    padding: 11px 22px; border-radius: 3px; text-decoration: none;
+    border: 1px solid var(--accent); white-space: nowrap;
+  }
+  .btn-solid { background: var(--accent); color: var(--paper-card); }
+  .btn-solid:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+  .btn-line { background: transparent; color: var(--accent); }
+  .btn-line:hover { background: var(--accent-soft); }
+  .nav-cta { display: none; }
+  @media (min-width: 720px) { .nav-cta { display: inline-flex; } }
+
+  /* ---------- tape rule divider ---------- */
+  .tape { max-width: var(--content-w); margin: 0 auto; padding: 0 28px; }
+  .tape-ticks {
+    height: 10px;
+    background-image: repeating-linear-gradient(to right, var(--line-strong) 0 1px, transparent 1px 14px);
+    opacity: .8;
+  }
+  .tape-numbers {
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: .62rem; letter-spacing: .03em;
+    color: var(--ink-faint); font-variant-numeric: tabular-nums; margin-top: 5px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 64px 0 40px; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+  @media (min-width: 880px) { .hero .wrap { grid-template-columns: 1.1fr .9fr; gap: 24px; } }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em;
+    color: var(--thread); text-transform: uppercase; margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--thread); }
+  .hero h1 {
+    font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+    line-height: 1.35;
+    letter-spacing: .01em;
+  }
+  .hero .lede {
+    margin-top: 22px; max-width: 46ch; color: var(--ink-soft); font-size: 1.02rem;
+  }
+  .hero .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+  .hero-art { justify-self: center; width: min(100%, 380px); }
+
+  /* ---------- section scaffolding ---------- */
+  section { padding: 72px 0; }
+  .section-head { max-width: 62ch; margin-bottom: 44px; }
+  .section-label {
+    font-family: var(--font-mono); font-size: .7rem; letter-spacing: .14em;
+    color: var(--ink-faint); text-transform: uppercase; display: block; margin-bottom: 12px;
+  }
+  h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+  .section-head p { margin-top: 14px; color: var(--ink-soft); }
+
+  /* ---------- problem cards ---------- */
+  .grid-3 { display: grid; grid-template-columns: 1fr; gap: 22px; }
+  @media (min-width: 760px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+  .problem-card {
+    background: var(--paper-card); border: 1px solid var(--line);
+    padding: 28px 24px; border-radius: 2px;
+  }
+  .problem-card svg { width: 30px; height: 30px; color: var(--accent); margin-bottom: 18px; }
+  .problem-card h3 { font-family: var(--font-body); font-size: 1.02rem; font-weight: 700; margin-bottom: 10px; }
+  .problem-card p { color: var(--ink-soft); font-size: .93rem; }
+
+  /* ---------- process ---------- */
+  .process-list { display: grid; grid-template-columns: 1fr; gap: 0; }
+  @media (min-width: 880px) { .process-list { grid-template-columns: repeat(3, 1fr); } }
+  .process-step {
+    position: relative; padding: 30px 26px 26px;
+    border-top: 1px solid var(--line);
+  }
+  @media (min-width: 880px) {
+    .process-step { border-top: none; border-left: 1px solid var(--line); }
+    .process-step:first-child { border-left: none; }
+  }
+  .process-num {
+    font-family: var(--font-mono); font-size: .95rem; color: var(--thread);
+    letter-spacing: .06em; display: block; margin-bottom: 14px;
+  }
+  .process-step svg { width: 26px; height: 26px; color: var(--accent); margin-bottom: 16px; }
+  .process-step h3 { font-family: var(--font-body); font-size: 1.06rem; font-weight: 700; margin-bottom: 10px; }
+  .process-step p { color: var(--ink-soft); font-size: .93rem; }
+
+  /* ---------- case study ---------- */
+  .case-panel {
+    background: var(--paper-card);
+    border: 1px dashed var(--line-strong);
+    padding: 40px clamp(20px, 4vw, 48px);
+    position: relative;
+  }
+  .case-tag {
+    position: absolute; top: -14px; left: 32px;
+    background: var(--thread); color: var(--paper-card);
+    font-family: var(--font-mono); font-size: .68rem; letter-spacing: .1em;
+    padding: 5px 12px; border-radius: 2px;
+  }
+  .case-panel h3 { font-size: 1.35rem; margin-top: 8px; }
+  .case-panel .case-lede { color: var(--ink-soft); margin-top: 14px; max-width: 68ch; }
+  .spec-grid {
+    margin-top: 30px; display: grid; grid-template-columns: 1fr; gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  @media (min-width: 700px) { .spec-grid { grid-template-columns: 1fr 1fr; } }
+  .spec-row {
+    display: grid; grid-template-columns: 92px 1fr; gap: 16px;
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+  }
+  .spec-row dt { font-family: var(--font-mono); font-size: .7rem; color: var(--ink-faint); letter-spacing: .06em; padding-top: 2px; }
+  .spec-row dd { margin: 0; font-size: .93rem; }
+  .case-quote {
+    margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line);
+    font-family: var(--font-display); font-size: 1.05rem; color: var(--ink);
+  }
+  .case-quote span { color: var(--ink-faint); font-family: var(--font-mono); font-size: .72rem; display: block; margin-top: 10px; }
+
+  /* ---------- pricing ---------- */
+  .pricing-panel {
+    display: grid; grid-template-columns: 1fr; gap: 30px;
+    align-items: start;
+  }
+  @media (min-width: 820px) { .pricing-panel { grid-template-columns: 1.1fr .9fr; } }
+  .pricing-copy p + p { margin-top: 16px; }
+  .pricing-copy p { color: var(--ink-soft); }
+  .pricing-note {
+    background: var(--accent-soft); border: 1px solid var(--line);
+    padding: 26px; font-size: .9rem; color: var(--ink);
+  }
+  .pricing-note strong { display: block; font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 10px; }
+
+  /* ---------- contact ---------- */
+  .contact-panel {
+    display: grid; grid-template-columns: 1fr; gap: 36px;
+  }
+  @media (min-width: 820px) { .contact-panel { grid-template-columns: 1fr 1fr; } }
+  .contact-list { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .contact-list li { display: flex; gap: 10px; font-size: .92rem; color: var(--ink-soft); }
+  .contact-list li::before { content: "・"; color: var(--thread); }
+  .contact-email {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 22px;
+    font-family: var(--font-mono); font-size: .95rem;
+  }
+
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: .78rem; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">型紙工房<small>KATAGAMI&nbsp;KOUBOU</small></div>
+    <nav class="site-nav">
+      <a href="#problem">サービスについて</a>
+      <a href="#case">制作事例</a>
+      <a href="#process">流れ</a>
+      <a href="#contact" class="btn btn-solid nav-cta">ご相談はこちら</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">オーダーメイド業務アプリ制作</span>
+        <h1>既製品じゃない、<br>現場の型紙で。</h1>
+        <p class="lede">
+          勤怠管理、在庫管理、予約管理——市販のソフトは「ここさえ直れば」がいつまでも直りません。
+          型紙工房は、実際に使う方の声を採寸し、その現場だけの一着に仕立てます。
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-solid" href="#contact">まずは無料相談</a>
+          <a class="btn btn-line" href="#case">制作事例を見る</a>
+        </div>
+      </div>
+      <svg class="hero-art" viewBox="0 0 420 380" fill="none" aria-hidden="true">
+        <g transform="rotate(-7 210 190)">
+          <rect x="70" y="70" width="220" height="260" rx="6" fill="var(--paper-card)" stroke="var(--line-strong)" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <circle cx="70" cy="150" r="4" fill="var(--thread)"/>
+          <circle cx="70" cy="250" r="4" fill="var(--thread)"/>
+          <text x="90" y="105" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" fill="var(--ink-faint)" letter-spacing="1">着丈</text>
+          <line x1="90" y1="130" x2="90" y2="300" stroke="var(--ink-faint)" stroke-width="1"/>
+          <path d="M86 130 L90 122 L94 130" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+          <path d="M86 300 L90 308 L94 300" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+        </g>
+        <g transform="rotate(9 260 150)">
+          <path d="M230 60 L340 90 L330 220 L250 240 L215 150 Z" fill="var(--accent-soft)" stroke="var(--line-strong)" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <text x="245" y="150" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" fill="var(--ink-faint)" letter-spacing="1">肩幅</text>
+          <line x1="235" y1="200" x2="325" y2="200" stroke="var(--ink-faint)" stroke-width="1"/>
+          <path d="M235 196 L227 200 L235 204" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+          <path d="M325 196 L333 200 L325 204" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+        </g>
+        <g transform="translate(150 300)">
+          <path d="M0 0 Q40 -18 80 0 Q40 18 0 0 Z" fill="none" stroke="var(--thread)" stroke-width="1.4"/>
+          <circle cx="4" cy="0" r="2.5" fill="var(--thread)"/>
+          <circle cx="76" cy="0" r="2.5" fill="var(--thread)"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <div class="tape" aria-hidden="true">
+    <div class="tape-ticks"></div>
+    <div class="tape-numbers"><span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span></div>
+  </div>
+
+  <section id="problem">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-label">Problem</span>
+        <h2>なぜ、既製ソフトは「惜しい」のか</h2>
+        <p>棚から選んだ一着が、誰にもぴったり合わないのと同じです。業務ソフトも、あなたの現場のために作られたものではありません。</p>
+      </div>
+      <div class="grid-3">
+        <div class="problem-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
+          <h3>機能が多すぎる</h3>
+          <p>使わない機能ばかりで、覚えることも画面も増えていく。現場が欲しいのは、今日の仕事に必要な機能だけです。</p>
+        </div>
+        <div class="problem-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 4h9l4 4v12H6z"/><path d="M15 4v4h4"/></svg>
+          <h3>帳票が事情に合わない</h3>
+          <p>出勤簿も給与明細も、その業界・その会社ごとの書式があります。既製ソフトの出力は、結局手直しが必要になります。</p>
+        </div>
+        <div class="problem-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          <h3>変更に時間がかかる</h3>
+          <p>「ここだけ直したい」と思っても、パッケージ製品は次の仕様変更まで待つしかありません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="background:var(--paper-card-2);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-label">Process</span>
+        <h2>三つの工程で、現場の一着に</h2>
+        <p>仕立ての順番は、服も業務アプリも同じです。採寸し、型紙を起こし、着ながら直す。</p>
+      </div>
+      <div class="process-list">
+        <div class="process-step">
+          <span class="process-num">01</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 12h18M3 12v4M7 12v6M11 12v4M15 12v6M19 12v4"/></svg>
+          <h3>採寸</h3>
+          <p>まずは現場の一日を、丁寧に伺います。誰が、いつ、何を、どう記録しているか。使う方ご本人の言葉を、そのまま仕様に落とし込みます。</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">02</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 19l6-14 4 9 3-5 3 10H4z"/></svg>
+          <h3>型紙を起こす</h3>
+          <p>伺った内容をもとに、実際に動く画面を短期間で組み上げます。最新の開発手法を使うことで、従来の受託開発より短い期間・手の届く費用でお作りできます。</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">03</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 12c3-4 6-4 8 0s5 4 8 0" /><circle cx="6" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="18" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+          <h3>仮縫いと補正</h3>
+          <p>実際に使っていただき、「ここが使いにくい」をその都度直します。着てみて初めてわかる感覚を、何度でも仕立て直します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="case">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-label">Case</span>
+        <h2>制作事例</h2>
+        <p>クライアント様のお名前は伏せておりますが、実際に稼働しているアプリの一例です。</p>
+      </div>
+      <div class="case-panel">
+        <span class="case-tag">CASE 01 ・ 福祉施設</span>
+        <h3>とある福祉施設様の「勤怠・給与管理アプリ」</h3>
+        <p class="case-lede">
+          複数の施設を掛け持ちするスタッフの勤怠を、施設ごと・業務ごとに記録し、そのまま給与明細まで作成できる仕組みを仕立てました。
+        </p>
+        <dl class="spec-grid">
+          <div class="spec-row"><dt>記録</dt><dd>施設・業務内容を複数選んで、まとめて登録できる</dd></div>
+          <div class="spec-row"><dt>入力</dt><dd>カレンダーから、過去の日付も直感的に選べる</dd></div>
+          <div class="spec-row"><dt>出力</dt><dd>正式な書式の給与明細を、A4に2名分ずつ印刷</dd></div>
+          <div class="spec-row"><dt>並び順</dt><dd>フリガナ登録で、スタッフ名を自動的にあいうえお順に</dd></div>
+          <div class="spec-row"><dt>起動</dt><dd>スマホのホーム画面にアイコンを置いて、アプリのように起動</dd></div>
+          <div class="spec-row"><dt>見守り</dt><dd>週2回、自動でシステムの状態を確認し、異常があれば通知</dd></div>
+        </dl>
+        <p class="case-quote">
+          「完成度が素晴らしく、当初のイメージ通りのものができました。」
+          <span>— ご利用者様より</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" style="background:var(--paper-card-2);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-label">Pricing</span>
+        <h2>料金について</h2>
+      </div>
+      <div class="pricing-panel">
+        <div class="pricing-copy">
+          <p>現場ごとに必要な機能も規模も異なるため、料金は一律ではご案内していません。まずは無料のご相談で、現在の困りごとと、実現したいことをお聞かせください。</p>
+          <p>お話を伺ったうえで、内容に見合ったお見積りをお出しします。最新の開発手法を活用しているため、一般的な受託開発の相場よりも、手の届きやすい価格でご案内できる場合が多くあります。</p>
+        </div>
+        <div class="pricing-note">
+          <strong>ご相談の前に</strong>
+          今お使いのソフトや紙の運用、困りごとを教えていただくだけで構いません。仕様書やご準備は不要です。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tape" aria-hidden="true">
+    <div class="tape-ticks"></div>
+    <div class="tape-numbers"><span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span></div>
+  </div>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel">
+        <div>
+          <span class="section-label">Contact</span>
+          <h2>お問い合わせ</h2>
+          <p style="margin-top:14px;color:var(--ink-soft);">下記のメールアドレスまでご連絡ください。折り返しご連絡いたします。</p>
+          <a class="btn btn-solid contact-email" href="mailto:himorogi191011@gmail.com?subject=%E3%81%94%E7%9B%B8%E8%AB%87%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">
+            himorogi191011@gmail.com
+          </a>
+        </div>
+        <div>
+          <span class="section-label">お伝えいただけると助かること</span>
+          <ul class="contact-list">
+            <li>業種・従業員数の目安</li>
+            <li>今お困りのこと、現在お使いのソフトや運用方法</li>
+            <li>ご希望の時期</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>型紙工房 — オーダーメイド業務アプリ制作</span>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
