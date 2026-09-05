@@ -113,6 +113,9 @@
   .btn-line:hover { background: var(--accent-soft); }
   .nav-cta { display: none; }
   @media (min-width: 720px) { .nav-cta { display: inline-flex; } }
+  /* nav.site-nav a's color rule otherwise wins on specificity and washes out the solid button text */
+  nav.site-nav a.nav-cta,
+  nav.site-nav a.nav-cta:hover { color: var(--on-accent); }
 
   /* ---------- tape rule divider ---------- */
   .tape { max-width: var(--content-w); margin: 0 auto; padding: 0 28px; }
@@ -323,23 +326,46 @@
         </div>
       </div>
       <svg class="hero-art" viewBox="0 0 420 380" fill="none" aria-hidden="true">
-        <g transform="rotate(-7 210 190)">
-          <rect x="70" y="70" width="220" height="260" rx="6" fill="var(--paper-card)" stroke="var(--line-strong)" stroke-width="1.5" stroke-dasharray="5 5"/>
-          <circle cx="70" cy="150" r="4" fill="var(--thread)"/>
-          <circle cx="70" cy="250" r="4" fill="var(--thread)"/>
-          <text x="90" y="105" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" fill="var(--ink-faint)" letter-spacing="1">着丈</text>
-          <line x1="90" y1="130" x2="90" y2="300" stroke="var(--ink-faint)" stroke-width="1"/>
-          <path d="M86 130 L90 122 L94 130" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
-          <path d="M86 300 L90 308 L94 300" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+        <!-- 後ろ身頃(パターンピース) -->
+        <g transform="rotate(-6 190 190)">
+          <path d="M120,60
+                   L200,48
+                   C 220,70 224,100 214,132
+                   C 226,160 232,200 224,240
+                   C 214,268 200,286 178,296
+                   L 100,300
+                   C 90,270 86,230 92,190
+                   C 84,150 84,100 96,72
+                   Z"
+                fill="var(--paper-card)" stroke="var(--line-strong)" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <!-- わ(輪)=生地を折って裁つ位置の印 -->
+          <line x1="98" y1="80" x2="104" y2="288" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="8 3 2 3"/>
+          <!-- 地の目(布目)線 -->
+          <line x1="160" y1="100" x2="160" y2="260" stroke="var(--ink-faint)" stroke-width="1"/>
+          <path d="M156 100 L160 92 L164 100" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+          <path d="M156 260 L160 268 L164 260" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+          <text x="168" y="185" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" fill="var(--ink-faint)" letter-spacing="1">着丈</text>
+          <!-- ノッチ(合い印) -->
+          <path d="M214 132 L222 128 L218 138" stroke="var(--thread)" stroke-width="1.2" fill="none"/>
+          <circle cx="100" cy="300" r="3" fill="var(--thread)"/>
         </g>
-        <g transform="rotate(9 260 150)">
-          <path d="M230 60 L340 90 L330 220 L250 240 L215 150 Z" fill="var(--accent-soft)" stroke="var(--line-strong)" stroke-width="1.5" stroke-dasharray="5 5"/>
-          <text x="245" y="150" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" fill="var(--ink-faint)" letter-spacing="1">肩幅</text>
-          <line x1="235" y1="200" x2="325" y2="200" stroke="var(--ink-faint)" stroke-width="1"/>
-          <path d="M235 196 L227 200 L235 204" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
-          <path d="M325 196 L333 200 L325 204" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+        <!-- 袖(パターンピース) -->
+        <g transform="rotate(10 300 150)">
+          <path d="M260,100
+                   C 280,70 320,68 340,98
+                   C 352,120 350,150 338,175
+                   L 320,230
+                   L 280,230
+                   L 262,175
+                   C 250,150 248,120 260,100 Z"
+                fill="var(--accent-soft)" stroke="var(--line-strong)" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <line x1="300" y1="110" x2="300" y2="220" stroke="var(--ink-faint)" stroke-width="1"/>
+          <path d="M296 110 L300 102 L304 110" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+          <path d="M296 220 L300 228 L304 220" stroke="var(--ink-faint)" stroke-width="1" fill="none"/>
+          <text x="308" y="168" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" fill="var(--ink-faint)" letter-spacing="1">袖丈</text>
+          <path d="M338 175 L348 178 L340 186" stroke="var(--thread)" stroke-width="1.2" fill="none"/>
         </g>
-        <g transform="translate(150 300)">
+        <g transform="translate(150 330)">
           <path d="M0 0 Q40 -18 80 0 Q40 18 0 0 Z" fill="none" stroke="var(--thread)" stroke-width="1.4"/>
           <circle cx="4" cy="0" r="2.5" fill="var(--thread)"/>
           <circle cx="76" cy="0" r="2.5" fill="var(--thread)"/>
