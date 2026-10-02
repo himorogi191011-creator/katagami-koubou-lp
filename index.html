@@ -281,6 +281,9 @@
   .mock-a4-cut span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--paper-card); padding: 0 4px; font-size: .4rem; letter-spacing: .25em; color: var(--ink-faint); }
   .mock-a4-ctl { position: absolute; top: 0; left: 0; width: 12px; height: 12px; border: 1px solid var(--ink); border-radius: 1px; font-family: var(--font-display); font-size: .42rem; display: flex; align-items: center; justify-content: center; }
 
+  .demo-cta { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+  .demo-cta p { color: var(--ink-soft); font-size: .88rem; }
+
   /* ---------- pricing ---------- */
   .pricing-panel {
     display: grid; grid-template-columns: 1fr; gap: 30px;
@@ -494,8 +497,8 @@
             <div class="shot-frame"><img src="images/case01-date.png" alt="日付選択画面" loading="lazy"></div>
           </div>
           <div>
-            <span class="mock-label">③ 施設・担当を選ぶ</span>
-            <div class="shot-frame"><img src="images/case01-facility.png" alt="施設・担当選択画面" loading="lazy"></div>
+            <span class="mock-label">施設と金額の設定</span>
+            <div class="shot-frame"><img src="images/case01-facility.png" alt="施設と金額の設定画面" loading="lazy"></div>
           </div>
           <div>
             <span class="mock-label">スタッフ管理</span>
@@ -596,6 +599,13 @@
           </div>
         </div>
         <p class="mock-caption">※画面はすべてサンプルデータで再現したものです。</p>
+
+        <div class="demo-cta">
+          <a class="btn btn-solid" href="https://katagami-koubou.himorogi.co.jp/demo/mitsumori-seikyu.html" target="_blank" rel="noopener">サンプルを体験する
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+          <p>実際のアプリを、サンプルデータで操作できます（パソコン推奨）。入力した内容は保存されません。</p>
+        </div>
 
         <!-- お客様の声をいただいたら、この下のコメントを外して差し替えてください
         <p class="case-quote">
