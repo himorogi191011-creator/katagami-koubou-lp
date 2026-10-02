@@ -208,6 +208,571 @@ table.items input.r{text-align:right}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <input type="file" id="importFile" accept=".json,application/json" hidden>
 
-<script>'use strict';const a0_0x22894a=a0_0x417d;(function(_0x434061,_0x39c80e){const _0x16deab=a0_0x417d,_0x2758a5=_0x434061();while(!![]){try{const _0x37b4b1=-parseInt(_0x16deab(0x2a1))/0x1*(parseInt(_0x16deab(0x2a8))/0x2)+-parseInt(_0x16deab(0x149))/0x3+parseInt(_0x16deab(0x270))/0x4+-parseInt(_0x16deab(0x1dd))/0x5*(-parseInt(_0x16deab(0x172))/0x6)+-parseInt(_0x16deab(0x2ca))/0x7*(parseInt(_0x16deab(0x17f))/0x8)+-parseInt(_0x16deab(0x216))/0x9+parseInt(_0x16deab(0x247))/0xa;if(_0x37b4b1===_0x39c80e)break;else _0x2758a5['push'](_0x2758a5['shift']());}catch(_0x454498){_0x2758a5['push'](_0x2758a5['shift']());}}}(a0_0x263d,0x661e7));const LICENSEE='',LICENSE_LABEL=a0_0x22894a(0x2c0),$=_0x2d9842=>document[a0_0x22894a(0x27e)](_0x2d9842),esc=_0x10ebd8=>String(_0x10ebd8??'')[a0_0x22894a(0x283)](/[&<>"']/g,_0x466363=>({'&':a0_0x22894a(0x234),'<':a0_0x22894a(0x151),'>':a0_0x22894a(0x1fa),'\x22':a0_0x22894a(0x265),'\x27':a0_0x22894a(0x1c0)}[_0x466363])),num=_0x59c20f=>{const _0x560366=a0_0x22894a,_0x1bc383=parseFloat(String(_0x59c20f??'')[_0x560366(0x283)](/,/g,''));return isFinite(_0x1bc383)?_0x1bc383:0x0;},fmt=_0x588f75=>Math[a0_0x22894a(0x259)](_0x588f75)[a0_0x22894a(0x1d8)](a0_0x22894a(0x20b)),yen=_0x3f6416=>'¥'+fmt(_0x3f6416),fmtQty=_0x5829c0=>num(_0x5829c0)[a0_0x22894a(0x1d8)](a0_0x22894a(0x20b),{'maximumFractionDigits':0x2}),uid=()=>Date[a0_0x22894a(0x155)]()[a0_0x22894a(0x21a)](0x24)+Math[a0_0x22894a(0x1d7)]()[a0_0x22894a(0x21a)](0x24)[a0_0x22894a(0x1e6)](0x2,0x7),iso=_0xe1a5f7=>_0xe1a5f7[a0_0x22894a(0x18a)]()+'-'+String(_0xe1a5f7[a0_0x22894a(0x1a3)]()+0x1)[a0_0x22894a(0x2a6)](0x2,'0')+'-'+String(_0xe1a5f7[a0_0x22894a(0x2be)]())[a0_0x22894a(0x2a6)](0x2,'0'),today=()=>iso(new Date()),addDays=(_0x33198e,_0x4ccbc2)=>{const _0x415fbf=a0_0x22894a,_0x528819=new Date(_0x33198e+_0x415fbf(0x158));return _0x528819[_0x415fbf(0x298)](_0x528819[_0x415fbf(0x2be)]()+_0x4ccbc2),iso(_0x528819);},endOfNextMonth=_0x43b681=>{const _0x2ce18c=a0_0x22894a,_0x44678a=new Date(_0x43b681+_0x2ce18c(0x158));return iso(new Date(_0x44678a[_0x2ce18c(0x18a)](),_0x44678a[_0x2ce18c(0x1a3)]()+0x2,0x0));},jpDate=_0x584e72=>{const _0x32501f=a0_0x22894a;if(!_0x584e72)return'';const [_0x157e23,_0x384dc2,_0x10f8bf]=_0x584e72[_0x32501f(0x16d)]('-');return _0x157e23+'年'+ +_0x384dc2+'月'+ +_0x10f8bf+'日';},nl2br=_0x22a92d=>esc(_0x22a92d)[a0_0x22894a(0x283)](/\n/g,a0_0x22894a(0x279)),TYPES={'estimate':{'label':a0_0x22894a(0x25e),'short':'見積','prefix':a0_0x22894a(0x164),'due':a0_0x22894a(0x1b9),'lead':a0_0x22894a(0x24d),'amount':a0_0x22894a(0x194)},'invoice':{'label':a0_0x22894a(0x1f7),'short':'請求','prefix':a0_0x22894a(0x2b3),'due':a0_0x22894a(0x137),'lead':a0_0x22894a(0x2a7),'amount':a0_0x22894a(0x170)}},RATES=[{'v':0xa,'l':a0_0x22894a(0x28e)},{'v':0x8,'l':a0_0x22894a(0x26b)},{'v':0x0,'l':a0_0x22894a(0x256)}],defaultData=()=>({'app':a0_0x22894a(0x18e),'version':0x1,'company':{'name':'','person':'','zip':'','address':'','tel':'','email':'','regNo':'','bank':''},'settings':{'layout':a0_0x22894a(0x206)},'docs':[]}),S={'data':null,'handle':null,'dirty':![],'view':a0_0x22894a(0x22e),'filter':a0_0x22894a(0x243),'q':'','edit':null,'editDirty':![],'editIsNew':![],'fsa':a0_0x22894a(0x14d)in window};function calc(_0x31b817){const _0x2414af=a0_0x22894a,_0x329238=new Map();let _0x5e4288=0x0;for(const _0x43d957 of _0x31b817[_0x2414af(0x186)]){const _0x5da501=Math[_0x2414af(0x259)](num(_0x43d957[_0x2414af(0x1af)])*num(_0x43d957[_0x2414af(0x154)])),_0x599f57=Number(_0x43d957[_0x2414af(0x24a)]);_0x329238[_0x2414af(0x183)](_0x599f57,(_0x329238[_0x2414af(0x1c5)](_0x599f57)||0x0)+_0x5da501),_0x5e4288+=_0x5da501;}const _0x133a02=[0xa,0x8,0x0][_0x2414af(0x1e0)](_0x136927=>_0x329238[_0x2414af(0x177)](_0x136927)&&_0x329238[_0x2414af(0x1c5)](_0x136927)!==0x0)[_0x2414af(0x1a0)](_0x2a3e76=>({'rate':_0x2a3e76,'base':_0x329238[_0x2414af(0x1c5)](_0x2a3e76),'tax':_0x2a3e76?Math[_0x2414af(0x263)](_0x329238[_0x2414af(0x1c5)](_0x2a3e76)*_0x2a3e76/0x64):0x0,'label':_0x2a3e76===0xa?_0x2414af(0x21c):_0x2a3e76===0x8?_0x2414af(0x280):_0x2414af(0x1cb)})),_0x3e3e09=_0x133a02[_0x2414af(0x1d4)]((_0x3f1802,_0x11e140)=>_0x3f1802+_0x11e140[_0x2414af(0x2c7)],0x0);return{'subtotal':_0x5e4288,'groups':_0x133a02,'tax':_0x3e3e09,'total':_0x5e4288+_0x3e3e09};}function nextNo(_0x2a5df7,_0x116ae9,_0x2e8f9f){const _0x4ae8ef=a0_0x22894a,_0x586ca2=TYPES[_0x2a5df7][_0x4ae8ef(0x208)]+'-'+(_0x116ae9||today())[_0x4ae8ef(0x1e6)](0x0,0x4)+'-';let _0x4e1d43=0x0;for(const _0x385a29 of S[_0x4ae8ef(0x226)][_0x4ae8ef(0x1b0)]){if(_0x385a29['id']===_0x2e8f9f||!_0x385a29['no']||!_0x385a29['no'][_0x4ae8ef(0x29d)](_0x586ca2))continue;_0x4e1d43=Math[_0x4ae8ef(0x2d3)](_0x4e1d43,parseInt(_0x385a29['no'][_0x4ae8ef(0x1e6)](_0x586ca2[_0x4ae8ef(0x23a)]),0xa)||0x0);}return _0x586ca2+String(_0x4e1d43+0x1)[_0x4ae8ef(0x2a6)](0x4,'0');}function idb(){return new Promise((_0x4efca4,_0x44f377)=>{const _0x471700=a0_0x417d,_0x514a18=indexedDB[_0x471700(0x19a)](_0x471700(0x169),0x1);_0x514a18[_0x471700(0x246)]=()=>_0x514a18[_0x471700(0x2a3)][_0x471700(0x2d6)]('kv'),_0x514a18[_0x471700(0x236)]=()=>_0x4efca4(_0x514a18[_0x471700(0x2a3)]),_0x514a18[_0x471700(0x282)]=()=>_0x44f377(_0x514a18[_0x471700(0x166)]);});}async function kvGet(_0x4780d8){try{const _0x4a2cd5=await idb();return await new Promise(_0xf7687=>{const _0x38ef4a=a0_0x417d,_0x24e530=_0x4a2cd5[_0x38ef4a(0x1d3)]('kv')[_0x38ef4a(0x18d)]('kv')[_0x38ef4a(0x1c5)](_0x4780d8);_0x24e530[_0x38ef4a(0x236)]=()=>_0xf7687(_0x24e530[_0x38ef4a(0x2a3)]),_0x24e530[_0x38ef4a(0x282)]=()=>_0xf7687(null);});}catch{return null;}}async function kvSet(_0xeb5eb8,_0x1eeb66){try{const _0x47fb3d=await idb();await new Promise(_0xe676f1=>{const _0x1637c1=a0_0x417d,_0x532208=_0x47fb3d[_0x1637c1(0x1d3)]('kv',_0x1637c1(0x2de));_0x532208[_0x1637c1(0x18d)]('kv')[_0x1637c1(0x1e4)](_0x1eeb66,_0xeb5eb8),_0x532208[_0x1637c1(0x1b7)]=_0xe676f1,_0x532208[_0x1637c1(0x282)]=_0xe676f1;});}catch{}}const FTYPES=[{'description':a0_0x22894a(0x2c9),'accept':{'application/json':[a0_0x22894a(0x1a6)]}}],LS_KEY=a0_0x22894a(0x22a);function parseData(_0x337a54){const _0x2bb91f=a0_0x22894a;try{const _0x209ea9=JSON[_0x2bb91f(0x16b)](_0x337a54);if(!_0x209ea9||!Array[_0x2bb91f(0x2e4)](_0x209ea9[_0x2bb91f(0x1b0)]))throw new Error();return _0x209ea9[_0x2bb91f(0x2d4)]={...defaultData()[_0x2bb91f(0x2d4)],..._0x209ea9[_0x2bb91f(0x2d4)]||{}},_0x209ea9[_0x2bb91f(0x205)]={...defaultData()[_0x2bb91f(0x205)],..._0x209ea9[_0x2bb91f(0x205)]||{}},_0x209ea9;}catch{return alert(_0x2bb91f(0x251)),null;}}async function save(){const _0x5634f6=a0_0x22894a;if(S[_0x5634f6(0x2e3)])try{const _0x160d41=await S[_0x5634f6(0x2e3)][_0x5634f6(0x273)]();await _0x160d41[_0x5634f6(0x18f)](JSON[_0x5634f6(0x2a5)](S[_0x5634f6(0x226)],null,0x2)),await _0x160d41[_0x5634f6(0x2bd)](),S[_0x5634f6(0x17d)]=![];}catch(_0x12c78a){S[_0x5634f6(0x17d)]=!![],alert(_0x5634f6(0x268)+_0x12c78a[_0x5634f6(0x24f)]);}else try{localStorage[_0x5634f6(0x248)](LS_KEY,JSON[_0x5634f6(0x2a5)](S[_0x5634f6(0x226)])),S[_0x5634f6(0x17d)]=![];}catch{S[_0x5634f6(0x17d)]=!![],alert(_0x5634f6(0x201));}updateStatus();}async function createFile(){const _0x23d080=a0_0x22894a;try{const _0x1e6338=await showSaveFilePicker({'suggestedName':_0x23d080(0x1e9),'types':FTYPES});S[_0x23d080(0x2e3)]=_0x1e6338,S[_0x23d080(0x226)]=defaultData(),await save(),await kvSet(_0x23d080(0x2e3),_0x1e6338),S[_0x23d080(0x188)]=_0x23d080(0x205),render(),toast(_0x23d080(0x18c));}catch(_0x255478){if(_0x255478[_0x23d080(0x14f)]!==_0x23d080(0x266))alert(_0x23d080(0x17b)+_0x255478[_0x23d080(0x24f)]);}}async function openFile(){const _0x22f789=a0_0x22894a;if(!confirmLeaveEdit())return;try{const [_0x379ed6]=await showOpenFilePicker({'types':FTYPES});await loadFrom(_0x379ed6);}catch(_0x2dfeb9){if(_0x2dfeb9[_0x22f789(0x14f)]!==_0x22f789(0x266))alert(_0x22f789(0x1a9)+_0x2dfeb9[_0x22f789(0x24f)]);}}async function reopenLast(){const _0x56042e=a0_0x22894a,_0x10aa24=await kvGet(_0x56042e(0x2e3));if(!_0x10aa24)return;try{let _0x33f1da=await _0x10aa24[_0x56042e(0x21b)]({'mode':_0x56042e(0x2de)});if(_0x33f1da!==_0x56042e(0x145))_0x33f1da=await _0x10aa24[_0x56042e(0x1c8)]({'mode':_0x56042e(0x2de)});if(_0x33f1da!==_0x56042e(0x145)){alert(_0x56042e(0x228));return;}await loadFrom(_0x10aa24);}catch(_0x3ae757){alert(_0x56042e(0x13c));}}async function loadFrom(_0x1eb35f){const _0x4be454=a0_0x22894a,_0x38c2a9=await(await _0x1eb35f[_0x4be454(0x13b)]())[_0x4be454(0x1f0)](),_0x36bb72=parseData(_0x38c2a9);if(!_0x36bb72)return;try{await _0x1eb35f[_0x4be454(0x1c8)]({'mode':_0x4be454(0x2de)});}catch{}S[_0x4be454(0x2e3)]=_0x1eb35f,S[_0x4be454(0x226)]=_0x36bb72,S[_0x4be454(0x17d)]=![],S[_0x4be454(0x17c)]=null,S[_0x4be454(0x144)]=![],await kvSet(_0x4be454(0x2e3),_0x1eb35f),S[_0x4be454(0x188)]=_0x4be454(0x22e),render(),toast('「'+_0x1eb35f[_0x4be454(0x14f)]+_0x4be454(0x1fe));}function a0_0x263d(){const _0x26e1d5=['yMfUAW','su5wltiWmJyTmdaWmq','pc90zd4kicaGicaGphrKihn0EwXLpsj3Awr0AdO5mhb4o3rLEhqTywXPz246CMLNAhqIpJXIDxr0B24Gy2XHC3m9iMj0BIbZBwfSBciGzgf0ys1Hy3q9iNbYAw50swqIigrHDgeTAwq9iG','DhjHBNnHy3rPB24','CMvKDwnL','phrYpGOGicaGphrKpG','cIaGica8zgL2ignSyxnZpsjTzxrHiJ5oBY4G','CMfUzg9T','Dg9mB2nHBgvtDhjPBMC','6AUy5zYN5Rsx5Rwe','pgrPDIbJBgfZCZ0Iy3rSiJ7MJQC8l2rPDJ4','57EO6zUg5lIT44gU5yAf5A6544gm5l+D5A2y44gv44km44gM44ge44g+44gB44kt44cc56c05Qoe44gx44gM44ki44kn44gx44ge44gN44gz44gl77YF','iIb0AxrSzt0I44gt44gU6kgm44ks5yMk6zMKiIbHCMLHlwXHyMvSpslJGzpJGA7OOyZJGPlLIyRPMAqIpSoxpc9IDxr0B24+pc90zd4kica8l3rYpG','nJKYmgzZyMDurq','44ks5l2C5OIq','44oH44o844oR44kI44oj44oS44k5','zMLSDgvY','pgrPDIbJBgfZCZ0IC3rHCNqIpG','Dgv4DenVBNrLBNq','pgrPDIbJBgfZCZ0Izw1WDhKIpUADOEs7TUobQ+wqIoobHUABUoMHNUobJoobGUocIUobVUobM+ocK+oaGJWVzgL2pG','Chv0','5BgX55sWioIkSEwTKa','C2XPy2u','iIbKyxrHlwS9iNf0EsiGy2XHC3m9iNiIihr5Cgu9iM51BwjLCIiGC3rLCd0Iyw55iIb2ywX1zt0I','DhLWzq','6kAl56Mn6kUl5Rgc44oh44o844k/lMPZB24','pgrSignSyxnZpsj0B3rHBhmIpGOGicaGpgrPDJ48zhq+5Bcp6kIi77Yi56Io5OQC77Yjpc9KDd48zgq+','CxvLCNLtzwXLy3rVCKfSBa','6ksh6ko944gx44g+44gx44gF44cc5l+D5A2y44gz44kl44gO5PAW44gx44ge5PU46AgE44gR44gQ44kk44g+44gz','C3vIDg90ywW','yxnZAwDU','mJaYnI0Wos0YmG','Dgv4Da','pgjYpUA2IoIYU+EOJIa','iJ48l3nWyw4+','5QcQ5BYp5lYA56s+44ch44ch','cIaGicaGicaGphrYpJX0Ad7MTOJOSRVNQi7LKiJOQiG8l3rOpJX0zcbJBgfZCZ0IBIi+','pc9ZCgfUpGOGicaGica8Adi+','Dg9mB3DLCKnHC2u','6kUl5Rgc5PU4','iIbKyxrHlwS9iM5HBwuIihzHBhvLpsi','cIaGicaGidWVzgL2pGOGicaGpc9KAxy+cIaGica8DgfIBgu+cIaGicaGidX0AgvHzd48Dhi+phrOpUwtGEEBRJWVDgG+phrOihn0EwXLpsj3Awr0AdOXnM1TiJ7MLBdPH488l3rOpJX0AcbZDhLSzt0ID2LKDgG6mtrTBsi+5y2y5l2npc90Ad48DgGGC3r5Bgu9iNDPzhrOoJi2Bw0IpUwnMos+OtWVDgG+phrOihn0EwXLpsj3Awr0AdOZmg1TiJ7PH5hPOy08l3rOpJWVDhi+pc90AgvHzd4kicaGicaGphrIB2r5pG','jMD0oW','i2L0zw1sB3DZ','5OUf5B2t6icf','6yoO5zob5lUJ77Yi57Az5OMl44o744or44od44kT44oZ77Yj','44cn44ks6zAl44gn44g+44gx44gF','cIaGica8l2rPDJ4kicaGidXWignSyxnZpsjOAw50iIbZDhLSzt0IBwfYz2LUlxrVCdOXnhb4iJ5qreBJGAVJGzNJGOVJGAVJGA/JGihLJBdLIlFNLlVPNAlJGA7JG5FJG6RJG7pJGR/JG7ZJGAFJGiXqreBJGAJJGzFJGABKV53LRzJJGi3JGPlPGBJJGBpJGB7JGzNJGilJGiZJG5JJG4pJG4dJG7ZJGAJJG5xJG4pJGR/JG7ZJGi3JGA7JG4hJGQFJG4pJGQ/JGA/LPjBJGzNJGAJJGy3JGOZJGytJGAVLH7RLIPVJGAFJGy3JGB7JGzNJGijdDhjSk1mG44gN44kc5l+D5A2y44gN44gn44g+44gz44ccpc9WpG','iIbHCMLHlwXHyMvSpslLJzJKVy0IpJWVDgq+cIaGica8Dgq+pgLUChv0igrHDgeTAt0I','44ow44oP44kM44k25yAf44gR5l+D5A2y44gN44gn44g+44gB44kt44gN44gx44gF44cc44oq44od44kV44kI44od44ox44ks5PU444gn5yE644gx44gM44gp44gG44gv44ge44cc','CMvTB3zL','phrYpGOGicaGphrKpJXPBNb1DcbKyxrHlwK9iG','pgj1DhrVBIbJBgfZCZ0I','C2v0DgLUz3m','zNvSBa','44ch44ch55Ym44ch44ch5BIc44ch44chideTmI0Z','ChjLzML4','pgj1DhrVBIbJBgfZCZ0IyNrUiIbKyxrHlwfJDd0IzhvWiJ7OPiFOO73JGzFJGABMLRdOPO/KVzZMIja8l2j1DhrVBJ4','5BEL5lQl5PMc6zAt44gV5y2k5PEL56Il5BQM44gN44gz44cc5B2t5PEL44gV44gk5RMV44gm5l2/44gi44gQ44ge5PMc6zAt44gm44gc44kk44g+44gz44cc','AMeTsLa','44cn44gV44gz44gN44gR5l2/44kp44km44gM44ge44g+44gz44cc','6yo15l6/55wQ5y+3','CMvNtM8','iIbKyxrHlwfJDd0Iy3jLyxrLiJ7JG4FJG7ZJGR/JG5xJGQhJGQtJG6VJGPlMLRdJGzFJGy/KVzZJGOS8C21HBgW+5yID44kb44gM5l2/44gg44gO44gn44cc5l+D5A2y5Ac05OMa44ks6yg444gZ44g+44gzpc9ZBwfSBd48l2j1DhrVBJ4kicaGicaGpgj1DhrVBIbJBgfZCZ0IyNrUigjPzYiGzgf0ys1Hy3q9iM9Wzw4IpUodH+odVoocV+odLEocOEocPoodQ+ocKUMwI+obJZXZBwfSBd7LIkxJGA7LOltMIydJGOrvu0lJG6hJG6lJG6RJGAVJGylJGOVJG5xJGQhJGQtJG6VJGPlPGBJJGBy8l3nTywXSpJWVyNv0Dg9UpGOGicaGpc9KAxy+pc9KAxy+','Ag9UB3jPzMLJ','iIbWBgfJzwHVBgrLCJ0I44oB44o844oG44oA44o844k45yI25l2C6lk7iJ48l2XHyMvSpGOGicaGpc9KAxy+pc9Zzwn0Aw9UpGOkicaGidXZzwn0Aw9UignSyxnZpsjWyw5LBci+cIaGicaGidXKAxyGy2XHC3m9iNDYyxaIpJX0ywjSzsbJBgfZCZ0IAxrLBxmIpGOGicaGicaGidX0AgvHzd48Dhi+phrOpUwtGEEBRJWVDgG+phrOihn0EwXLpsj3Awr0AdO5mhb4iJ7MLBdPH488l3rOpJX0AcbZDhLSzt0ID2LKDgG6odbWEci+5y2y5l2npc90Ad48DgGGC3r5Bgu9iNDPzhrOoJeZmhb4iJ7LJzJKVQhVViJNQi7MIPZVViK8l3rOpJX0AcbZDhLSzt0ID2LKDgG6mtiWChGIpUEOJUEoHZWVDgG+phrOihn0EwXLpsj3Awr0AdOXmJbWEdT0zxH0lwfSAwDUoNjPz2H0o3bHzgrPBMCTCMLNAhq6mtbWEci+6yEr6Agnpc90Ad48DgGGC3r5Bgu9iNDPzhrOoJqWChGIpJWVDgG+pc90CJ48l3rOzwfKpGOGicaGicaGidX0yM9KEsbPzd0IAxrLBvjVD3mIpJWVDgjVzhK+cIaGicaGidWVDgfIBgu+pc9KAxy+cIaGicaGidXKAxyGy2XHC3m9iMfJDgLVBNmIihn0EwXLpsjTyxjNAw4TDg9WoJHWEci+pgj1DhrVBIbJBgfZCZ0IyNrUihnTywXSiIbKyxrHlwfJDd0IywrKsxrLBsi+77YlioIHJoocKUI/VEwkOdWVyNv0Dg9UpJWVzgL2pGOGicaGica8zgL2igLKpsj0B3rHBhmIpJWVzgL2pGOGicaGpc9Zzwn0Aw9UpGOkicaGidXZzwn0Aw9UignSyxnZpsjWyw5LBci+cIaGicaGidXSywjLBd7LGPNOGim8Dgv4DgfYzweGzgf0ys1MpsjUB3rLiIbYB3DZpsi1iIbWBgfJzwHVBgrLCJ0I57sn5PYF44cb44gk5PsV5OMv5P2H5lU244gQ44gPiJ4','44oq44od44kV44kI44od44ox44ks6kQT44g/6l6844g/44g+44gx44gF','CMv2B2TLt2jQzwn0vvjm','su5wltiWmJyTmdaWmG','6iEQ56s+5Oof5AcX44gm5PYQ5ywL5yQB44gN44gz44cc44cm6iEQ56s+5Oof5AcX44o744oh44o844k/44cn44gl44kj5ywL5yQB44gN44gn44g+44gz','mZmYmJa1m3zrCwz4sa','iJ48l2XHyMvSpGOGicaGica8BgfIzwWGy2XHC3m9iNDPzguIpUwUM+wfIaOGicaGicaGidXZCgfUignSyxnZpsjWywLYiJ48Aw5WDxqGzgf0ys1MpsjJBgLLBNqIigXPC3q9iMnSAwvUDhmIihzHBhvLpsi','y2XHC3nmAxn0','pgj1DhrVBIbJBgfZCZ0IyNrUiIbKyxrHlwfJDd0IDg9jBNzVAwnLiJ7JGzpJGA7OPOVNQy3JGyVJGONOQ4VMSylMM7JJGPlKVzZMIja8l2j1DhrVBJ4','Dg9tDhjPBMC','CxvLCNLqzxjTAxnZAw9U','mtaL5A++6lgH','mdaWmc0Wmc0WmdaW','iIbKyxrHlwfJDd0Iz28IigrHDgeTDJ0IC2v0DgLUz3mIpUIhQUEKVUAdHEwGSEodU+odH+odVoocVZWVyNv0Dg9UpGOGicaGpc9Uyxy+cIaGica8zgL2ignSyxnZpsjMAwXLiIbPzd0IC3rHDhvZiJ48l2rPDJ4','iJ4kicaGicaGphrKihn0EwXLpsj3Awr0AdO1mhb4iJ48C3bHBIbJBgfZCZ0IC2vHBca','pc90Ad48DgqGy2XHC3m9iM4IpG','5OUf5B2t77YA','iIbKyxrHlwfJDd0Iz28IigrHDgeTDJ0IBgLZDci+5PU46AgE5lIa6kANpc9IDxr0B24+cIaGicaGidXIDxr0B24Gy2XHC3m9iG','zg93BMXVywq','pc9OmJ4kicaGidXKAxyGy2XHC3m9iNrVCci+cIaGicaGidXKAxyGy2XHC3m9iNrViJ4kicaGicaGica8zgL2ignSyxnZpsjJBgLLBNqIpG','yMfZzq','zgf0yq','44oi44kK44oS5lQK5O+B5BEL5lQl','44ov44kH44kK44oR44g444gU44kI44kV44k744k544gm6kIX5y+V44gv44km44g+44gB44kt44gN44gx44gF44cc','pgrPDIbJBgfZCZ0IDg9VBgjHCIi+cIaGicaGidXKAxyGy2XHC3m9iNnLzYi+','BwL0C3vTB3jPlxnLAwT5Ds1KyxrH','iIbYB3DZpsiZiIbYzwfKB25SEsb0ywjPBMrLEd0IlteIignSyxnZpsjYBYiGCgXHy2vOB2XKzxi9iG','5lYA56s+5zcn44o75Bgl5y+3','zgf0yxnLDa','BgLZDa','pc9KAxy+cIaGicaGicaG','6kAl56Mn6kUl5Rgc44oq44od44kV44kI44od44oxxW','z3jVDxbZ','5O6s5Rc06kMW44g+44kk6zMK5y675l2C5QwT','pgrPDIbJBgfZCZ0ICMvKDwnLzci+4Oc744gV6lU95RIB56Io546h77YiocxVViNLR77OSAhJGAFJGzNJGii8l2rPDJ4','jMfTCdS','pc90zd48DgqGy2XHC3m9iMmIpG','B25ZDwnJzxnZ','44ca56Ioia','pc9KAxy+cIaGicaGidXPBNb1Dcb0ExbLpsjZzwfYy2GIigLKpsjXiIbWBgfJzwHVBgrLCJ0I55wQ5y+344o75A6B5ywi44o75lU25zcn44gN5QsC57sIiIb2ywX1zt0I','phnWyw4Gy2XHC3m9iM11DgvKiJ4','BgvUz3rO','Aw5MB0bLEgfTCgXLlMnVBq','44kS44k557wM5RMV5zMO5PYS5l2t77YimJtLJ7FVViK','qtqGmEAEMUobP+wnSowiT+obL+obVUobMq','pc9ZBwfSBd48l2j1DhrVBJ4','54++5zYO44gU44oh44o844k/77Yi5PU46AgEia','i3n0yxr1CW','phrYigrHDgeTywn0psjLzgL0iIbKyxrHlwLKpsi','pc9ZCgfUpG','ywXS','y2XVC2vZDa','5l+D5A2y5RIi44g/','B251CgDYywrLBMvLzgvK','mJe3nti3nJb0z3PfrMi','C2v0sxrLBq','zM9YrwfJAa','CMf0zq','pc9KAxy+cIaGica8Adi+','phnWyw4Gy2XHC3m9iMrVDcbKAxj0Esi+pc9ZCgfUpUodH+odOUEjIdXZCgfUignSyxnZpsjTDxrLzci+5l+D5A2y44gv44km44g+44gB44ktpc9ZCgfUpG','5lIl6kIy44gU44gO44gk44kk44gk6kAl56Mn44kk55sZ44gx5lIk44gs44g+44gz44cc','yw1VDw50','BwvZC2fNzq','y2XPzw50','44gt44gU44ov44kH44kK44oR44gV6kAl56Mn44o76kUl5Rgc44oh44o844k/44gO44gx44gM6kQT44g/6l6844kb44g+44gB44kt44cc','Bg9JywXLq29TCgfYzq','pc9KyxrHBgLZDd4kicaGicaGpc9SywjLBd4kicaGicaGpgXHyMvSignSyxnZpsj3AwrLiJ7KU7BLKi08Aw5WDxqGzgf0ys1MpsjZDwjQzwn0iIb2ywX1zt0I','pc90zd48l3rYpGOGicaGicaGidX0CIbJBgfZCZ0Iz3qIpJX0Ad7LKiJOQiJVViJNQi7OVRZVViK8l3rOpJX0zcbJBgfZCZ0IBIi+','C2vSzwn0zwq','5A++6lgH5Asw','cIaGicaGicaG','AgfZqxr0CMLIDxrL','CM91BMq','mJaYnI0Xmc0YmG','zgf0zq','pgGXpUIMI+EPJEodU+IRI+AXGJWVAde+phnWyw4Gy2XHC3m9iMXPyYi+','i3bYAw50lwfYzwe','6kAl56Mn5PU4','y2HHBMDL','iIb2ywX1zt0I','ChjPBNq','pc90zd48DgqGy2XHC3m9iM4IpG','Dhj1BMm','6zU76kMX55wQ5y+3','jNf1B3q7','qwjVCNrfCNjVCG','C3vIAMvJDa','44ov44kH44kK44oR44gR5l+D5A2y44gN44gn44g+44gB44kt44gN44gx44gF44cc44cm6iEQ56s+5Oof5AcX44o744oh44o844k/44cn44gl44kj44oq44od44kV44kI44od44ox44ks5PU444gn5yE644gx44gM44gp44gG44gv44ge44cccG','pc90zxH0yxjLyt4','cIaGica8CcbJBgfZCZ0ID2fYBIi+44gt44gU44ow44oP44kM44k244gV44ov44kH44kK44oR44g444gU55U05O6L5l+D5A2y44gR5A++5B+C44gx44gM44ge44g+44gB44kt44cctwLJCM9ZB2z0ievKz2uG44glieDVB2DSzsbdAhjVBwuG44gN6zAl44gp44gt44gO44ks44gk44gz44gz44kb44gx44g+44gz44cc44gt44gU44g+44g+5l2/44gg5Ac05zci44gV44oh44o844k/44gm44ow44oP44kM44k25yAf44gR5l+D5A2y44gv44km44kl44gF44kb44cb44gt44g+44kb44gR44oq44od44kV44kI44od44ox44ks5PU444gn5yE644gx44gM44gp44gG44gv44ge44ccpc9WpGOGicaGpgrPDIbJBgfZCZ0Iy2HVAwnLCYi+cIaGicaGidXIDxr0B24Gy2XHC3m9iMj0BIbWCMLTyxj5igjPzYiGzgf0ys1Hy3q9iMXVy2fSiJ7JGzpJGA7JG5BJG6NJGQBJGRBJGAFLP4VJGOhJGOS8C21HBgW+5yMn5zUE44gU57AA44gn44kc44gt44gt44gl44kjpc9ZBwfSBd48l2j1DhrVBJ4kicaGicaGpgj1DhrVBIbJBgfZCZ0IyNrUigjPzYiGzgf0ys1Hy3q9iMLTCg9YDci+44oq44od44kV44kI44od44ox44gl44kj6kQT44g/6l6844kaphnTywXSpUABUoobJEwhUUobL+obN0Ptt07JG5xJGQhJGQtJG6VJGPlPGBJJGBy8l3nTywXSpJWVyNv0Dg9UpGOGicaGpc9KAxy+pc9KAxy+','ocxVViJOU73MUjVVViK','pgrPDIbJBgfZCZ0IC3vIiJ48zhq+','pgrPDJ7KU7BLKi3VVjO','5REH6lEViowKQUMdJG','5yE65BY16lk7','ntuZmdi0rvrAEhPy','ios7TU+8IEobP+E9RUobJEApM+obIoobVUobMEoaGUocIoocJEobL+obHoobP+obMEobI++8NW','6kgm44gc44kk44g+44gz44cc5O6N44gi5lUy44gn77Yi5lIk5lIlmUMDOU+8IEobRZJOOyZJGB7JGAFJGPlMG7pLRPRJGzFJGABJGytJGOVJGz/JGOhJGihKUiVJGyZLIiFJGOZJGOVLJ6/OG73MGkFJGyZJGylJGORJGB7JGzNJGilJGzpJGA7JGB7JGB7LJBdLIlFJGzFJGB7JGzNJGyVVVj8','y3jLyxrLv3jPDgfIBgu','pc9ZzwXLy3q+pc9SywjLBd4kicaGicaGpgj1DhrVBIbJBgfZCZ0IyNrUihbYAw1HCNKIigrHDgeTywn0psjUzxCIigrHDgeTDJ0Izxn0Aw1HDguIpUIMI+EPJEABUoocKUs9NoAiKdWVyNv0Dg9UpGOGicaGica8yNv0Dg9UignSyxnZpsjIDg4GChjPBwfYEsiGzgf0ys1Hy3q9iM5LDYiGzgf0ys12psjPBNzVAwnLiJ7OQ4VMSylMM7JJGPlKVzZMIja8l2j1DhrVBJ4kicaGidWVzgL2pGOGicaGpgrPDIbPzd0ICM93CYi+','pc90zd4kicaGidX0zd48yNv0Dg9UignSyxnZpsj4iIbKyxrHlwfJDd0IzgvSsxrLBsiGzgf0ys1Ppsi','pc90zd4kicaGidX0zcbJBgfZCZ0IBIi+','pc9ZzwXLy3q+pc90zd4kicaGidX0zcbJBgfZCZ0Iyw10iIbPzd0Iyw10','C2HVCNq','pgjYpG','pc9KAxy+pc90zd4kicaGicaGphrKignSyxnZpsjUiJ4','cIaGicaGicaGpgrPDIbJBgfZCZ0IBM90zwjVEci+pgi+5ykz6icdpc9IpG','ChjPBwfYEq','pc90zd48l3rYpGOGicaGicaGia','CxvLCNLtzwXLy3rVCG','ywrKrxzLBNrmAxn0zw5LCG','ocxLR77OSAhVViJOU73MUjVNQi7NJOFVViK','ywrKCMvZCW','B25LCNjVCG','CMvWBgfJzq','ywn0','5BgX55sWiowKQUMdJG','44k144oZ44ox44oR6AoF5Acc','y3jLyxrLzef0','5OYV6l685OMl5PwW5PAz44gV44gu6lkG5OUf6Agy44ge44g+44gz44cc','C29YDa','pgrPDIbJBgfZCZ0IC3vIiJ4','pc90yM9KEt4kicaGidWVDgfIBgu+cIaGica8zgL2ignSyxnZpsjZDw0IpGOGicaGica8zgL2ignSyxnZpsjUB3rLiJ4kicaGicaGica','44ch44ch55Ym44ch44ch5BIc44ch44ch55s6ms0Yltm','Aw5JBhvKzxm','mtaL','phrLEhrHCMvHigrHDgeTyZ0I','iIbWBgfJzwHVBgrLCJ0I5QcQ5BYp5lYA56s+44ch44chiJ4kicaGicaGica8C2vSzwn0igrHDgeTzJ0IAg9UB3jPzMLJiJ4','44oq44od44kV44kI44od44ox44ks5PU444gn5yE644gx44g+44gx44gF','44ch44ch6yQa6kgmiooaH+oaH+AuR+w6L+oaGoAzRUMaMIaXmJm0nty3cUwpO+w6P+wqJEE+QEoaGoocQ++8IEoaH+oaHW','BgfIzwW','ChvZAa','77Yi44gQ44gx77Yj','iIbKyxrHlwS9iNbYAwnLiIbJBgfZCZ0ICIiGDhLWzt0IBNvTyMvYiIbZDgvWpsjHBNKIihzHBhvLpsi','DgvS','C2v0rgf0zq','mJaYnI0Wos0Zma','C29Tzq','Bwv0yuTLEq','pc9ZCgfUpJWVzgL2pGOGicaGicaGia','C3rHCNrZv2L0Aa','i3jVD3m','iIbHCMLHlwXHyMvSpslLK4hNM64IpJWVDgq+cIaGica8Dgq+pgLUChv0igrHDgeTAt0I','zMLUzeLUzgv4','mtaWodiZB3fMAfje','zhvL','CMvZDwX0','iIbHCMLHlwXHyMvSpslMPjZNTkiIpGOGicaGica8zgL2ignSyxnZpsjZCgfJzxiIpJWVzgL2pGOGicaGica8BgfIzwWGy2XHC3m9iMLUBgLUzsi+5y2W5yI3phnLBgvJDcbKyxrHlwXHEw91DcbHCMLHlwXHyMvSpslLJBdLIlFJG6ZJGQtJGQlJGQBJG4GIpG','C3rYAw5NAwz5','CgfKu3rHCNq','5lIl6kIy44gU44gO44gk44kk44gu6kUl5Rgc55sZ44gx5lIk44gs44g+44gz44cc','mtris2DKu3q','cIaGica8l2rPDJ4kicaGidXKAxyGy2XHC3m9iMfJDgLVBNmIpJXIDxr0B24Gy2XHC3m9iMj0BIbWCMLTyxj5iIbKAxnHyMXLzcbZDhLSzt0IB3bHy2L0EtOUndTJDxjZB3i6BM90lwfSBg93zwqIpUIhQUEKVUAdHEwGSEocKUs/NEwTMdWVyNv0Dg9UpJXZCgfUignSyxnZpsjOAw50iIbZDhLSzt0IBwfYz2LUoJaIpUwWJUwfPEEjIoobP+obR+IhQUEuSEobQ+IOREwUMUobP+obJEobVUobMtWVC3bHBJ48l2rPDJ48l3nLy3rPB24+cGOGicaGpgGYignSyxnZpsj0AxrSzsi+44oP44kK44k744oZ44k5pc9OmJ4kicaGidXZzwn0Aw9UignSyxnZpsjWyw5LBci+phaGC3r5Bgu9iM1HCMDPBI10B3a6mci+44gt44gU44kI44ox44oQ44gV44oh44oI54Mi44gN44gz44ccpc9WpJXWignSyxnZpsjOAw50iIbZDhLSzt0IBwfYz2LUlwjVDhrVBtOWiJ7MNkZJGR3JG5xJG4JJGQBJGQFJGQlJGA7OKzFKVzZMQkNJGA/MOkRLVi/KVjRNPl5iAw1VCM9NAEobQ+w4SowXNUobL+obVUobMEoaGUESRos4IEIaHEobUoobRUITSUA4OEodU+IKH+IJVEodU+wgJEMfJEw4G+obR+obLoMbOoAfRUobJ+obOoobLEobHooaGJWVCd48l3nLy3rPB24+cGOGicaGpgGYignSyxnZpsj0AxrSzsi+44oh44o844k/pc9OmJ4kicaGidXZzwn0Aw9UignSyxnZpsjWyw5LBci+cIaGicaGidXWihn0EwXLpsjTyxjNAw4TDg9WoJaIpUodH+odOUEjIoobRUobN+ocGEoaGEodH+odVoocV+obR+obQEobK+obQ+ocGUs/NEwTMoobLEocJoobVUobM+ocK++8IoABUoMHNIa','cIaGicaGicaGpgrPDIbJBgfZCZ0IBgvHzci+','pc9ZzwXLy3q+pc9ZCgfUpGOGicaGicaGidXKyxrHBgLZDcbPzd0Iy2XPzw50CYi+','pc9OmJ4kicaGicaGpgrPDIbJBgfZCZ0IC3bHy2vYiJ48l2rPDJ4kicaGicaGpgj1DhrVBIbJBgfZCZ0IyNrUiIbKyxrHlwfJDd0Iz28IigrHDgeTDJ0IBgLZDci+5lIa6kAN44gR5OI744klpc9IDxr0B24+cIaGicaGidXSywjLBcbJBgfZCZ0IAw5SAw5LiJ7LJBdLIlC8C2vSzwn0igrHDgeTBgf5B3v0igfYAweTBgfIzwW9iUwnSowiT+odRoocPoocOUocPUodIci+','pc90yM9KEt48l3rHyMXLpJWVzgL2pG','mdaWltaWmda','mJaYnI0Xmc0Zmq','5PEI5A2y5l6/5zMO44gU5PkK5y6744o75yEM5yIg','AgfSzG','pc9KDd48zgq+','su5w','pc9Kzd48l2rPDJ4kicaGia','y3jLyxrLt2jQzwn0vvjm','44kK44oZ44oC44kK44k555M76yYY55wQ5y+3','pc9ZCgfUpJWVDgq+cIaGicaGidX0zd4','zMLSzxm','zNnH','phnWyw4Gy2XHC3m9iNn1yIi+77Yi5A6B5ywi44gQ44gx77Yjpc9ZCgfUpG','i2fTDa','pgrPDIbJBgfZCZ0Izg9Jia','y2XVC2u','z2v0rgf0zq','5yMk6zMK44gx44g+44gx44gF','44oh44oI54Mi','pgrPDIbJBgfZCZ0IAgfSzNDYyxaIpJXKAxyGy2XHC3m9iMHHBgyIpG','DgL0Bgu','qtqG5lIk5lIl77Yi5O6N44gi5lUy44gn77Yj','iJ4kicaGia','Aw52B2LJzq','cIaGicaGidXIDxr0B24Gy2XHC3m9iMj0BIbIAwCG','Dgf4','pc9IDxr0B24+','6kAl56Mn44o76kUl5Rgc44oh44o844k/','ndi0nJjysefbr0q','pc9KAxy+pc90zd4kicaGicaGphrKpG','A2v5zg93BG','cIaGica8zgL2pJXKDd7MTOJOSRVNQi48l2r0pJXKzd4','pgjYpUEzUUIHJoAxPEoaGa','ios7TU+8IEoaGJWVCd4kicaGicaGphaGy2XHC3m9iMHPBNqIpUwWJUwfPEEjIoobP+obR+oaGEodH+odVoocV+obR+s6I+wlMEAjGoobRUodKEocVEocS+odS+wgHEobRUodLEocOEocPoodQ+obQ+s/NEwTMoobLEocJooaGEodKoodG+ocR+ocOUodG+odL+obRUABUoobJEwhUUobL+odU+IQREobV+I+VoobV+ocGUobP+obJEobVUobMEoaGJWVCd4kicaGicaGpgrPDIbJBgfZCZ0Iywn0Aw9UCYi+pgeGy2XHC3m9iMj0BIbWCMLTyxj5iIbOCMvMpsjODhrWCZOVl2THDgfNyw1PlwTVDwjVDs5OAw1VCM9NAs5JBY5QCc8Jy29UDgfJDciGC3r5Bgu9iNrLEhqTzgvJB3jHDgLVBJPUB25LiJ7LSi7LHAxJGAVJGAtJGytJGABNM7JOQ4FJGzNJGOS8l2e+pc9KAxy+cIaGica8l3nLy3rPB24+','w2rHDgeTy10','pc9VChrPB24+','cIaGicaGia','Bwf4','y29TCgfUEq','zxn0Aw1HDgu','y3jLyxrLt2jQzwn0u3rVCMu','i2jHCG','zw1HAwW','zMLUza','iIbKyxrHlwS9iNvUAxqIihzHBhvLpsi','6kAl56Mn44gU5yAf5A6544gN6kUl5Rgc5PU444ks5l2C44kk44g+44gx44gF44cc56k66kQn44gx44gM5l+D5A2y44gx44gM44gp44gG44gv44ge','pc9ZCgfUpGOGicaGpg5HDIbJBgfZCZ0IDgfICYi+cIaGicaGidXIDxr0B24Gy2XHC3m9iG','pgrPDIbJBgfZCZ0IA3yIpG','CMvHzhDYAxrL','pgrPDIbJBgfZCZ0IyMfUAYi+pgi+44gk5OYV6l685ywipc9IpG','pc9KAxy+','5PYQ5l+D5A2y44gU5Asj5PU044gc44kk','5O6s5Rc06kMW44g+44kk5A++5B+C','AgfUzgXL','AxnbCNjHEq','qtqGmEAEMG','DgfYz2v0','iIbKyxrHlwfJDd0IzMLSDgvYiIbKyxrHlxy9iG','pc90zd48l3rYpG','pgLUChv0ihr5Cgu9iMrHDguIigrHDgeTzJ0IzhvLiIb2ywX1zt0I','5PEI5A2y57wM5RMV5zMO44gU5PkK5y6744o75yEM5yIg','Aw5WDxq','iIbHCMLHlwXHyMvSpslMLBdPH48IpJWVDgq+cIaGica8Dgq+pgLUChv0igrHDgeTAt0I','44gk5PsV5OMv5PYF6zMq','5l+D5A2y44gx44g+44gx44gF','phnWyw4Gy2XHC3m9iMrVDca','y2XPy2S','z2v0rMLSzq','5yMn5zUE44gU44ov44kH44kK44oR44ks6zAl44gr44g+44gB44kt44gN44gx44gF44cc56E75yUv44o75yMk6zMK44gv44km44gF5y+V6io95OcN44gm44gc44kk44g+44gz44cc44cm44oh44o844k/44ov44kH44kK44oR44ks6zAl44gp44cn44gl44kj6yg444gZ55U044gx44gM44gp44gG44gv44ge44cc','C2nYB2XSvg8','iJ48l2XHyMvSpGOGicaGica8BgfIzwW+','5QcQ5BYp5lYA56s+44k144oZ44ox44oR5zwg5BQx','6iEQ56s+5Oof5AcX44ks5l+D5A2y44gx44g+44gx44gF','DgHLBG','C2HVDW','iIbKyxrHlwS9iNjHDguIigfYAweTBgfIzwW9iUEOJUEoHYi+','zwrPDerPCNr5','z3jHBNrLza','Bgf5B3v0','zM9JDxm','A2v5','mtiYotiYovLQzvLfqW','5Rsl5BYp5l6/5zMO77Yi56+a5Rc05z6l77Yj','ChjLDMvUDerLzMf1Bhq','vevmia','C2HVD1nHDMvgAwXLugLJA2vY','6ywn566H5O6L57AA5BEL5lQl','BMfTzq','EMLW','jMX0oW','pc9Kzd48l2rPDJ4kicaGidXKAxyGy2XHC3m9iMDYyw5KiJ48zhq+5zci6kIi77Yi56Io6l6877Yjpc9KDd48zgq+','AM9PBG','ChjPy2u','BM93','44gz44g544gM','yxbWBgLJyxrPB24VANnVBG','vdaWoJaW','mJaYnI0Wos0Woa','mJaYnI0Wos0Xnq','pc9KAxy+pgrPDIbJBgfZCZ0Iy3v0iJ48C3bHBJ7JGQ3JG6RJG4JJG6O8l3nWyw4+pc9KAxy+pgrPDIbJBgfZCZ0IAgfSzIi+','44ks57EO6zUg','cIaGicaGidWVzgL2pGOGicaGica8zgL2ignSyxnZpsjMCM9TiJ4kicaGicaGica8zgL2ignSyxnZpsjJBYi+','ios7TU+8IEocKUoaGEodKoodG+ocR+ocOUodG+odL+obRUwgHEwUUE+8IoABUoMHNIa','5PIo57sW44gm','w2rHDgeTywn0xq','44oh44oI54Mi44gN44gV6iEQ56s+5Oof5AcX44gV5Asj5PU044gN44gn44g+44gB44kt','C3bSAwnL','vdeYmZq1nJC4otaXmJm','rvnu','ywrK','zxjYB3i','DxbKyxrLzef0','pgj1DhrVBIbJBgfZCZ0IyNrUihbYAw1HCNKGyMLNiIbKyxrHlwfJDd0ICMvVCgvUiJ7LIy3LM57JGA7JG5xJGQhJGQtJG6VJGPlPLOVJGy88C21HBgW+','BwL0C3vTB3jPlwfWCa','pc9IpJWVzgL2pGOGicaGicaGia','CgfYC2u','DMfSDwu','C3bSAxq','D2LKzq','y29WEq','44gu6kUl5Rgc6yEr6Agn','pc9KAxy+cIaGicaGicaGpgrPDIbJBgfZCZ0Iyw1VDw50iJ48C3bHBJ4','ntm0uNfkrNPU','i21HAw4','i2L0zw1sB3DZigLUChv0w2rHDgeTAZ0IBMfTzsjD','vdaWmdaWmdaWmdaWmda','CgvYC29U','AgfZ','44cn44ks5yMk6zMK44gx44g+44gz44cc5ywd44gR5OI744gB44g+44gB44kt44cc44ki44kn44gx44ge44gN44gz44gl77YF','pc9KAxy+cIaGicaGidWVzgL2pGOGicaGica8DgfIBgu+cIaGicaGicaGphrYpJX0Ad7LSi/OQiJVViJNQi7MIPZVViK8l3rOpJX0zcbJBgfZCZ0IBIi+','5PYj6zMq5lYA56s+44k144oZ44ox44oR6kIT5ykz','5l2C5OIq44gN44gn44g+44gB44kt44gN44gx44gF44cccG','zwrPDa','zgLYDhK','pc9Kzd48l2rPDJ4kica8l2rSpG','nZa0wLPWqM12','DgfNtMfTzq','AhjLzG','yNv0Dg9U','C2v0','pgrPDIbJBgfZCZ0Izw1WDhKIpUobVUobOoABUoMHNUobJoobGUocIUobVUobM+ocK+oaGUwpS+s4IUobRUoaJoIMI+EPJEABUoocKUs9NoAiKooaJEobI+ocIEwNI+ocGEobVUobL+ocH+obHUoaGJWVzgL2pG','phrYpJX0zd48l3rKpJX0zd48l3rKpJX0zd48l3rKpJX0zd48l3rKpJX0zd48l3rKpJWVDhi+','AxrLBxm','pgXHyMvSignSyxnZpsi','DMLLDW','mJaYnI0Xmc0Woa','z2v0rNvSBfLLyxi','pc90zxH0yxjLyt48l2XHyMvSpGOGicaGpc9Zzwn0Aw9UpGOGicaGpc9KAxy+cGOGicaGpgrPDIbJBgfZCZ0Iywn0Aw9UCYi+cIaGicaGidXIDxr0B24Gy2XHC3m9iMj0BIbWCMLTyxj5iIbKyxrHlwfJDd0IC2f2zurVyYi+5l+D5A2ypc9IDxr0B24+cIaGicaGidXIDxr0B24Gy2XHC3m9iMj0BIiGzgf0ys1Hy3q9iNbYAw50iJ7LJBdLIlFJG7Tqrey8l2j1DhrVBJ4kicaGicaG','44oh44o844k/44ov44kH44kK44oR44ks5l2C5OIq44gx44g+44gx44gF44cc44g+44gA6iEQ56s+5Oof5AcX44ks5ywL5yQB44gx44gM44gp44gG44gv44ge','B2jQzwn0u3rVCMu','BwL0C3vTB3jPlxnLAwT5Dq','D3jPDgu','pc9SywjLBd4','rvnultiWmJyTmdaWmG','rvnultiWmJyTmdaWmq','iJ7LJBdLIlC8l2j1DhrVBJ48l3rKpGOGicaGpc90CJ4','44gk6kAl56Mn6yEr6Agn','pc9KAxy+pc9KAxy+','y3rYBeTLEq','pgrPDIbJBgfZCZ0IzwrPDc1OzwfKiJ4kicaGicaGphnWyw4Gy2XHC3m9iNnLywWG','pgLUChv0igrHDgeTyZ0I','pgGYignSyxnZpsj0AxrSzsi+6iEQ56s+5Oof5AcXpc9OmJ4kicaGidXWignSyxnZpsjOAw50iJ7MM7JPOz7JGA7LJ7pKUiRJGAJMJk/OVRZLHyJMRitJGAVLJBdLIlFJGzxJGOZJGB7JGzNJGilJG4FJG6lNIyJJGA7JGz/JGOhJGihOH6RNPl7MG4xLOlhJGA/LPiNMM7tJGAFJGy3JGB7JGzVJGPpJGii8l3a+cIaGica8C2vJDgLVBIbJBgfZCZ0ICgfUzwWIpJXKAxyGy2XHC3m9iMDYAwqIpGOGicaGica','B3bLBG','pgj1DhrVBIbJBgfZCZ0IyNrUigrHBMDLCIiGzgf0ys1Hy3q9iMrLBci+5yMk6zMKpc9IDxr0B24+','i3rVyxn0','iIbYzwfKB25SEsb0ywjPBMrLEd0IlteIignSyxnZpsjYBYiGCgXHy2vOB2XKzxi9iG','44gt44gU44ow44oP44kM44k25yAf','5BgX55sWios4GoMdJG','BwfW','DhjPBq','Dw5PDa','z2v0tw9UDgG','pgGYpUIMI+EPJEodU+IRI+AXGJWVAdi+cIaGica8Cd7OPOVNQy3MM7JJGAJOQ4VMSylMM7JJGPlKVzZMIjdJG7VKV53LRzJJG7VLJBdLIlFJGzNJGOVJGQlJG5FJG6RJGAFJGzNJGilJG4FJG7ZJGR/JGA/JGzpJGA7JG5hJGR3JGRpJG7pLHOxJGA7JG5xJGQhJGQtJG6VJGAVKV53LRzJJGzxJGOZJGihJGQtJG7pJGR/JG7ZJG43JG4pJG4JJGAVJGA/KUidLIiFPGihKV6hJGzxJGOZJGB7JGzVJGPpJGii8l3a+','phrYpJX0Ad4','lMPZB24','zwrPDeLZtMv3','pc9Kzd48l2rPDJ4','6zAl44gr44g+44gB44kt44gN44gx44gF44cccG','Aw5Uzxjive1m','phnWyw4+','iIbHCMLHlwXHyMvSpslLJzJKVQeIpJWVDgq+cIaGica8Dgq+phnLBgvJDcbKyxrHlwK9iG','i2LTCg9YDezPBgu','z2v0sxrLBq','Cxr5','zg9JCW','pc90zd48l3rYpGOGicaGica8l3rHyMXLpGOGicaGpc9KAxy+cIaGpc9KAxy+','57wM5Rc0566H5l+U55cg','cIaGicaGidXKAxyGy2XHC3m9iNnWywnLCIi+pc9KAxy+cIaGicaGia','pgrPDIbJBgfZCZ0ID3jHCci+phrHyMXLignSyxnZpsjSAxn0iJ4kicaGidX0AgvHzd48Dhi+phrOpJWVDgG+phrOpUEvQUwpT+odU+EzUUIHJoAxPtWVDgG+phrOpUwUM+wfIoodU+s7TUwqJtWVDgG+phrOignSyxnZpsjUiJ7LKiJOQiJVViJNQi7OVRZVViK8l3rOpJX0Ad48l3rOpJWVDhi+pc90AgvHzd4kicaGidX0yM9KEt4','5y+w5lUy5BEL5lQl','cIaGica8zgL2ignSyxnZpsjJAg9Py2vZiJ4kicaGicaG','B25JB21WBgv0zq','zgf0ys1SyxLVDxq','5PYj5yQ55PYF6zMq','i3rVDgfSCW','5PU46AgE55wQ5y+344ks5ywL5yQB44gx44gM44gp44gG44gv44ge44cc','5lIk44gm55U45OMl55sO44cb5lIl44gm5O6N44gi44gR44gQ44kk44g+44gz','Dg90ywW','iJ48l2XHyMvSpGOGicaGica8BgfIzwW+55M66kgm5PELpgLUChv0ihr5Cgu9iMrHDguIigrHDgeTzJ0Izgf0zsiGDMfSDwu9iG','5PU46AgE55wQ5y+344cm','jImZotS','BgvHza','57wM5RMV5zMO5lQK5O+B5BEL5lQl','BM90zq','5OYV6l685ywi77Yi6kUl5Rgc5PU444gR5y2W5yI377Yj','z2v0','pg9WDgLVBIb2ywX1zt0I','55M76yYY55wQ5y+377YA','CMvXDwvZDfbLCM1PC3nPB24','77Yi56Io6l6877Yjpc9ZCgfUpJXIpG','57wM5Rc0566Hios/RUEqHUw3PEs6IW','5RAi6lk756Io5A++6lgH5Asw','pc9ZzwXLy3q+pc9SywjLBd4kicaGicaGpgj1DhrVBIbJBgfZCZ0IyNrUiIbKyxrHlwfJDd0IChjPBNqIpUwnSowiT+odU1berJWVyNv0Dg9UpGOGicaGica8yNv0Dg9UignSyxnZpsjIDg4GChjPBwfYEsiGzgf0ys1Hy3q9iNnHDMveB2mIpUs/NEwTMdWVyNv0Dg9UpGOGicaGpc9KAxy+cIaGica8zgL2igLKpsjLzgL0B3iIpGOGicaGphnLy3rPB24Gy2XHC3m9iNbHBMvSiJ48zgL2ignSyxnZpsjNCMLKiJ4kicaGicaGpgXHyMvSpUABUoMHNUEvQUwpTZXPBNb1DcbKyxrHlwy9iM5ViIb2ywX1zt0I','44ch44ch6yQa6kgmiooaH+oaH+AuR+w6L+oaGoAzRUMaMIaXmJm0nty3cUwpO+w6P+wqJEE+QEoaGoodPU+8IEocTEodS+odL+odQ+ocU+odHoodKW','y3jLyxrLrwXLBwvUDa','mdC5os0Wmc0WmdaW'];a0_0x263d=function(){return _0x26e1d5;};return a0_0x263d();}function exportBackup(){const _0x5bbe3a=a0_0x22894a,_0x2e7c9c=new Blob([JSON[_0x5bbe3a(0x2a5)](S[_0x5bbe3a(0x226)],null,0x2)],{'type':_0x5bbe3a(0x157)}),_0x2eed40=document[_0x5bbe3a(0x1ce)]('a');_0x2eed40[_0x5bbe3a(0x181)]=URL[_0x5bbe3a(0x2b5)](_0x2e7c9c),_0x2eed40[_0x5bbe3a(0x223)]=_0x5bbe3a(0x230)+today()[_0x5bbe3a(0x283)](/-/g,'')+_0x5bbe3a(0x1a6),_0x2eed40[_0x5bbe3a(0x13a)](),setTimeout(()=>URL[_0x5bbe3a(0x213)](_0x2eed40[_0x5bbe3a(0x181)]),0x3e8),toast(_0x5bbe3a(0x291));}$(a0_0x22894a(0x1ad))[a0_0x22894a(0x27f)](a0_0x22894a(0x25f),async _0x53fcd4=>{const _0x32b1ab=a0_0x22894a,_0x295edd=_0x53fcd4[_0x32b1ab(0x130)][_0x32b1ab(0x2b8)][0x0];_0x53fcd4[_0x32b1ab(0x130)][_0x32b1ab(0x16c)]='';if(!_0x295edd)return;const _0x45b9a8=parseData(await _0x295edd[_0x32b1ab(0x1f0)]());if(!_0x45b9a8)return;if(S[_0x32b1ab(0x226)]&&!confirm(_0x32b1ab(0x23f)+S[_0x32b1ab(0x226)][_0x32b1ab(0x1b0)][_0x32b1ab(0x23a)]+_0x32b1ab(0x15e)+_0x45b9a8[_0x32b1ab(0x1b0)][_0x32b1ab(0x23a)]+_0x32b1ab(0x271)))return;S[_0x32b1ab(0x226)]=_0x45b9a8,S[_0x32b1ab(0x17c)]=null,S[_0x32b1ab(0x144)]=![],await save(),S[_0x32b1ab(0x188)]=_0x32b1ab(0x22e),render(),toast(_0x32b1ab(0x212));});function render(){const _0x52fa8b=a0_0x22894a;$(_0x52fa8b(0x2d7))[_0x52fa8b(0x1aa)]=viewBar(),updateStatus();const _0x149f7e=$(_0x52fa8b(0x173));if(!S[_0x52fa8b(0x226)]){kvGet(_0x52fa8b(0x2e3))[_0x52fa8b(0x141)](_0x4ebb0e=>{const _0x58330e=_0x52fa8b;_0x149f7e[_0x58330e(0x1aa)]=viewStart(_0x4ebb0e);});return;}if(S[_0x52fa8b(0x188)]===_0x52fa8b(0x17c)&&S[_0x52fa8b(0x17c)])_0x149f7e[_0x52fa8b(0x1aa)]=viewEdit(),renderItems();else{if(S[_0x52fa8b(0x188)]===_0x52fa8b(0x205))_0x149f7e[_0x52fa8b(0x1aa)]=viewSettings();else S[_0x52fa8b(0x188)]=_0x52fa8b(0x22e),_0x149f7e[_0x52fa8b(0x1aa)]=viewList();}window[_0x52fa8b(0x13d)](0x0,0x0);}function viewBar(){const _0x4db768=a0_0x22894a;if(!S[_0x4db768(0x226)])return _0x4db768(0x25c)+esc(LICENSE_LABEL)+_0x4db768(0x242);const _0x3e0ce0=_0x28bf23=>S[_0x4db768(0x188)]===_0x28bf23||_0x28bf23===_0x4db768(0x22e)&&S[_0x4db768(0x188)]===_0x4db768(0x17c)?'on':'';return _0x4db768(0x25c)+esc(LICENSE_LABEL)+_0x4db768(0x2dc)+_0x3e0ce0(_0x4db768(0x22e))+_0x4db768(0x222)+_0x3e0ce0(_0x4db768(0x205))+_0x4db768(0x21e);}function updateStatus(){const _0x25e7c5=a0_0x22894a,_0xbf0375=$(_0x25e7c5(0x240));if(!_0xbf0375)return;const _0x4320be=S[_0x25e7c5(0x2e3)]?S[_0x25e7c5(0x2e3)][_0x25e7c5(0x14f)]:_0x25e7c5(0x19e);_0xbf0375[_0x25e7c5(0x1aa)]=_0x25e7c5(0x139)+(S[_0x25e7c5(0x17d)]?_0x25e7c5(0x17d):'')+_0x25e7c5(0x1f2)+esc(_0x4320be)+_0x25e7c5(0x239)+(S[_0x25e7c5(0x17d)]?_0x25e7c5(0x2e1):_0x25e7c5(0x245))+_0x25e7c5(0x242);}function viewStart(_0x1f2ae9){const _0x57f109=a0_0x22894a,_0x2227a5=_0x57f109(0x1a4);if(S[_0x57f109(0x2b9)])return _0x57f109(0x1e1)+_0x2227a5+_0x57f109(0x1b6)+(_0x1f2ae9?_0x57f109(0x168)+esc(_0x1f2ae9[_0x57f109(0x14f)])+_0x57f109(0x23e):'')+_0x57f109(0x2c6)+(_0x1f2ae9?'':_0x57f109(0x27c))+_0x57f109(0x20f);return _0x57f109(0x1e1)+_0x2227a5+_0x57f109(0x26a);}function filteredDocs(){const _0xb18fbe=a0_0x22894a,_0x5d4b36=S['q'][_0xb18fbe(0x1a1)]();return S[_0xb18fbe(0x226)][_0xb18fbe(0x1b0)][_0xb18fbe(0x1e0)](_0x68ff28=>(S[_0xb18fbe(0x1e0)]===_0xb18fbe(0x243)||_0x68ff28[_0xb18fbe(0x1e8)]===S[_0xb18fbe(0x1e0)])&&(!_0x5d4b36||[_0x68ff28['no'],_0x68ff28[_0xb18fbe(0x250)],_0x68ff28[_0xb18fbe(0x267)]][_0xb18fbe(0x153)]('\x20')[_0xb18fbe(0x28d)](_0x5d4b36)))[_0xb18fbe(0x289)]((_0x30bf2c,_0x335dfe)=>(_0x335dfe[_0xb18fbe(0x25b)]||'')[_0xb18fbe(0x252)](_0x30bf2c[_0xb18fbe(0x25b)]||'')||(_0x335dfe['no']||'')[_0xb18fbe(0x252)](_0x30bf2c['no']||''));}function viewList(){const _0x118b39=a0_0x22894a,_0xa78e4f=[_0x118b39(0x243),_0x118b39(0x2d5),_0x118b39(0x2c5)][_0x118b39(0x1a0)](_0x470201=>_0x118b39(0x204)+(S[_0x118b39(0x1e0)]===_0x470201?'on':'')+_0x118b39(0x131)+_0x470201+'\x22>'+(_0x470201===_0x118b39(0x243)?_0x118b39(0x156):TYPES[_0x470201][_0x118b39(0x293)])+_0x118b39(0x2c8))[_0x118b39(0x153)]('');return _0x118b39(0x229)+_0xa78e4f+_0x118b39(0x238)+esc(S['q'])+_0x118b39(0x2a4)+layoutOpts()+_0x118b39(0x274)+listRows()+_0x118b39(0x2e0);}function listRows(){const _0x1ba55c=a0_0x22894a,_0x44ab8a=filteredDocs();if(!S[_0x1ba55c(0x226)][_0x1ba55c(0x1b0)][_0x1ba55c(0x23a)])return _0x1ba55c(0x184);if(!_0x44ab8a[_0x1ba55c(0x23a)])return _0x1ba55c(0x1e3);return _0x1ba55c(0x1b4)+_0x44ab8a[_0x1ba55c(0x1a0)](_0xa8e18c=>_0x1ba55c(0x241)+_0xa8e18c['id']+_0x1ba55c(0x21f)+_0xa8e18c[_0x1ba55c(0x1e8)]+'\x22>'+TYPES[_0xa8e18c[_0x1ba55c(0x1e8)]][_0x1ba55c(0x278)]+_0x1ba55c(0x2b7)+esc(_0xa8e18c['no'])+_0x1ba55c(0x28a)+jpDate(_0xa8e18c[_0x1ba55c(0x25b)])+_0x1ba55c(0x2cb)+(esc(_0xa8e18c[_0x1ba55c(0x250)])||_0x1ba55c(0x2ba))+'\x20'+esc(_0xa8e18c[_0x1ba55c(0x210)])+_0x1ba55c(0x28a)+esc(_0xa8e18c[_0x1ba55c(0x267)])+_0x1ba55c(0x27a)+yen(calc(_0xa8e18c)[_0x1ba55c(0x1bd)])+_0x1ba55c(0x1d2)+_0xa8e18c['id']+_0x1ba55c(0x193))[_0x1ba55c(0x153)]('')+_0x1ba55c(0x2ad);}const blankItem=()=>({'name':'','qty':0x1,'unit':'式','price':0x0,'rate':0xa});function newDoc(_0x30695c){const _0x3232b6=a0_0x22894a,_0x19b8dc=today();return{'id':uid(),'type':_0x30695c,'no':nextNo(_0x30695c,_0x19b8dc),'date':_0x19b8dc,'due':_0x30695c===_0x3232b6(0x2d5)?addDays(_0x19b8dc,0x1e):endOfNextMonth(_0x19b8dc),'client':'','honorific':'御中','subject':'','items':[blankItem()],'note':'','createdAt':Date[_0x3232b6(0x155)](),'updatedAt':Date[_0x3232b6(0x155)]()};}function startEdit(_0x22f86a,_0x2e5328){const _0x1c4e3f=a0_0x22894a;S[_0x1c4e3f(0x17c)]=JSON[_0x1c4e3f(0x16b)](JSON[_0x1c4e3f(0x2a5)](_0x22f86a)),S[_0x1c4e3f(0x1a7)]=_0x2e5328,S[_0x1c4e3f(0x144)]=_0x2e5328,S[_0x1c4e3f(0x188)]=_0x1c4e3f(0x17c),render();}function a0_0x417d(_0x41fbae,_0x31e7bf){_0x41fbae=_0x41fbae-0x130;const _0x263db5=a0_0x263d();let _0x417dbd=_0x263db5[_0x41fbae];if(a0_0x417d['Muodjz']===undefined){var _0x29e5b1=function(_0x5762c1){const _0x1d6337='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x2d9842='',_0x10ebd8='';for(let _0x466363=0x0,_0x59c20f,_0x1bc383,_0x588f75=0x0;_0x1bc383=_0x5762c1['charAt'](_0x588f75++);~_0x1bc383&&(_0x59c20f=_0x466363%0x4?_0x59c20f*0x40+_0x1bc383:_0x1bc383,_0x466363++%0x4)?_0x2d9842+=String['fromCharCode'](0xff&_0x59c20f>>(-0x2*_0x466363&0x6)):0x0){_0x1bc383=_0x1d6337['indexOf'](_0x1bc383);}for(let _0x3f6416=0x0,_0x5829c0=_0x2d9842['length'];_0x3f6416<_0x5829c0;_0x3f6416++){_0x10ebd8+='%'+('00'+_0x2d9842['charCodeAt'](_0x3f6416)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x10ebd8);};a0_0x417d['iGtcAY']=_0x29e5b1,a0_0x417d['cGeyuB']={},a0_0x417d['Muodjz']=!![];}const _0x547899=_0x263db5[0x0],_0xef2580=_0x41fbae+_0x547899,_0x421ae3=a0_0x417d['cGeyuB'][_0xef2580];return!_0x421ae3?(_0x417dbd=a0_0x417d['iGtcAY'](_0x417dbd),a0_0x417d['cGeyuB'][_0xef2580]=_0x417dbd):_0x417dbd=_0x421ae3,_0x417dbd;}function confirmLeaveEdit(){const _0x13fee4=a0_0x22894a;if(S[_0x13fee4(0x188)]===_0x13fee4(0x17c)&&S[_0x13fee4(0x144)])return confirm(_0x13fee4(0x1db));return!![];}function viewEdit(){const _0xeb46c3=a0_0x22894a,_0x304422=S[_0xeb46c3(0x17c)],_0x1e0d07=TYPES[_0x304422[_0xeb46c3(0x1e8)]],_0x5e42a0=[...new Set(S[_0xeb46c3(0x226)][_0xeb46c3(0x1b0)][_0xeb46c3(0x1a0)](_0x151dd2=>_0x151dd2[_0xeb46c3(0x250)])[_0xeb46c3(0x1e0)](Boolean))];return _0xeb46c3(0x197)+_0x304422[_0xeb46c3(0x1e8)]+'\x22>'+_0x1e0d07[_0xeb46c3(0x278)]+_0xeb46c3(0x1f5)+_0x1e0d07[_0xeb46c3(0x293)]+(S[_0xeb46c3(0x1a7)]?_0xeb46c3(0x1de):_0xeb46c3(0x15c))+_0xeb46c3(0x2ac)+layoutOpts()+_0xeb46c3(0x1cc)+esc(_0x304422['no'])+_0xeb46c3(0x1be)+esc(_0x304422[_0xeb46c3(0x25b)])+_0xeb46c3(0x13e)+_0x1e0d07[_0xeb46c3(0x2a2)]+_0xeb46c3(0x133)+esc(_0x304422[_0xeb46c3(0x2a2)])+_0xeb46c3(0x217)+esc(_0x304422[_0xeb46c3(0x250)])+_0xeb46c3(0x290)+['御中','様',''][_0xeb46c3(0x1a0)](_0x231b77=>_0xeb46c3(0x1c6)+_0x231b77+'\x22\x20'+(_0x304422[_0xeb46c3(0x210)]===_0x231b77?_0xeb46c3(0x255):'')+'>'+(_0x231b77||_0xeb46c3(0x295))+_0xeb46c3(0x2d1))[_0xeb46c3(0x153)]('')+_0xeb46c3(0x2ab)+_0x5e42a0[_0xeb46c3(0x1a0)](_0xbbeeb4=>_0xeb46c3(0x1c6)+esc(_0xbbeeb4)+'\x22>')[_0xeb46c3(0x153)]('')+_0xeb46c3(0x253)+esc(_0x304422[_0xeb46c3(0x267)])+_0xeb46c3(0x211)+esc(_0x304422[_0xeb46c3(0x1c3)])+_0xeb46c3(0x18b)+(!S[_0xeb46c3(0x1a7)]?_0xeb46c3(0x209):'')+_0xeb46c3(0x2d2)+(!S[_0xeb46c3(0x1a7)]&&_0x304422[_0xeb46c3(0x1e8)]===_0xeb46c3(0x2d5)?_0xeb46c3(0x219):'')+_0xeb46c3(0x1b3)+(!S[_0xeb46c3(0x1a7)]?_0xeb46c3(0x19b):'')+_0xeb46c3(0x1ff);}function renderItems(){const _0x49c344=a0_0x22894a;$(_0x49c344(0x1fb))[_0x49c344(0x1aa)]=S[_0x49c344(0x17c)][_0x49c344(0x186)][_0x49c344(0x1a0)]((_0x3b1941,_0x5cb89a)=>_0x49c344(0x203)+_0x5cb89a+_0x49c344(0x1f8)+esc(_0x3b1941[_0x49c344(0x14f)])+_0x49c344(0x29f)+_0x5cb89a+_0x49c344(0x1e7)+esc(_0x3b1941[_0x49c344(0x1af)])+_0x49c344(0x136)+_0x5cb89a+_0x49c344(0x2da)+esc(_0x3b1941[_0x49c344(0x1a2)])+_0x49c344(0x200)+_0x5cb89a+_0x49c344(0x296)+esc(_0x3b1941[_0x49c344(0x154)])+_0x49c344(0x1ac)+_0x5cb89a+_0x49c344(0x143)+RATES[_0x49c344(0x1a0)](_0x5af3ea=>_0x49c344(0x1c6)+_0x5af3ea['v']+'\x22\x20'+(Number(_0x3b1941[_0x49c344(0x24a)])===_0x5af3ea['v']?_0x49c344(0x255):'')+'>'+_0x5af3ea['l']+_0x49c344(0x2d1))[_0x49c344(0x153)]('')+_0x49c344(0x277)+_0x5cb89a+'\x22>'+fmt(num(_0x3b1941[_0x49c344(0x1af)])*num(_0x3b1941[_0x49c344(0x154)]))+_0x49c344(0x275)+_0x5cb89a+_0x49c344(0x1dc))[_0x49c344(0x153)](''),renderTotals();}function renderTotals(){const _0x2359bf=a0_0x22894a,_0x4393cf=calc(S[_0x2359bf(0x17c)]);$(_0x2359bf(0x1ba))[_0x2359bf(0x1aa)]=_0x2359bf(0x1ea)+yen(_0x4393cf[_0x2359bf(0x1ed)])+_0x2359bf(0x2b4)+_0x4393cf[_0x2359bf(0x231)][_0x2359bf(0x1a0)](_0x50513e=>_0x2359bf(0x26c)+_0x50513e[_0x2359bf(0x293)]+_0x2359bf(0x2b2)+yen(_0x50513e[_0x2359bf(0x225)])+(_0x50513e[_0x2359bf(0x24a)]?_0x2359bf(0x237)+yen(_0x50513e[_0x2359bf(0x2c7)]):'')+_0x2359bf(0x1a8))[_0x2359bf(0x153)]('')+_0x2359bf(0x2cd)+yen(_0x4393cf[_0x2359bf(0x2c7)])+_0x2359bf(0x152)+yen(_0x4393cf[_0x2359bf(0x1bd)])+_0x2359bf(0x17e);}const layoutOpts=()=>[[a0_0x22894a(0x206),a0_0x22894a(0x2e5)],[a0_0x22894a(0x2b1),a0_0x22894a(0x2c3)]][a0_0x22894a(0x1a0)](([_0x2e33c5,_0x412597])=>a0_0x22894a(0x1c6)+_0x2e33c5+'\x22\x20'+(S[a0_0x22894a(0x226)][a0_0x22894a(0x205)][a0_0x22894a(0x146)]===_0x2e33c5?a0_0x22894a(0x255):'')+'>'+_0x412597+a0_0x22894a(0x2d1))[a0_0x22894a(0x153)]('');function viewSettings(){const _0xd58007=a0_0x22894a,_0x5a2bfb=S[_0xd58007(0x226)][_0xd58007(0x2d4)],_0x4bffeb=(_0x3d378d,_0x19c131,_0x3d88fb='',_0x307ca7=![],_0x28ed40=![])=>_0xd58007(0x187)+(_0x307ca7?_0xd58007(0x16e):'')+'\x22>'+_0x19c131+(_0x28ed40?_0xd58007(0x28f)+_0x3d378d+_0xd58007(0x22b)+esc(_0x3d88fb)+'\x22>'+esc(_0x5a2bfb[_0x3d378d])+_0xd58007(0x269):_0xd58007(0x198)+_0x3d378d+_0xd58007(0x260)+esc(_0x5a2bfb[_0x3d378d])+_0xd58007(0x19d)+esc(_0x3d88fb)+'\x22>')+_0xd58007(0x190);return _0xd58007(0x199)+_0x4bffeb(_0xd58007(0x14f),_0xd58007(0x22c),_0xd58007(0x1f3))+_0x4bffeb(_0xd58007(0x176),_0xd58007(0x1fc),_0xd58007(0x285))+_0xd58007(0x2d2)+_0x4bffeb(_0xd58007(0x150),_0xd58007(0x20d),_0xd58007(0x2ae))+_0x4bffeb(_0xd58007(0x297),_0xd58007(0x264),_0xd58007(0x1cf))+_0xd58007(0x2d2)+_0x4bffeb(_0xd58007(0x281),'住所',_0xd58007(0x207),!![])+_0xd58007(0x2d2)+_0x4bffeb(_0xd58007(0x2d8),_0xd58007(0x1df))+_0x4bffeb(_0xd58007(0x20e),_0xd58007(0x2b6),_0xd58007(0x163))+_0xd58007(0x2d2)+_0x4bffeb(_0xd58007(0x1d0),_0xd58007(0x1c4),_0xd58007(0x292),!![],!![])+_0xd58007(0x2a9)+S[_0xd58007(0x226)][_0xd58007(0x1b0)][_0xd58007(0x23a)]+_0xd58007(0x2cf);}function docHTML(_0x32ecbf,_0x3a58ea={}){const _0x7828f8=a0_0x22894a,_0x1b595e=S[_0x7828f8(0x226)][_0x7828f8(0x2d4)],_0x3893ae=TYPES[_0x32ecbf[_0x7828f8(0x1e8)]],_0x2de82f=calc(_0x32ecbf),_0x2f71cc=_0x3a58ea[_0x7828f8(0x2b1)]?0x8:0xc,_0x17ae86=_0x32ecbf[_0x7828f8(0x186)][_0x7828f8(0x1e0)](_0x3912fd=>_0x3912fd[_0x7828f8(0x14f)]||num(_0x3912fd[_0x7828f8(0x154)]));let _0x45b52b=_0x17ae86[_0x7828f8(0x1a0)](_0x57c862=>_0x7828f8(0x1d5)+esc(_0x57c862[_0x7828f8(0x14f)])+(Number(_0x57c862[_0x7828f8(0x24a)])===0x8?'\u3000※':'')+_0x7828f8(0x276)+fmtQty(_0x57c862[_0x7828f8(0x1af)])+_0x7828f8(0x235)+esc(_0x57c862[_0x7828f8(0x1a2)])+_0x7828f8(0x276)+fmt(num(_0x57c862[_0x7828f8(0x154)]))+_0x7828f8(0x262)+fmt(num(_0x57c862[_0x7828f8(0x1af)])*num(_0x57c862[_0x7828f8(0x154)]))+_0x7828f8(0x132))[_0x7828f8(0x153)]('');for(let _0x419f13=_0x17ae86[_0x7828f8(0x23a)];_0x419f13<_0x2f71cc;_0x419f13++)_0x45b52b+=_0x7828f8(0x185);const _0xfc88d8=_0x17ae86[_0x7828f8(0x29a)](_0x4121ba=>Number(_0x4121ba[_0x7828f8(0x24a)])===0x8);return _0x7828f8(0x2bc)+(_0x3a58ea[_0x7828f8(0x2b1)]?_0x7828f8(0x2b1):'')+_0x7828f8(0x2c4)+(_0x3a58ea[_0x7828f8(0x16f)]?_0x7828f8(0x1da):'')+_0x7828f8(0x1d6)+esc(_0x32ecbf['no'])+_0x7828f8(0x2ce)+jpDate(_0x32ecbf[_0x7828f8(0x25b)])+_0x7828f8(0x24b)+_0x3893ae[_0x7828f8(0x293)]+_0x7828f8(0x224)+esc(_0x32ecbf[_0x7828f8(0x250)])+_0x7828f8(0x1ab)+esc(_0x32ecbf[_0x7828f8(0x210)])+_0x7828f8(0x29c)+(_0x32ecbf[_0x7828f8(0x267)]?_0x7828f8(0x26d)+esc(_0x32ecbf[_0x7828f8(0x267)])+_0x7828f8(0x2e0):'')+_0x7828f8(0x2aa)+_0x3893ae[_0x7828f8(0x1c1)]+_0x7828f8(0x171)+_0x3893ae[_0x7828f8(0x24e)]+_0x7828f8(0x1c9)+yen(_0x2de82f[_0x7828f8(0x1bd)])+_0x7828f8(0x16a)+(_0x32ecbf[_0x7828f8(0x2a2)]?_0x7828f8(0x2dd)+_0x3893ae[_0x7828f8(0x2a2)]+'：'+jpDate(_0x32ecbf[_0x7828f8(0x2a2)])+_0x7828f8(0x2e0):'')+_0x7828f8(0x15d)+esc(_0x1b595e[_0x7828f8(0x14f)])+_0x7828f8(0x22f)+(_0x1b595e[_0x7828f8(0x150)]?'〒'+esc(_0x1b595e[_0x7828f8(0x150)])+_0x7828f8(0x279):'')+(_0x1b595e[_0x7828f8(0x281)]?esc(_0x1b595e[_0x7828f8(0x281)])+_0x7828f8(0x279):'')+_0x7828f8(0x257)+(_0x1b595e[_0x7828f8(0x297)]?_0x7828f8(0x14c)+esc(_0x1b595e[_0x7828f8(0x297)])+_0x7828f8(0x279):'')+(_0x1b595e[_0x7828f8(0x2d8)]?esc(_0x1b595e[_0x7828f8(0x2d8)])+_0x7828f8(0x279):'')+_0x7828f8(0x257)+(_0x1b595e[_0x7828f8(0x176)]?_0x7828f8(0x221)+esc(_0x1b595e[_0x7828f8(0x176)])+_0x7828f8(0x279):'')+_0x7828f8(0x257)+(_0x1b595e[_0x7828f8(0x20e)]?_0x7828f8(0x1c7)+esc(_0x1b595e[_0x7828f8(0x20e)]):'')+_0x7828f8(0x257)+(_0x32ecbf[_0x7828f8(0x1e8)]===_0x7828f8(0x2c5)&&_0x1b595e[_0x7828f8(0x1d0)]?_0x7828f8(0x2df)+esc(_0x1b595e[_0x7828f8(0x1d0)])+_0x7828f8(0x2e0):'')+_0x7828f8(0x1f9)+_0x45b52b+_0x7828f8(0x28b)+(_0xfc88d8?_0x7828f8(0x233):'')+_0x7828f8(0x27b)+esc(_0x32ecbf[_0x7828f8(0x1c3)])+_0x7828f8(0x179)+yen(_0x2de82f[_0x7828f8(0x1ed)])+_0x7828f8(0x27d)+_0x2de82f[_0x7828f8(0x231)][_0x7828f8(0x1a0)](_0x47b675=>_0x7828f8(0x1a5)+_0x47b675[_0x7828f8(0x293)]+_0x7828f8(0x220)+yen(_0x47b675[_0x7828f8(0x225)])+(_0x47b675[_0x7828f8(0x24a)]?''+(_0x3a58ea[_0x7828f8(0x2b1)]?_0x7828f8(0x237):_0x7828f8(0x1f1))+yen(_0x47b675[_0x7828f8(0x2c7)]):'')+_0x7828f8(0x132))[_0x7828f8(0x153)]('')+_0x7828f8(0x1f4)+yen(_0x2de82f[_0x7828f8(0x2c7)])+_0x7828f8(0x254)+yen(_0x2de82f[_0x7828f8(0x1bd)])+_0x7828f8(0x1b1);}function printDoc(_0x3b7964){const _0x553bb2=a0_0x22894a,_0x5cec90=S[_0x553bb2(0x226)][_0x553bb2(0x205)][_0x553bb2(0x146)]===_0x553bb2(0x2b1),_0x320e1c=_0x3b7964[_0x553bb2(0x186)][_0x553bb2(0x1e0)](_0x5e7039=>_0x5e7039[_0x553bb2(0x14f)]||num(_0x5e7039[_0x553bb2(0x154)]))[_0x553bb2(0x23a)];if(_0x5cec90&&_0x320e1c>0x8&&!confirm(_0x553bb2(0x15f)+_0x320e1c+_0x553bb2(0x272)))return;$(_0x553bb2(0x25d))[_0x553bb2(0x1aa)]=_0x5cec90?_0x553bb2(0x2c1)+docHTML(_0x3b7964,{'half':!![]})+_0x553bb2(0x15b)+docHTML(_0x3b7964,{'half':!![],'copy':!![]})+_0x553bb2(0x195):docHTML(_0x3b7964);const _0x1494ff=document[_0x553bb2(0x2c2)];document[_0x553bb2(0x2c2)]=TYPES[_0x3b7964[_0x553bb2(0x1e8)]][_0x553bb2(0x293)]+'_'+_0x3b7964['no']+'_'+(_0x3b7964[_0x553bb2(0x250)]||''),window[_0x553bb2(0x261)](),document[_0x553bb2(0x2c2)]=_0x1494ff;}async function saveDoc(){const _0x562170=a0_0x22894a,_0x5707b2=S[_0x562170(0x17c)];if(!_0x5707b2['no'][_0x562170(0x1a1)]()){alert(_0x562170(0x1bb));return;}if(S[_0x562170(0x226)][_0x562170(0x1b0)][_0x562170(0x29a)](_0x264f50=>_0x264f50['id']!==_0x5707b2['id']&&_0x264f50['no']===_0x5707b2['no'][_0x562170(0x1a1)]())){alert(_0x562170(0x1bf)+_0x5707b2['no']+_0x562170(0x20c));return;}_0x5707b2['no']=_0x5707b2['no'][_0x562170(0x1a1)](),_0x5707b2[_0x562170(0x167)]=Date[_0x562170(0x155)]();const _0x75ddb=S[_0x562170(0x226)][_0x562170(0x1b0)][_0x562170(0x2a0)](_0x2ceeb9=>_0x2ceeb9['id']===_0x5707b2['id']),_0x134093=JSON[_0x562170(0x16b)](JSON[_0x562170(0x2a5)](_0x5707b2));if(_0x75ddb>=0x0)S[_0x562170(0x226)][_0x562170(0x1b0)][_0x75ddb]=_0x134093;else S[_0x562170(0x226)][_0x562170(0x1b0)][_0x562170(0x294)](_0x134093);S[_0x562170(0x144)]=![],await save();if(!S[_0x562170(0x17d)])toast(_0x562170(0x138));S[_0x562170(0x1a7)]&&(S[_0x562170(0x1a7)]=![],render());}const actions={'create':createFile,'open':openFile,'reopen':reopenLast,'local':()=>{const _0x2a64d1=a0_0x22894a;let _0x3569c0=null;try{const _0x58d4d3=localStorage[_0x2a64d1(0x1ae)](LS_KEY);if(_0x58d4d3)_0x3569c0=parseData(_0x58d4d3);}catch{}S[_0x2a64d1(0x226)]=_0x3569c0||defaultData(),S[_0x2a64d1(0x188)]=S[_0x2a64d1(0x226)][_0x2a64d1(0x2d4)][_0x2a64d1(0x14f)]?_0x2a64d1(0x22e):_0x2a64d1(0x205),render();},'import':()=>$(a0_0x22894a(0x1ad))[a0_0x22894a(0x13a)](),'export':exportBackup,'go':_0x41ff33=>{const _0x44a3e8=a0_0x22894a;if(S[_0x44a3e8(0x188)]===_0x41ff33['v']||!confirmLeaveEdit())return;S[_0x44a3e8(0x17c)]=null,S[_0x44a3e8(0x144)]=![],S[_0x44a3e8(0x188)]=_0x41ff33['v'],render();},'filter':_0x258870=>{const _0x321d0c=a0_0x22894a;S[_0x321d0c(0x1e0)]=_0x258870['v'],render();},'new':_0x5dc63c=>{const _0x578f73=a0_0x22894a;if(!S[_0x578f73(0x226)][_0x578f73(0x2d4)][_0x578f73(0x14f)])toast(_0x578f73(0x215));startEdit(newDoc(_0x5dc63c['v']),!![]);},'edit':_0x51190b=>{const _0x41c1b7=a0_0x22894a,_0x11dbbd=S[_0x41c1b7(0x226)][_0x41c1b7(0x1b0)][_0x41c1b7(0x2d9)](_0x56b499=>_0x56b499['id']===_0x51190b['id']);if(_0x11dbbd)startEdit(_0x11dbbd,![]);},'printId':_0x55a744=>{const _0x470832=a0_0x22894a,_0x1cf382=S[_0x470832(0x226)][_0x470832(0x1b0)][_0x470832(0x2d9)](_0x539f1a=>_0x539f1a['id']===_0x55a744['id']);if(_0x1cf382)printDoc(_0x1cf382);},'print':()=>printDoc(S[a0_0x22894a(0x17c)]),'saveDoc':saveDoc,'addItem':()=>{const _0x3c276a=a0_0x22894a;S[_0x3c276a(0x17c)][_0x3c276a(0x186)][_0x3c276a(0x294)](blankItem()),S[_0x3c276a(0x144)]=!![],renderItems();const _0x1276ea=document[_0x3c276a(0x1eb)](_0x3c276a(0x174));_0x1276ea[_0x1276ea[_0x3c276a(0x23a)]-0x1][_0x3c276a(0x147)]();},'delItem':_0x4e9c48=>{const _0x118185=a0_0x22894a;S[_0x118185(0x17c)][_0x118185(0x186)][_0x118185(0x162)](+_0x4e9c48['i'],0x1);if(!S[_0x118185(0x17c)][_0x118185(0x186)][_0x118185(0x23a)])S[_0x118185(0x17c)][_0x118185(0x186)][_0x118185(0x294)](blankItem());S[_0x118185(0x144)]=!![],renderItems();},'dup':()=>{const _0x208ffd=a0_0x22894a;if(!confirmLeaveEdit())return;const _0x2b743f=JSON[_0x208ffd(0x16b)](JSON[_0x208ffd(0x2a5)](S[_0x208ffd(0x17c)])),_0x2ce96b=today();Object[_0x208ffd(0x1ee)](_0x2b743f,{'id':uid(),'date':_0x2ce96b,'no':nextNo(_0x2b743f[_0x208ffd(0x1e8)],_0x2ce96b),'due':_0x2b743f[_0x208ffd(0x1e8)]===_0x208ffd(0x2d5)?addDays(_0x2ce96b,0x1e):endOfNextMonth(_0x2ce96b),'createdAt':Date[_0x208ffd(0x155)]()}),startEdit(_0x2b743f,!![]),toast(_0x208ffd(0x1ec));},'toInvoice':()=>{const _0x3a7e71=a0_0x22894a;if(!confirmLeaveEdit())return;const _0x1b7a38=JSON[_0x3a7e71(0x16b)](JSON[_0x3a7e71(0x2a5)](S[_0x3a7e71(0x17c)])),_0x1e9f62=today();Object[_0x3a7e71(0x1ee)](_0x1b7a38,{'id':uid(),'type':_0x3a7e71(0x2c5),'date':_0x1e9f62,'no':nextNo(_0x3a7e71(0x2c5),_0x1e9f62),'due':endOfNextMonth(_0x1e9f62),'fromNo':S[_0x3a7e71(0x17c)]['no'],'createdAt':Date[_0x3a7e71(0x155)]()}),startEdit(_0x1b7a38,!![]),toast(_0x3a7e71(0x2db));},'del':async()=>{const _0x22cf31=a0_0x22894a;if(!confirm('「'+S[_0x22cf31(0x17c)]['no']+_0x22cf31(0x178)))return;S[_0x22cf31(0x226)][_0x22cf31(0x1b0)]=S[_0x22cf31(0x226)][_0x22cf31(0x1b0)][_0x22cf31(0x1e0)](_0x1337d2=>_0x1337d2['id']!==S[_0x22cf31(0x17c)]['id']),S[_0x22cf31(0x17c)]=null,S[_0x22cf31(0x144)]=![],S[_0x22cf31(0x188)]=_0x22cf31(0x22e),await save(),render(),toast(_0x22cf31(0x2bf));},'saveCompany':async()=>{const _0x36a915=a0_0x22894a;toast(_0x36a915(0x161));return;document[_0x36a915(0x1eb)](_0x36a915(0x2d0))[_0x36a915(0x249)](_0x54d804=>S[_0x36a915(0x226)][_0x36a915(0x2d4)][_0x54d804[_0x36a915(0x22d)]['c']]=_0x54d804[_0x36a915(0x16c)][_0x36a915(0x1a1)]()),await save();if(!S[_0x36a915(0x17d)])toast(_0x36a915(0x140));}};document[a0_0x22894a(0x27f)](a0_0x22894a(0x13a),_0x59ca66=>{const _0x3a1b76=a0_0x22894a,_0x3935a7=_0x59ca66[_0x3a1b76(0x130)][_0x3a1b76(0x244)](_0x3a1b76(0x160));if(!_0x3935a7)return;if(_0x3935a7[_0x3a1b76(0x180)]==='TR'&&_0x59ca66[_0x3a1b76(0x130)][_0x3a1b76(0x244)](_0x3a1b76(0x182)))return;_0x59ca66[_0x3a1b76(0x14b)]();const _0xa548c2=actions[_0x3935a7[_0x3a1b76(0x22d)][_0x3a1b76(0x284)]];if(_0xa548c2)_0xa548c2(_0x3935a7[_0x3a1b76(0x22d)]);}),document[a0_0x22894a(0x27f)](a0_0x22894a(0x135),_0x56bd9b=>{const _0x4ab17a=a0_0x22894a,_0x536652=_0x56bd9b[_0x4ab17a(0x130)];if(_0x536652['id']==='q'){S['q']=_0x536652[_0x4ab17a(0x16c)],$(_0x4ab17a(0x29e))[_0x4ab17a(0x1aa)]=listRows();return;}if(_0x536652[_0x4ab17a(0x258)](_0x4ab17a(0x1b8))){S[_0x4ab17a(0x226)][_0x4ab17a(0x205)][_0x4ab17a(0x146)]=_0x536652[_0x4ab17a(0x16c)],save(),toast(_0x536652[_0x4ab17a(0x16c)]===_0x4ab17a(0x2b1)?_0x4ab17a(0x1bc):_0x4ab17a(0x23d));return;}if(!S[_0x4ab17a(0x17c)])return;if(_0x536652[_0x4ab17a(0x22d)]['f'])S[_0x4ab17a(0x17c)][_0x536652[_0x4ab17a(0x22d)]['f']]=_0x536652[_0x4ab17a(0x16c)],S[_0x4ab17a(0x144)]=!![];else{if(_0x536652[_0x4ab17a(0x22d)]['i']!==undefined&&_0x536652[_0x4ab17a(0x22d)]['k']){const _0x576ad7=S[_0x4ab17a(0x17c)][_0x4ab17a(0x186)][+_0x536652[_0x4ab17a(0x22d)]['i']];if(!_0x576ad7)return;_0x576ad7[_0x536652[_0x4ab17a(0x22d)]['k']]=_0x536652[_0x4ab17a(0x22d)]['k']===_0x4ab17a(0x24a)?Number(_0x536652[_0x4ab17a(0x16c)]):_0x536652[_0x4ab17a(0x16c)],S[_0x4ab17a(0x144)]=!![];const _0xf8ac41=$(_0x4ab17a(0x2bb)+_0x536652[_0x4ab17a(0x22d)]['i']);if(_0xf8ac41)_0xf8ac41[_0x4ab17a(0x1e2)]=fmt(num(_0x576ad7[_0x4ab17a(0x1af)])*num(_0x576ad7[_0x4ab17a(0x154)]));renderTotals();}}}),document[a0_0x22894a(0x27f)](a0_0x22894a(0x2cc),_0x2eb61f=>{const _0x3e8a2d=a0_0x22894a;if((_0x2eb61f[_0x3e8a2d(0x196)]||_0x2eb61f[_0x3e8a2d(0x29b)])&&_0x2eb61f[_0x3e8a2d(0x148)][_0x3e8a2d(0x1f6)]()==='s'){_0x2eb61f[_0x3e8a2d(0x14b)]();if(S[_0x3e8a2d(0x188)]===_0x3e8a2d(0x17c)&&S[_0x3e8a2d(0x17c)])saveDoc();}});let toastTimer;function toast(_0xac7526){const _0x5f283e=a0_0x22894a,_0xf3982f=$(_0x5f283e(0x19c));_0xf3982f[_0x5f283e(0x1e2)]=_0xac7526,_0xf3982f[_0x5f283e(0x218)][_0x5f283e(0x165)](_0x5f283e(0x142)),clearTimeout(toastTimer),toastTimer=setTimeout(()=>_0xf3982f[_0x5f283e(0x218)][_0x5f283e(0x202)](_0x5f283e(0x142)),0xaf0);}save=async function(){const _0x1e7efe=a0_0x22894a;S[_0x1e7efe(0x17d)]=![],updateStatus();},updateStatus=function(){const _0x54a3b7=a0_0x22894a,_0x4a6e0c=$(_0x54a3b7(0x240));if(!_0x4a6e0c)return;_0x4a6e0c[_0x54a3b7(0x1aa)]=_0x54a3b7(0x24c);};function demoData(){const _0x1aa9ad=a0_0x22894a,_0x3d0283=defaultData();_0x3d0283[_0x1aa9ad(0x2d4)]={'name':_0x1aa9ad(0x17a),'person':_0x1aa9ad(0x19f),'zip':_0x1aa9ad(0x2ae),'address':_0x1aa9ad(0x28c),'tel':_0x1aa9ad(0x21d),'email':_0x1aa9ad(0x23b),'regNo':_0x1aa9ad(0x175),'bank':_0x1aa9ad(0x1cd)},_0x3d0283[_0x1aa9ad(0x205)]={'layout':_0x1aa9ad(0x2b1)};const _0x50001b=(_0x22b81d,_0x35d70e,_0xfdf902,_0x45a108)=>({'name':_0x22b81d,'qty':_0x35d70e,'unit':_0xfdf902,'price':_0x45a108,'rate':0xa});return _0x3d0283[_0x1aa9ad(0x1b0)]=[{'id':uid(),'type':_0x1aa9ad(0x2d5),'no':_0x1aa9ad(0x192),'date':_0x1aa9ad(0x159),'due':_0x1aa9ad(0x189),'client':_0x1aa9ad(0x26e),'honorific':'様','subject':_0x1aa9ad(0x1c2),'note':_0x1aa9ad(0x20a),'items':[_0x50001b(_0x1aa9ad(0x23c),0x1,'台',0x26930),_0x50001b(_0x1aa9ad(0x134),0x1,'式',0x3a98),_0x50001b(_0x1aa9ad(0x14e),0x1,'式',0x61a8),_0x50001b(_0x1aa9ad(0x26f),0x1,'回',0x1388)]},{'id':uid(),'type':_0x1aa9ad(0x2c5),'no':_0x1aa9ad(0x1d1),'date':_0x1aa9ad(0x15a),'due':_0x1aa9ad(0x2af),'client':_0x1aa9ad(0x13f),'honorific':'御中','subject':_0x1aa9ad(0x1b2),'note':_0x1aa9ad(0x288),'items':[_0x50001b(_0x1aa9ad(0x1ca),0x1,'式',0x61a8),_0x50001b(_0x1aa9ad(0x1fd),0x1,'式',0x1388),_0x50001b(_0x1aa9ad(0x26f),0x1,'回',0x1388)]},{'id':uid(),'type':_0x1aa9ad(0x2d5),'no':_0x1aa9ad(0x191),'date':_0x1aa9ad(0x1ef),'due':_0x1aa9ad(0x25a),'client':_0x1aa9ad(0x1e5),'honorific':'様','subject':_0x1aa9ad(0x227),'note':'','items':[_0x50001b(_0x1aa9ad(0x14a),0x1,'台',0x17ed0),_0x50001b(_0x1aa9ad(0x1b5),0x1,'式',0x7530),_0x50001b(_0x1aa9ad(0x2b0),0x1,'式',0x2ee0)]},{'id':uid(),'type':_0x1aa9ad(0x2c5),'no':_0x1aa9ad(0x214),'date':_0x1aa9ad(0x299),'due':_0x1aa9ad(0x2af),'client':_0x1aa9ad(0x286),'honorific':'御中','subject':_0x1aa9ad(0x2e2),'note':_0x1aa9ad(0x288),'items':[_0x50001b(_0x1aa9ad(0x232),0x1,'式',0x2ee0),_0x50001b(_0x1aa9ad(0x1d9),0x1,'式',0xbb8)]}],_0x3d0283[_0x1aa9ad(0x1b0)][_0x1aa9ad(0x249)](_0x48f793=>{const _0x26eeba=_0x1aa9ad;_0x48f793[_0x26eeba(0x287)]=_0x48f793[_0x26eeba(0x167)]=Date[_0x26eeba(0x155)]();}),_0x3d0283;}S[a0_0x22894a(0x2b9)]=![],S[a0_0x22894a(0x2e3)]=null,S[a0_0x22894a(0x226)]=demoData(),S[a0_0x22894a(0x188)]=a0_0x22894a(0x22e),render();</script>
+<script>
+"use strict";
+const LICENSEE = "";
+const LICENSE_LABEL = "デモ版";
+/* ---------- 基本ユーティリティ ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = v => { const n = parseFloat(String(v ?? "").replace(/,/g, "")); return isFinite(n) ? n : 0; };
+const fmt = n => Math.round(n).toLocaleString("ja-JP");
+const yen = n => "¥" + fmt(n);
+const fmtQty = q => num(q).toLocaleString("ja-JP", {maximumFractionDigits: 2});
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const iso = d => d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+const today = () => iso(new Date());
+const addDays = (s, n) => { const d = new Date(s + "T00:00"); d.setDate(d.getDate() + n); return iso(d); };
+const endOfNextMonth = s => { const d = new Date(s + "T00:00"); return iso(new Date(d.getFullYear(), d.getMonth() + 2, 0)); };
+const jpDate = s => { if (!s) return ""; const [y,m,d] = s.split("-"); return `${y}年${+m}月${+d}日`; };
+const nl2br = s => esc(s).replace(/\n/g, "<br>");
+
+const TYPES = {
+  estimate: {label:"見積書", short:"見積", prefix:"EST", due:"有効期限", lead:"下記のとおりお見積り申し上げます。", amount:"お見積金額"},
+  invoice:  {label:"請求書", short:"請求", prefix:"INV", due:"お支払期限", lead:"下記のとおりご請求申し上げます。", amount:"ご請求金額"}
+};
+const RATES = [{v:10, l:"10%"}, {v:8, l:"8%（軽減）"}, {v:0, l:"対象外"}];
+
+const defaultData = () => ({
+  app: "mitsumori-seikyu", version: 1,
+  company: {name:"", person:"", zip:"", address:"", tel:"", email:"", regNo:"", bank:""},
+  settings: {layout:"full"},
+  docs: []
+});
+
+const S = {
+  data: null, handle: null, dirty: false, view: "list",
+  filter: "all", q: "", edit: null, editDirty: false, editIsNew: false,
+  fsa: "showSaveFilePicker" in window
+};
+
+/* ---------- 計算（税率ごとに1回端数処理＝インボイス対応） ---------- */
+function calc(d) {
+  const m = new Map(); let subtotal = 0;
+  for (const it of d.items) {
+    const a = Math.round(num(it.qty) * num(it.price));
+    const r = Number(it.rate);
+    m.set(r, (m.get(r) || 0) + a); subtotal += a;
+  }
+  const groups = [10, 8, 0].filter(r => m.has(r) && m.get(r) !== 0).map(r => ({
+    rate: r, base: m.get(r), tax: r ? Math.trunc(m.get(r) * r / 100) : 0,
+    label: r === 10 ? "10%対象" : r === 8 ? "8%対象（軽減税率）" : "消費税対象外"
+  }));
+  const tax = groups.reduce((s, g) => s + g.tax, 0);
+  return {subtotal, groups, tax, total: subtotal + tax};
+}
+
+function nextNo(type, date, exceptId) {
+  const pre = `${TYPES[type].prefix}-${(date || today()).slice(0,4)}-`;
+  let max = 0;
+  for (const d of S.data.docs) {
+    if (d.id === exceptId || !d.no || !d.no.startsWith(pre)) continue;
+    max = Math.max(max, parseInt(d.no.slice(pre.length), 10) || 0);
+  }
+  return pre + String(max + 1).padStart(4, "0");
+}
+
+/* ---------- 前回ファイルの記憶（IndexedDB） ---------- */
+function idb() {
+  return new Promise((res, rej) => {
+    const r = indexedDB.open("mitsumori-app", 1);
+    r.onupgradeneeded = () => r.result.createObjectStore("kv");
+    r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+  });
+}
+async function kvGet(k) {
+  try { const db = await idb(); return await new Promise(res => {
+    const q = db.transaction("kv").objectStore("kv").get(k);
+    q.onsuccess = () => res(q.result); q.onerror = () => res(null);
+  }); } catch { return null; }
+}
+async function kvSet(k, v) {
+  try { const db = await idb(); await new Promise(res => {
+    const tx = db.transaction("kv", "readwrite"); tx.objectStore("kv").put(v, k);
+    tx.oncomplete = res; tx.onerror = res;
+  }); } catch {}
+}
+
+/* ---------- ファイル保存・読込 ---------- */
+const FTYPES = [{description:"見積・請求データ", accept:{"application/json":[".json"]}}];
+const LS_KEY = "mitsumori-seikyu-data";
+
+function parseData(text) {
+  try {
+    const d = JSON.parse(text);
+    if (!d || !Array.isArray(d.docs)) throw new Error();
+    d.company = {...defaultData().company, ...(d.company || {})};
+    d.settings = {...defaultData().settings, ...(d.settings || {})};
+    return d;
+  } catch {
+    alert("このファイルは見積・請求データとして読み込めません。");
+    return null;
+  }
+}
+
+async function save() {
+  if (S.handle) {
+    try {
+      const w = await S.handle.createWritable();
+      await w.write(JSON.stringify(S.data, null, 2)); await w.close();
+      S.dirty = false;
+    } catch (e) {
+      S.dirty = true;
+      alert("ファイルに保存できませんでした。「自社情報・データ」からバックアップを書き出してください。\n" + e.message);
+    }
+  } else {
+    try { localStorage.setItem(LS_KEY, JSON.stringify(S.data)); S.dirty = false; }
+    catch { S.dirty = true; alert("ブラウザ内に保存できませんでした。バックアップを書き出してください。"); }
+  }
+  updateStatus();
+}
+
+async function createFile() {
+  try {
+    const h = await showSaveFilePicker({suggestedName:"見積請求データ.json", types:FTYPES});
+    S.handle = h; S.data = defaultData();
+    await save(); await kvSet("handle", h);
+    S.view = "settings"; render();
+    toast("データファイルを作成しました。まず自社情報を入力してください");
+  } catch (e) { if (e.name !== "AbortError") alert("作成できませんでした。\n" + e.message); }
+}
+async function openFile() {
+  if (!confirmLeaveEdit()) return;
+  try {
+    const [h] = await showOpenFilePicker({types:FTYPES});
+    await loadFrom(h);
+  } catch (e) { if (e.name !== "AbortError") alert("開けませんでした。\n" + e.message); }
+}
+async function reopenLast() {
+  const h = await kvGet("handle"); if (!h) return;
+  try {
+    let p = await h.queryPermission({mode:"readwrite"});
+    if (p !== "granted") p = await h.requestPermission({mode:"readwrite"});
+    if (p !== "granted") { alert("ファイルへのアクセスが許可されませんでした。"); return; }
+    await loadFrom(h);
+  } catch (e) {
+    alert("前回のファイルを開けませんでした。移動・削除された可能性があります。「データファイルを開く」から選び直してください。");
+  }
+}
+async function loadFrom(h) {
+  const text = await (await h.getFile()).text();
+  const d = parseData(text); if (!d) return;
+  try { await h.requestPermission({mode:"readwrite"}); } catch {}
+  S.handle = h; S.data = d; S.dirty = false; S.edit = null; S.editDirty = false;
+  await kvSet("handle", h);
+  S.view = "list"; render();
+  toast(`「${h.name}」を開きました`);
+}
+
+function exportBackup() {
+  const blob = new Blob([JSON.stringify(S.data, null, 2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `見積請求バックアップ_${today().replace(/-/g,"")}.json`;
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast("バックアップを書き出しました");
+}
+$("#importFile").addEventListener("change", async e => {
+  const f = e.target.files[0]; e.target.value = ""; if (!f) return;
+  const d = parseData(await f.text()); if (!d) return;
+  if (S.data && !confirm(`現在のデータ（書類 ${S.data.docs.length} 件）を、バックアップの内容（書類 ${d.docs.length} 件）で置き換えます。よろしいですか？`)) return;
+  S.data = d; S.edit = null; S.editDirty = false;
+  await save(); S.view = "list"; render(); toast("バックアップを読み込みました");
+});
+
+/* ---------- 画面 ---------- */
+function render() {
+  $("#bar").innerHTML = viewBar();
+  updateStatus();
+  const m = $("#main");
+  if (!S.data) { kvGet("handle").then(h => { m.innerHTML = viewStart(h); }); return; }
+  if (S.view === "edit" && S.edit) { m.innerHTML = viewEdit(); renderItems(); }
+  else if (S.view === "settings") m.innerHTML = viewSettings();
+  else { S.view = "list"; m.innerHTML = viewList(); }
+  window.scrollTo(0, 0);
+}
+
+function viewBar() {
+  if (!S.data) return `<h1>見積・請求</h1><span class="lic">${esc(LICENSE_LABEL)}</span>`;
+  const on = k => (S.view === k || (k === "list" && S.view === "edit")) ? "on" : "";
+  return `<h1>見積・請求</h1><span class="lic">${esc(LICENSE_LABEL)}</span>
+    <nav class="tabs">
+      <button class="${on("list")}" data-act="go" data-v="list">書類一覧</button>
+      <button class="${on("settings")}" data-act="go" data-v="settings">自社情報・データ</button>
+    </nav>
+    <div class="file" id="status"></div>`;
+}
+function updateStatus() {
+  const el = $("#status"); if (!el) return;
+  const name = S.handle ? S.handle.name : "このブラウザ内";
+  el.innerHTML = `<span class="dot ${S.dirty ? "dirty" : ""}"></span>${esc(name)}<span class="muted">${S.dirty ? "未保存の変更あり" : "保存済み"}</span>`;
+}
+
+function viewStart(last) {
+  const intro = `<h2>見積・請求</h2>
+    <p>見積書と請求書を作成・保存・印刷するアプリです。データはこのパソコン内のファイルに保存され、インターネットには一切送信されません。</p>`;
+  if (S.fsa) return `<div class="start">${intro}
+    <div class="choices">
+      ${last ? `<button class="btn primary big" data-act="reopen">前回のファイルを開く<small>${esc(last.name)}</small></button>` : ""}
+      <button class="btn big ${last ? "" : "primary"}" data-act="create">データファイルを新しく作る<small>初めて使うとき。保存場所を選びます</small></button>
+      <button class="btn big" data-act="open">データファイルを開く<small>別の場所やUSBメモリにあるファイルを選ぶ</small></button>
+    </div></div>`;
+  return `<div class="start">${intro}
+    <p class="warn">このブラウザはファイルへの直接保存に対応していません。Microsoft Edge か Google Chrome で開くことをおすすめします。このまま使う場合はデータがブラウザ内に保存されるため、こまめにバックアップを書き出してください。</p>
+    <div class="choices">
+      <button class="btn primary big" data-act="local">このブラウザで始める<small>前回の続きもここから</small></button>
+      <button class="btn big" data-act="import">バックアップから読み込む<small>書き出したJSONファイルを選ぶ</small></button>
+    </div></div>`;
+}
+
+/* 一覧 */
+function filteredDocs() {
+  const q = S.q.trim();
+  return S.data.docs
+    .filter(d => (S.filter === "all" || d.type === S.filter) && (!q || [d.no, d.client, d.subject].join(" ").includes(q)))
+    .sort((a, b) => (b.date || "").localeCompare(a.date || "") || (b.no || "").localeCompare(a.no || ""));
+}
+function viewList() {
+  const seg = ["all","estimate","invoice"].map(k =>
+    `<button class="${S.filter === k ? "on" : ""}" data-act="filter" data-v="${k}">${k === "all" ? "すべて" : TYPES[k].label}</button>`).join("");
+  return `<div class="toolbar">
+      <div class="seg">${seg}</div>
+      <input type="search" id="q" placeholder="番号・宛先・件名で検索" value="${esc(S.q)}" aria-label="検索">
+      <div class="spacer"></div>
+      <label class="inline">印刷<select data-layout aria-label="印刷レイアウト">${layoutOpts()}</select></label>
+      <button class="btn primary" data-act="new" data-v="estimate">見積書を作成</button>
+      <button class="btn primary" data-act="new" data-v="invoice">請求書を作成</button>
+    </div>
+    <div id="rows">${listRows()}</div>`;
+}
+function listRows() {
+  const docs = filteredDocs();
+  if (!S.data.docs.length) return `<div class="empty">まだ書類がありません。右上の「見積書を作成」から始めましょう。</div>`;
+  if (!docs.length) return `<div class="empty">条件に合う書類がありません。</div>`;
+  return `<div class="wrap"><table class="list">
+    <thead><tr><th></th><th>番号・発行日</th><th>宛先・件名</th><th class="n">合計（税込）</th><th></th></tr></thead>
+    <tbody>${docs.map(d => `<tr data-act="edit" data-id="${d.id}">
+      <td style="width:50px"><span class="seal ${d.type}">${TYPES[d.type].short}</span></td>
+      <td>${esc(d.no)}<div class="sub">${jpDate(d.date)}</div></td>
+      <td>${esc(d.client) || '<span class="sub">（宛先なし）</span>'} ${esc(d.honorific)}<div class="sub">${esc(d.subject)}</div></td>
+      <td class="n">${yen(calc(d).total)}</td>
+      <td style="width:90px;text-align:right"><button class="btn small" data-act="printId" data-id="${d.id}">印刷</button></td>
+    </tr>`).join("")}</tbody></table></div>`;
+}
+
+/* 編集 */
+const blankItem = () => ({name:"", qty:1, unit:"式", price:0, rate:10});
+function newDoc(type) {
+  const date = today();
+  return {id:uid(), type, no:nextNo(type, date), date,
+    due: type === "estimate" ? addDays(date, 30) : endOfNextMonth(date),
+    client:"", honorific:"御中", subject:"", items:[blankItem()], note:"",
+    createdAt:Date.now(), updatedAt:Date.now()};
+}
+function startEdit(doc, isNew) {
+  S.edit = JSON.parse(JSON.stringify(doc));
+  S.editIsNew = isNew; S.editDirty = isNew; S.view = "edit"; render();
+}
+function confirmLeaveEdit() {
+  if (S.view === "edit" && S.editDirty) return confirm("編集中の内容が保存されていません。破棄してよろしいですか？");
+  return true;
+}
+
+function viewEdit() {
+  const d = S.edit, T = TYPES[d.type];
+  const clients = [...new Set(S.data.docs.map(x => x.client).filter(Boolean))];
+  return `<div class="edit-head">
+      <span class="seal ${d.type}">${T.short}</span>
+      <h2>${T.label}${S.editIsNew ? "を作成" : "を編集"}</h2>
+      <div class="spacer"></div>
+      <button class="btn" data-act="go" data-v="list">一覧に戻る</button>
+      <label class="inline">印刷<select data-layout aria-label="印刷レイアウト">${layoutOpts()}</select></label>
+      <button class="btn" data-act="print">印刷・PDF</button>
+      <button class="btn primary" data-act="saveDoc">保存</button>
+    </div>
+    <div id="editor">
+    <section class="panel"><div class="grid">
+      <label>書類番号<input data-f="no" value="${esc(d.no)}"></label>
+      <label>発行日<input type="date" data-f="date" value="${esc(d.date)}"></label>
+      <label>${T.due}<input type="date" data-f="due" value="${esc(d.due)}"></label>
+      <label class="wide">宛先
+        <span class="pair"><input data-f="client" list="clients" value="${esc(d.client)}" placeholder="株式会社〇〇">
+        <select data-f="honorific">${["御中","様",""].map(h => `<option value="${h}" ${d.honorific === h ? "selected" : ""}>${h || "（なし）"}</option>`).join("")}</select></span>
+        <datalist id="clients">${clients.map(c => `<option value="${esc(c)}">`).join("")}</datalist>
+      </label>
+      <label class="wide">件名<input data-f="subject" value="${esc(d.subject)}" placeholder="ホームページ制作費"></label>
+    </div></section>
+
+    <section class="panel">
+      <div class="wrap"><table class="items">
+        <thead><tr><th>品目</th><th style="width:90px">数量</th><th style="width:80px">単位</th><th style="width:130px">単価（税抜）</th><th style="width:120px">税率</th><th style="width:120px;text-align:right;padding-right:10px">金額</th><th style="width:40px"></th></tr></thead>
+        <tbody id="itemRows"></tbody>
+      </table></div>
+      <div class="actions" style="margin-top:8px"><button class="btn small" data-act="addItem">＋ 行を追加</button></div>
+      <div id="totals"></div>
+    </section>
+
+    <section class="panel">
+      <label>備考<textarea data-f="note" rows="5" placeholder="納期、お支払条件など">${esc(d.note)}</textarea></label>
+    </section>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" data-act="saveDoc">保存</button>
+      <button class="btn" data-act="print">印刷・PDF</button>
+      ${!S.editIsNew ? `<button class="btn" data-act="dup">複製して新規作成</button>` : ""}
+      ${!S.editIsNew && d.type === "estimate" ? `<button class="btn" data-act="toInvoice">この見積から請求書を作成</button>` : ""}
+      <div class="spacer"></div>
+      ${!S.editIsNew ? `<button class="btn danger" data-act="del">削除</button>` : ""}
+    </div>
+    <p class="hint" style="margin-top:14px">PDFにするには、印刷画面のプリンターで「PDFとして保存」を選びます。「ヘッダーとフッター」のチェックは外すときれいに出力できます。Ctrl+S でも保存できます。</p>`;
+}
+function renderItems() {
+  $("#itemRows").innerHTML = S.edit.items.map((it, i) => `<tr>
+    <td><input data-i="${i}" data-k="name" value="${esc(it.name)}" aria-label="品目"></td>
+    <td><input data-i="${i}" data-k="qty" class="r" type="number" step="any" value="${esc(it.qty)}" aria-label="数量"></td>
+    <td><input data-i="${i}" data-k="unit" value="${esc(it.unit)}" aria-label="単位"></td>
+    <td><input data-i="${i}" data-k="price" class="r" type="number" step="any" value="${esc(it.price)}" aria-label="単価"></td>
+    <td><select data-i="${i}" data-k="rate" aria-label="税率">${RATES.map(r => `<option value="${r.v}" ${Number(it.rate) === r.v ? "selected" : ""}>${r.l}</option>`).join("")}</select></td>
+    <td class="amt" id="amt${i}">${fmt(num(it.qty) * num(it.price))}</td>
+    <td><button class="x" data-act="delItem" data-i="${i}" title="この行を削除" aria-label="この行を削除">×</button></td>
+  </tr>`).join("");
+  renderTotals();
+}
+function renderTotals() {
+  const t = calc(S.edit);
+  $("#totals").innerHTML = `<dl class="totals">
+    <div><dt>小計（税抜）</dt><dd>${yen(t.subtotal)}</dd></div>
+    ${t.groups.map(g => `<div class="sub"><dt>${g.label}</dt><dd>${yen(g.base)}${g.rate ? `　税 ${yen(g.tax)}` : ""}</dd></div>`).join("")}
+    <div><dt>消費税</dt><dd>${yen(t.tax)}</dd></div>
+    <div class="grand"><dt>合計（税込）</dt><dd>${yen(t.total)}</dd></div>
+  </dl>`;
+}
+
+const layoutOpts = () => [["full","A4 1枚"],["half","A4 上下（控え付き）"]]
+  .map(([v,l]) => `<option value="${v}" ${S.data.settings.layout === v ? "selected" : ""}>${l}</option>`).join("");
+
+/* 自社情報 */
+function viewSettings() {
+  const c = S.data.company;
+  const f = (k, l, ph = "", wide = false, ta = false) => `<label class="${wide ? "wide" : ""}">${l}${ta
+    ? `<textarea data-c="${k}" rows="3" readonly tabindex="-1" class="ro" placeholder="${esc(ph)}">${esc(c[k])}</textarea>`
+    : `<input data-c="${k}" value="${esc(c[k])}" readonly tabindex="-1" class="ro" placeholder="${esc(ph)}">`}</label>`;
+  return `<h2 class="title">自社情報</h2>
+    <p class="hint">書類の右上と振込先欄に印刷されます。デモ版のため、自社情報は変更できません。</p>
+    <section class="panel"><div class="grid">
+      ${f("name","会社名・屋号","株式会社〇〇")}${f("person","担当者","山田 太郎")}
+      ${f("zip","郵便番号","000-0000")}${f("tel","電話番号","0799-00-0000")}
+      ${f("address","住所","〇〇県〇〇市〇〇 1-2-3", true)}
+      ${f("email","メールアドレス")}${f("regNo","インボイス登録番号","T1234567890123")}
+      ${f("bank","振込先（請求書に印刷）","〇〇銀行 〇〇支店　普通 1234567\n口座名義　カ）〇〇", true, true)}
+    </div>
+    <div class="actions"><button class="btn primary" disabled style="opacity:.4;cursor:not-allowed">自社情報を保存</button><span class="hint" style="margin:0">導入版では自由に設定できます</span></div></section>
+
+    <h2 class="title">ライセンス</h2>
+    <section class="panel"><p style="margin-top:0">このアプリはデモ版です。</p><p class="hint" style="margin-bottom:0">本ソフトウェアの著作権は株式会社Himorogiに帰属します。第三者への譲渡・複製・再配布はご遠慮ください。</p></section>
+
+    <h2 class="title">データ</h2>
+    <section class="panel">
+      <p style="margin-top:0">デモ版のため、データはどこにも保存されません（書類 ${S.data.docs.length} 件）。</p>
+      <p class="hint">導入版では、データは事務所のパソコン内のファイルに保存され、バックアップの書き出し・読み込みもできます。</p>
+      <div class="actions"><a class="btn primary" href="https://katagami-koubou.himorogi.co.jp/#contact" style="text-decoration:none">導入について相談する</a></div>
+    </section>`;
+}
+
+/* ---------- 印刷用の書類 ---------- */
+function docHTML(d, opt = {}) {
+  const c = S.data.company, T = TYPES[d.type], t = calc(d);
+  const minRows = opt.half ? 8 : 12;
+  const items = d.items.filter(it => it.name || num(it.price));
+  let rows = items.map(it => `<tr>
+    <td>${esc(it.name)}${Number(it.rate) === 8 ? "　※" : ""}</td>
+    <td class="n">${fmtQty(it.qty)}</td><td class="c">${esc(it.unit)}</td>
+    <td class="n">${fmt(num(it.price))}</td><td class="n">${fmt(num(it.qty) * num(it.price))}</td></tr>`).join("");
+  for (let i = items.length; i < minRows; i++) rows += `<tr><td></td><td></td><td></td><td></td><td></td></tr>`;
+  const hasReduced = items.some(it => Number(it.rate) === 8);
+  return `<div class="doc ${opt.half ? "half" : ""}">
+    ${opt.copy ? `<div class="ctl">控</div>` : ""}
+    <div class="meta">No. ${esc(d.no)}<br>発行日　${jpDate(d.date)}</div>
+    <h2>${T.label}</h2>
+    <div class="top">
+      <div class="to">
+        <div class="client">${esc(d.client)}<span>${esc(d.honorific)}</span></div>
+        ${d.subject ? `<div>件名：${esc(d.subject)}</div>` : ""}
+        <div class="lead">${T.lead}</div>
+        <div class="amount"><span>${T.amount}（税込）</span><b>${yen(t.total)}</b></div>
+        ${d.due ? `<div class="kv">${T.due}：${jpDate(d.due)}</div>` : ""}
+      </div>
+      <div class="from">
+        <div class="co">${esc(c.name)}</div>
+        ${c.zip ? `〒${esc(c.zip)}<br>` : ""}${c.address ? `${esc(c.address)}<br>` : ""}
+        ${c.tel ? `TEL ${esc(c.tel)}<br>` : ""}${c.email ? `${esc(c.email)}<br>` : ""}
+        ${c.person ? `担当：${esc(c.person)}<br>` : ""}
+        ${c.regNo ? `登録番号：${esc(c.regNo)}` : ""}
+        ${d.type === "invoice" && c.bank ? `<div class="bank"><b>お振込先</b>${esc(c.bank)}</div>` : ""}
+      </div>
+    </div>
+    <table>
+      <thead><tr><th>品目</th><th style="width:16mm">数量</th><th style="width:14mm">単位</th><th style="width:26mm">単価</th><th style="width:30mm">金額</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="sum">
+      <div class="note">
+        ${hasReduced ? `<div class="reduced">※は軽減税率（8%）対象です。</div>` : ""}
+        <div class="notebox"><b>備考</b>${esc(d.note)}</div>
+      </div>
+      <table>
+        <tr><th>小計（税抜）</th><td class="n">${yen(t.subtotal)}</td></tr>
+        ${t.groups.map(g => `<tr><th>${g.label}</th><td class="n">${yen(g.base)}${g.rate ? `${opt.half ? "　税 " : "<br>消費税 "}${yen(g.tax)}` : ""}</td></tr>`).join("")}
+        <tr><th>消費税合計</th><td class="n">${yen(t.tax)}</td></tr>
+        <tr class="gt"><th>合計（税込）</th><td class="n">${yen(t.total)}</td></tr>
+      </table>
+    </div>
+  </div>`;
+}
+function printDoc(d) {
+  const half = S.data.settings.layout === "half";
+  const n = d.items.filter(it => it.name || num(it.price)).length;
+  if (half && n > 8 && !confirm(`明細が${n}行あります。控え付き（上下2面）は8行までを想定しているため、下が切れる可能性があります。このまま印刷しますか？`)) return;
+  $("#print-area").innerHTML = half
+    ? `<div class="halfwrap"><div class="half">${docHTML(d, {half:true})}</div><div class="cut"><span>キリトリ</span></div><div class="half">${docHTML(d, {half:true, copy:true})}</div></div>`
+    : docHTML(d);
+  const old = document.title;
+  document.title = `${TYPES[d.type].label}_${d.no}_${d.client || ""}`;
+  window.print();
+  document.title = old;
+}
+
+/* ---------- 操作 ---------- */
+async function saveDoc() {
+  const d = S.edit;
+  if (!d.no.trim()) { alert("書類番号を入力してください。"); return; }
+  if (S.data.docs.some(x => x.id !== d.id && x.no === d.no.trim())) { alert(`書類番号「${d.no}」はすでに使われています。`); return; }
+  d.no = d.no.trim(); d.updatedAt = Date.now();
+  const i = S.data.docs.findIndex(x => x.id === d.id);
+  const copy = JSON.parse(JSON.stringify(d));
+  if (i >= 0) S.data.docs[i] = copy; else S.data.docs.push(copy);
+  S.editDirty = false;
+  await save();
+  if (!S.dirty) toast("保存しました");
+  if (S.editIsNew) { S.editIsNew = false; render(); }
+}
+
+const actions = {
+  create: createFile, open: openFile, reopen: reopenLast,
+  local: () => {
+    let d = null;
+    try { const t = localStorage.getItem(LS_KEY); if (t) d = parseData(t); } catch {}
+    S.data = d || defaultData(); S.view = S.data.company.name ? "list" : "settings"; render();
+  },
+  import: () => $("#importFile").click(),
+  export: exportBackup,
+  go: b => { if (S.view === b.v || !confirmLeaveEdit()) return; S.edit = null; S.editDirty = false; S.view = b.v; render(); },
+  filter: b => { S.filter = b.v; render(); },
+  new: b => { if (!S.data.company.name) toast("自社情報が未入力です。「自社情報・データ」から入力できます"); startEdit(newDoc(b.v), true); },
+  edit: b => { const d = S.data.docs.find(x => x.id === b.id); if (d) startEdit(d, false); },
+  printId: b => { const d = S.data.docs.find(x => x.id === b.id); if (d) printDoc(d); },
+  print: () => printDoc(S.edit),
+  saveDoc,
+  addItem: () => { S.edit.items.push(blankItem()); S.editDirty = true; renderItems();
+    const ins = document.querySelectorAll('#itemRows input[data-k="name"]'); ins[ins.length - 1].focus(); },
+  delItem: b => { S.edit.items.splice(+b.i, 1); if (!S.edit.items.length) S.edit.items.push(blankItem()); S.editDirty = true; renderItems(); },
+  dup: () => {
+    if (!confirmLeaveEdit()) return;
+    const d = JSON.parse(JSON.stringify(S.edit)), date = today();
+    Object.assign(d, {id:uid(), date, no:nextNo(d.type, date),
+      due: d.type === "estimate" ? addDays(date, 30) : endOfNextMonth(date), createdAt:Date.now()});
+    startEdit(d, true); toast("複製しました。保存すると新しい書類になります");
+  },
+  toInvoice: () => {
+    if (!confirmLeaveEdit()) return;
+    const d = JSON.parse(JSON.stringify(S.edit)), date = today();
+    Object.assign(d, {id:uid(), type:"invoice", date, no:nextNo("invoice", date), due:endOfNextMonth(date), fromNo:S.edit.no, createdAt:Date.now()});
+    startEdit(d, true); toast("見積の内容で請求書を作りました。確認して保存してください");
+  },
+  del: async () => {
+    if (!confirm(`「${S.edit.no}」を削除します。元に戻せません。よろしいですか？`)) return;
+    S.data.docs = S.data.docs.filter(x => x.id !== S.edit.id);
+    S.edit = null; S.editDirty = false; S.view = "list";
+    await save(); render(); toast("削除しました");
+  },
+  saveCompany: async () => { toast("デモ版では自社情報は変更できません"); return;
+    document.querySelectorAll("[data-c]").forEach(el => S.data.company[el.dataset.c] = el.value.trim());
+    await save(); if (!S.dirty) toast("自社情報を保存しました");
+  }
+};
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-act]"); if (!b) return;
+  if (b.tagName === "TR" && e.target.closest("button")) return;
+  e.preventDefault();
+  const fn = actions[b.dataset.act]; if (fn) fn(b.dataset);
+});
+
+document.addEventListener("input", e => {
+  const el = e.target;
+  if (el.id === "q") { S.q = el.value; $("#rows").innerHTML = listRows(); return; }
+  if (el.hasAttribute("data-layout")) {
+    S.data.settings.layout = el.value; save();
+    toast(el.value === "half" ? "上が相手用、下が控えになります" : "A4 1枚で印刷します");
+    return;
+  }
+  if (!S.edit) return;
+  if (el.dataset.f) { S.edit[el.dataset.f] = el.value; S.editDirty = true; }
+  else if (el.dataset.i !== undefined && el.dataset.k) {
+    const it = S.edit.items[+el.dataset.i]; if (!it) return;
+    it[el.dataset.k] = el.dataset.k === "rate" ? Number(el.value) : el.value;
+    S.editDirty = true;
+    const a = $("#amt" + el.dataset.i); if (a) a.textContent = fmt(num(it.qty) * num(it.price));
+    renderTotals();
+  }
+});
+
+document.addEventListener("keydown", e => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+    e.preventDefault();
+    if (S.view === "edit" && S.edit) saveDoc();
+  }
+});
+
+let toastTimer;
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2800);
+}
+
+/* ---------- デモ版の設定 ---------- */
+save = async function () { S.dirty = false; updateStatus(); };
+updateStatus = function () {
+  const el = $("#status"); if (!el) return;
+  el.innerHTML = `<span class="dot dirty"></span>デモ版<span class="muted">保存されません</span>`;
+};
+function demoData() {
+  const d = defaultData();
+  d.company = {name:"有限会社サンプル設備", person:"山田 一郎", zip:"000-0000", address:"〇〇県〇〇市〇〇町1-2-3",
+    tel:"0000-00-0000", email:"info@example.com", regNo:"T0000000000000",
+    bank:"〇〇銀行 〇〇支店　普通 1234567\n口座名義　ユ）サンプルセツビ"};
+  d.settings = {layout:"half"};
+  const it = (name, qty, unit, price) => ({name, qty, unit, price, rate:10});
+  d.docs = [
+    {id:uid(), type:"estimate", no:"EST-2026-0001", date:"2026-09-08", due:"2026-10-08", client:"淡路 太郎", honorific:"様",
+      subject:"給湯器交換工事", note:"工事時間は半日程度です。当日はお湯が使えない時間があります。",
+      items:[it("ガス給湯器本体（24号）",1,"台",158000), it("既存給湯器の撤去・処分",1,"式",15000), it("配管接続工事",1,"式",25000), it("出張費",1,"回",5000)]},
+    {id:uid(), type:"invoice", no:"INV-2026-0001", date:"2026-09-15", due:"2026-10-31", client:"株式会社サンプル商店", honorific:"御中",
+      subject:"給水管修理", note:"振込手数料はご負担願います。",
+      items:[it("給水管 修理工事",1,"式",25000), it("部品代（継手・パッキン）",1,"式",5000), it("出張費",1,"回",5000)]},
+    {id:uid(), type:"estimate", no:"EST-2026-0002", date:"2026-09-22", due:"2026-10-22", client:"山田 花子", honorific:"様",
+      subject:"トイレ交換工事", note:"",
+      items:[it("洋式便器（節水型）",1,"台",98000), it("取付工事",1,"式",30000), it("既存便器の撤去・処分",1,"式",12000)]},
+    {id:uid(), type:"invoice", no:"INV-2026-0002", date:"2026-09-30", due:"2026-10-31", client:"サンプル食堂", honorific:"御中",
+      subject:"排水詰まり対応", note:"振込手数料はご負担願います。",
+      items:[it("排水詰まり除去作業",1,"式",12000), it("高圧洗浄",1,"式",3000)]}
+  ];
+  d.docs.forEach(x => { x.createdAt = x.updatedAt = Date.now(); });
+  return d;
+}
+S.fsa = false; S.handle = null; S.data = demoData(); S.view = "list";
+render();
+</script>
 </body>
 </html>
