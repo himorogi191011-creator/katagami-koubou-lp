@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>見積・請求</title>
+<title>見積・請求（デモ版）｜型紙工房</title>
 <style>
 :root{
   --ai:#1F3A5F; --ai-soft:#E8EEF5; --sumi:#23272E; --nezumi:#6B7480;
@@ -111,7 +111,7 @@ table.items input.r{text-align:right}
 @page{size:A4;margin:11mm 12mm 10mm}
 @media print{
   body{background:#fff}
-  header.bar,main,.toast{display:none!important}
+  .demo-bar,header.bar,main,.toast{display:none!important}
   #print-area{display:block}
 }
 .doc{font-family:var(--ui);color:#000;font-size:10pt;line-height:1.5}
@@ -153,6 +153,11 @@ table.items input.r{text-align:right}
 .doc.half .bank{margin-top:1mm;padding-top:1mm}
 .doc.half .bank b{font-size:6.5pt}
 .doc{position:relative}
+.doc::after{content:"デモ版";position:absolute;left:0;right:0;top:50%;transform:translateY(-50%) rotate(-24deg);text-align:center;font-family:var(--ui);font-weight:700;font-size:120pt;color:rgba(168,78,56,.16);pointer-events:none;white-space:nowrap;z-index:2}
+.doc.half::after{font-size:72pt}
+.demo-bar{background:#A84E38;color:#fff;padding:9px 24px;font-size:13.5px;line-height:1.6;display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center}
+.demo-bar b{font-weight:700;letter-spacing:.05em}
+.demo-bar a{color:#fff;font-weight:700;margin-left:auto}
 .doc .ctl{position:absolute;left:0;top:0;width:9mm;height:9mm;border:1pt solid #000;border-radius:1mm;display:flex;align-items:center;justify-content:center;font-family:var(--mincho);font-weight:700;font-size:12pt}
 
 /* 上下2面（控え付き） */
@@ -187,6 +192,7 @@ table.items input.r{text-align:right}
 </style>
 </head>
 <body>
+<div class="demo-bar"><b>デモ版</b><span>入力した内容は保存されず、ページを閉じるとサンプルの状態に戻ります。印刷すると「デモ版」の透かしが入ります。</span><a href="https://katagami-koubou.himorogi.co.jp/#contact">導入のご相談はこちら →</a></div>
 <header class="bar" id="bar"></header>
 <main id="main"></main>
 <div id="print-area"></div>
@@ -554,13 +560,9 @@ function viewSettings() {
 
     <h2 class="title">データ</h2>
     <section class="panel">
-      <p style="margin-top:0">保存先：<b>${esc(S.handle ? S.handle.name : "このブラウザ内")}</b>（書類 ${S.data.docs.length} 件）</p>
-      <p class="hint">月に一度はバックアップをUSBメモリなどに書き出しておくと安心です。</p>
-      <div class="actions">
-        <button class="btn" data-act="export">バックアップを書き出す</button>
-        <button class="btn" data-act="import">バックアップから読み込む</button>
-        ${S.fsa ? `<button class="btn" data-act="open">別のデータファイルを開く</button>` : ""}
-      </div>
+      <p style="margin-top:0">デモ版のため、データはどこにも保存されません（書類 ${S.data.docs.length} 件）。</p>
+      <p class="hint">導入版では、データは事務所のパソコン内のファイルに保存され、バックアップの書き出し・読み込みもできます。</p>
+      <div class="actions"><a class="btn primary" href="https://katagami-koubou.himorogi.co.jp/#contact" style="text-decoration:none">導入について相談する</a></div>
     </section>`;
 }
 
@@ -718,9 +720,6 @@ document.addEventListener("keydown", e => {
     if (S.view === "edit" && S.edit) saveDoc();
   }
 });
-window.addEventListener("beforeunload", e => {
-  if (S.dirty || (S.view === "edit" && S.editDirty)) { e.preventDefault(); e.returnValue = ""; }
-});
 
 let toastTimer;
 function toast(msg) {
@@ -728,6 +727,37 @@ function toast(msg) {
   clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2800);
 }
 
+/* ---------- デモ版の設定 ---------- */
+save = async function () { S.dirty = false; updateStatus(); };
+updateStatus = function () {
+  const el = $("#status"); if (!el) return;
+  el.innerHTML = `<span class="dot dirty"></span>デモ版<span class="muted">保存されません</span>`;
+};
+function demoData() {
+  const d = defaultData();
+  d.company = {name:"有限会社サンプル設備", person:"山田 一郎", zip:"000-0000", address:"〇〇県〇〇市〇〇町1-2-3",
+    tel:"0000-00-0000", email:"info@example.com", regNo:"T0000000000000",
+    bank:"〇〇銀行 〇〇支店　普通 1234567\n口座名義　ユ）サンプルセツビ"};
+  d.settings = {layout:"half"};
+  const it = (name, qty, unit, price) => ({name, qty, unit, price, rate:10});
+  d.docs = [
+    {id:uid(), type:"estimate", no:"EST-2026-0001", date:"2026-09-08", due:"2026-10-08", client:"淡路 太郎", honorific:"様",
+      subject:"給湯器交換工事", note:"工事時間は半日程度です。当日はお湯が使えない時間があります。",
+      items:[it("ガス給湯器本体（24号）",1,"台",158000), it("既存給湯器の撤去・処分",1,"式",15000), it("配管接続工事",1,"式",25000), it("出張費",1,"回",5000)]},
+    {id:uid(), type:"invoice", no:"INV-2026-0001", date:"2026-09-15", due:"2026-10-31", client:"株式会社サンプル商店", honorific:"御中",
+      subject:"給水管修理", note:"振込手数料はご負担願います。",
+      items:[it("給水管 修理工事",1,"式",25000), it("部品代（継手・パッキン）",1,"式",5000), it("出張費",1,"回",5000)]},
+    {id:uid(), type:"estimate", no:"EST-2026-0002", date:"2026-09-22", due:"2026-10-22", client:"山田 花子", honorific:"様",
+      subject:"トイレ交換工事", note:"",
+      items:[it("洋式便器（節水型）",1,"台",98000), it("取付工事",1,"式",30000), it("既存便器の撤去・処分",1,"式",12000)]},
+    {id:uid(), type:"invoice", no:"INV-2026-0002", date:"2026-09-30", due:"2026-10-31", client:"サンプル食堂", honorific:"御中",
+      subject:"排水詰まり対応", note:"振込手数料はご負担願います。",
+      items:[it("排水詰まり除去作業",1,"式",12000), it("高圧洗浄",1,"式",3000)]}
+  ];
+  d.docs.forEach(x => { x.createdAt = x.updatedAt = Date.now(); });
+  return d;
+}
+S.fsa = false; S.handle = null; S.data = demoData(); S.view = "list";
 render();
 </script>
 </body>
