@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利用規約｜型紙工房</title>
+<meta name="description" content="市販の業務ソフトに合わないなら、現場の型紙から仕立てます。オーダーメイド業務アプリ制作。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #E7E8EA;
+    --paper-card: #F5F5F3;
+    --paper-card-2: #EEEEEA;
+    --ink: #21242B;
+    --ink-soft: #52565F;
+    --ink-faint: #7B7F87;
+    --line: #C6C9CE;
+    --line-strong: #9BA0A8;
+    --accent: #24466B;
+    --accent-strong: #16324E;
+    --accent-soft: #DCE3EA;
+    --thread: #A84E38;
+    --focus: #24466B;
+    --on-accent: #FCFCFB;
+
+    --content-w: 1080px;
+    --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    --font-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14171D;
+      --paper-card: #1B1F26;
+      --paper-card-2: #20242D;
+      --ink: #E9EAEC;
+      --ink-soft: #ABB0B9;
+      --ink-faint: #7D828B;
+      --line: #333947;
+      --line-strong: #454C5C;
+      --accent: #85A7C9;
+      --accent-strong: #B0C7DE;
+      --accent-soft: #223140;
+      --thread: #D9866C;
+      --focus: #85A7C9;
+      --on-accent: #0D1015;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14171D;
+    --paper-card: #1B1F26;
+    --paper-card-2: #20242D;
+    --ink: #E9EAEC;
+    --ink-soft: #ABB0B9;
+    --ink-faint: #7D828B;
+    --line: #333947;
+    --line-strong: #454C5C;
+    --accent: #85A7C9;
+    --accent-strong: #B0C7DE;
+    --accent-soft: #223140;
+    --thread: #D9866C;
+    --focus: #85A7C9;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+  img, svg { display: block; max-width: 100%; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  .wrap { max-width: var(--content-w); margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 16px; padding-bottom: 16px; gap: 16px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+  .brand small { font-family: var(--font-mono); font-size: .6rem; color: var(--ink-faint); letter-spacing: .12em; }
+  nav.site-nav { display: flex; align-items: center; gap: 28px; }
+  nav.site-nav a { font-size: .88rem; color: var(--ink-soft); text-decoration: none; }
+  nav.site-nav a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-body); font-weight: 700; font-size: .88rem;
+    padding: 11px 22px; border-radius: 3px; text-decoration: none;
+    border: 1px solid var(--accent); white-space: nowrap;
+  }
+  .btn-solid { background: var(--accent); color: var(--on-accent); }
+  .btn-solid:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+  .btn-line { background: transparent; color: var(--accent); }
+  .btn-line:hover { background: var(--accent-soft); }
+  .nav-cta { display: none; }
+  @media (min-width: 720px) { .nav-cta { display: inline-flex; } }
+  /* nav.site-nav a's color rule otherwise wins on specificity and washes out the solid button text */
+  nav.site-nav a.nav-cta,
+  nav.site-nav a.nav-cta:hover { color: var(--on-accent); }
+
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: .78rem; color: var(--ink-faint); }
+
+  .section-label { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .14em; color: var(--ink-faint); text-transform: uppercase; display: block; margin-bottom: 12px; }
+  .doc-page { padding: 64px 0 80px; }
+  .doc-page h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 6px 0 10px; }
+  .doc-page .lead { color: var(--ink-soft); margin-bottom: 34px; font-size: .95rem; }
+  .law-table { width: 100%; border-collapse: collapse; background: var(--paper-card); border: 1px solid var(--line); }
+  .law-table th, .law-table td { text-align: left; vertical-align: top; padding: 16px 20px; border-bottom: 1px solid var(--line); font-size: .93rem; line-height: 1.8; }
+  .law-table th { width: 30%; font-weight: 700; background: var(--paper-card-2); }
+  @media (max-width: 640px) { .law-table th, .law-table td { display: block; width: 100%; } .law-table th { border-bottom: none; padding-bottom: 4px; } }
+  .terms { background: var(--paper-card); border: 1px solid var(--line); padding: 32px clamp(20px, 4vw, 44px); }
+  .terms h2 { font-size: 1.1rem; margin: 30px 0 10px; font-family: var(--font-body); font-weight: 700; }
+  .terms h2:first-child { margin-top: 0; }
+  .terms p, .terms li { font-size: .93rem; line-height: 1.85; color: var(--ink); }
+  .terms ol { margin: 6px 0 0; padding-left: 1.4em; }
+  .terms .date { margin-top: 30px; color: var(--ink-soft); font-size: .88rem; }
+  .ph { background: #FFF3C4; color: #6B4E00; padding: 0 4px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" style="text-decoration:none">型紙工房<small>KATAGAMI&nbsp;KOUBOU</small></a>
+    <nav class="site-nav">
+      <a href="./#problem">サービスについて</a>
+      <a href="./#case">制作事例</a>
+      <a href="./#process">流れ</a>
+      <a href="./#contact" class="btn btn-solid nav-cta">ご相談はこちら</a>
+    </nav>
+  </div>
+</header>
+<main class="doc-page">
+  <div class="wrap">
+    <span class="section-label">Terms</span>
+    <h1>見積・請求アプリ 利用規約</h1>
+    <p class="lead">ご利用の前に、必ずお読みください。</p>
+    <div class="terms">
+      <p>この利用規約（以下「本規約」）は、株式会社Himorogi（以下「当社」）が提供する見積・請求アプリ（以下「本ソフトウェア」）の利用条件を定めるものです。本ソフトウェアをご利用いただくお客様（以下「利用者」）は、本規約に同意したものとみなします。</p>
+
+      <h2>第1条（利用の許諾）</h2>
+      <ol>
+        <li>当社は、利用者に対し、本ソフトウェアを利用者の1事業所において利用する非独占的な権利を許諾します。</li>
+        <li>本ソフトウェアには利用者の名称が登録されており、当該利用者のみが利用できます。</li>
+      </ol>
+
+      <h2>第2条（著作権）</h2>
+      <p>本ソフトウェアに関する著作権その他一切の知的財産権は、当社に帰属します。本規約による利用の許諾は、これらの権利を利用者に譲渡するものではありません。</p>
+
+      <h2>第3条（禁止事項）</h2>
+      <p>利用者は、次の行為を行ってはなりません。</p>
+      <ol>
+        <li>本ソフトウェアを第三者に譲渡、貸与、販売、配布すること</li>
+        <li>許諾された事業所以外で本ソフトウェアを利用すること</li>
+        <li>本ソフトウェアを改変、解析、逆コンパイル、リバースエンジニアリングすること</li>
+        <li>本ソフトウェアに表示される著作権表示や利用者名の表示を削除または変更すること</li>
+        <li>その他、法令または本規約に違反する行為</li>
+      </ol>
+
+      <h2>第4条（データの管理）</h2>
+      <ol>
+        <li>本ソフトウェアで作成したデータは、利用者のパソコン内に保存され、当社のサーバー等には送信されません。</li>
+        <li>データのバックアップは利用者の責任で行うものとします。当社は、パソコンの故障、操作の誤り等によるデータの消失について責任を負いません。</li>
+      </ol>
+
+      <h2>第5条（書類の内容）</h2>
+      <p>本ソフトウェアは、一般的な方法により消費税等を計算し、書類を作成します。作成した書類の記載内容および税務上の取扱いについては、利用者の責任においてご確認ください。</p>
+
+      <h2>第6条（サポート）</h2>
+      <ol>
+        <li>導入費には、本ソフトウェアの設置、初期設定および使い方の説明が含まれます。</li>
+        <li>本ソフトウェアの不具合については、無償で修正対応いたします。</li>
+        <li>書式や機能の変更、データの移行、継続的な問い合わせ対応等は、別途有償または年間サポート契約の範囲で対応いたします。</li>
+      </ol>
+
+      <h2>第7条（免責）</h2>
+      <p>当社は、本ソフトウェアの利用により利用者に生じた損害について、当社の故意または重大な過失による場合を除き、責任を負いません。当社が責任を負う場合であっても、その範囲は利用者が当社に支払った導入費の額を上限とします。</p>
+
+      <h2>第8条（利用許諾の終了）</h2>
+      <p>利用者が本規約に違反した場合、当社は通知のうえ、本ソフトウェアの利用許諾を終了することができます。</p>
+
+      <h2>第9条（規約の変更）</h2>
+      <p>当社は、必要に応じて本規約を変更することがあります。変更後の規約は、本ページに掲載した時点から効力を生じます。</p>
+
+      <h2>第10条（準拠法・管轄裁判所）</h2>
+      <p>本規約は日本法に準拠します。本ソフトウェアに関して紛争が生じた場合は、神戸地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+
+      <p class="date">制定日：2026年10月　／　株式会社Himorogi</p>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>型紙工房 — オーダーメイド業務アプリ制作　｜　<a href="tokushoho.html">特定商取引法に基づく表記</a>　｜　<a href="terms.html">利用規約</a></span>
+    <span>© 2026 株式会社Himorogi All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>
