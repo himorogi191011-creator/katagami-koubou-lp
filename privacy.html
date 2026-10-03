@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー｜型紙工房</title>
+<meta name="description" content="市販の業務ソフトに合わないなら、現場の型紙から仕立てます。オーダーメイド業務アプリ制作。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #E7E8EA;
+    --paper-card: #F5F5F3;
+    --paper-card-2: #EEEEEA;
+    --ink: #21242B;
+    --ink-soft: #52565F;
+    --ink-faint: #7B7F87;
+    --line: #C6C9CE;
+    --line-strong: #9BA0A8;
+    --accent: #24466B;
+    --accent-strong: #16324E;
+    --accent-soft: #DCE3EA;
+    --thread: #A84E38;
+    --focus: #24466B;
+    --on-accent: #FCFCFB;
+
+    --content-w: 1080px;
+    --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    --font-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14171D;
+      --paper-card: #1B1F26;
+      --paper-card-2: #20242D;
+      --ink: #E9EAEC;
+      --ink-soft: #ABB0B9;
+      --ink-faint: #7D828B;
+      --line: #333947;
+      --line-strong: #454C5C;
+      --accent: #85A7C9;
+      --accent-strong: #B0C7DE;
+      --accent-soft: #223140;
+      --thread: #D9866C;
+      --focus: #85A7C9;
+      --on-accent: #0D1015;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14171D;
+    --paper-card: #1B1F26;
+    --paper-card-2: #20242D;
+    --ink: #E9EAEC;
+    --ink-soft: #ABB0B9;
+    --ink-faint: #7D828B;
+    --line: #333947;
+    --line-strong: #454C5C;
+    --accent: #85A7C9;
+    --accent-strong: #B0C7DE;
+    --accent-soft: #223140;
+    --thread: #D9866C;
+    --focus: #85A7C9;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+  img, svg { display: block; max-width: 100%; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  .wrap { max-width: var(--content-w); margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 16px; padding-bottom: 16px; gap: 16px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+  .brand small { font-family: var(--font-mono); font-size: .6rem; color: var(--ink-faint); letter-spacing: .12em; }
+  nav.site-nav { display: flex; align-items: center; gap: 28px; }
+  nav.site-nav a { font-size: .88rem; color: var(--ink-soft); text-decoration: none; }
+  nav.site-nav a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-body); font-weight: 700; font-size: .88rem;
+    padding: 11px 22px; border-radius: 3px; text-decoration: none;
+    border: 1px solid var(--accent); white-space: nowrap;
+  }
+  .btn-solid { background: var(--accent); color: var(--on-accent); }
+  .btn-solid:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+  .btn-line { background: transparent; color: var(--accent); }
+  .btn-line:hover { background: var(--accent-soft); }
+  .nav-cta { display: none; }
+  @media (min-width: 720px) { .nav-cta { display: inline-flex; } }
+  /* nav.site-nav a's color rule otherwise wins on specificity and washes out the solid button text */
+  nav.site-nav a.nav-cta,
+  nav.site-nav a.nav-cta:hover { color: var(--on-accent); }
+
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: .78rem; color: var(--ink-faint); }
+
+  .section-label { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .14em; color: var(--ink-faint); text-transform: uppercase; display: block; margin-bottom: 12px; }
+  .doc-page { padding: 64px 0 80px; }
+  .doc-page h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 6px 0 10px; }
+  .doc-page .lead { color: var(--ink-soft); margin-bottom: 34px; font-size: .95rem; }
+  .law-table { width: 100%; border-collapse: collapse; background: var(--paper-card); border: 1px solid var(--line); }
+  .law-table th, .law-table td { text-align: left; vertical-align: top; padding: 16px 20px; border-bottom: 1px solid var(--line); font-size: .93rem; line-height: 1.8; }
+  .law-table th { width: 30%; font-weight: 700; background: var(--paper-card-2); }
+  @media (max-width: 640px) { .law-table th, .law-table td { display: block; width: 100%; } .law-table th { border-bottom: none; padding-bottom: 4px; } }
+  .terms { background: var(--paper-card); border: 1px solid var(--line); padding: 32px clamp(20px, 4vw, 44px); }
+  .terms h2 { font-size: 1.1rem; margin: 30px 0 10px; font-family: var(--font-body); font-weight: 700; }
+  .terms h2:first-child { margin-top: 0; }
+  .terms p, .terms li { font-size: .93rem; line-height: 1.85; color: var(--ink); }
+  .terms ol { margin: 6px 0 0; padding-left: 1.4em; }
+  .terms .date { margin-top: 30px; color: var(--ink-soft); font-size: .88rem; }
+  .ph { background: #FFF3C4; color: #6B4E00; padding: 0 4px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" style="text-decoration:none">型紙工房<small>KATAGAMI&nbsp;KOUBOU</small></a>
+    <nav class="site-nav">
+      <a href="./#problem">サービスについて</a>
+      <a href="./#case">制作事例</a>
+      <a href="./#process">流れ</a>
+      <a href="./#contact" class="btn btn-solid nav-cta">ご相談はこちら</a>
+    </nav>
+  </div>
+</header>
+<main class="doc-page">
+  <div class="wrap">
+    <span class="section-label">Privacy</span>
+    <h1>プライバシーポリシー</h1>
+    <p class="lead">株式会社Himorogi（以下「当社」）は、型紙工房のサービス提供にあたり、お客様の個人情報を次のとおり取り扱います。</p>
+    <div class="terms">
+      <h2>1. 取得する情報</h2>
+      <p>当社は、次の場面で個人情報を取得します。</p>
+      <ol>
+        <li>お問い合わせフォームのご利用時：お名前・会社名、メールアドレス、業種、従業員数の目安、お問い合わせ内容、ご希望の時期</li>
+        <li>導入のお申し込み（決済）時：お名前、会社名、メールアドレス、電話番号、請求先住所、設置のご希望・ご要望</li>
+        <li>お電話・メール・対面でのご相談時：ご相談に必要な範囲の情報</li>
+      </ol>
+      <p>クレジットカード情報は決済代行会社（Stripe）が直接取得・処理し、当社がカード番号を受け取ったり保存したりすることはありません。</p>
+
+      <h2>2. 利用目的</h2>
+      <ol>
+        <li>お問い合わせへの回答、ご相談への対応</li>
+        <li>ご購入いただいたサービスの提供（アプリの設置・初期設定・使い方のご説明）</li>
+        <li>代金の請求、領収書・請求書の発行</li>
+        <li>サポート、不具合の修正、重要なお知らせのご連絡</li>
+      </ol>
+      <p>これらの目的以外に、ご本人の同意なく個人情報を利用することはありません。</p>
+
+      <h2>3. 第三者への提供</h2>
+      <p>当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供しません。</p>
+
+      <h2>4. 外部サービスの利用</h2>
+      <p>当社は、次の外部サービスに業務の一部を委託しています。これらの事業者は外国に所在するため、各事業者のプライバシーポリシーに基づいて情報が取り扱われます。</p>
+      <ol>
+        <li>Stripe（決済の処理）</li>
+        <li>Formspree（お問い合わせフォームの送信）</li>
+      </ol>
+
+      <h2>5. 見積・請求アプリで作成したデータ</h2>
+      <p>見積・請求アプリおよびそのデモ版で入力・作成したデータは、お客様のパソコン（またはブラウザ）内にのみ保存され、当社のサーバー等には送信されません。当社がこれらのデータを取得することはありません。</p>
+
+      <h2>6. 安全管理</h2>
+      <p>当社は、取得した個人情報の漏えい、滅失、毀損を防ぐため、必要かつ適切な安全管理措置を講じます。</p>
+
+      <h2>7. 開示・訂正・削除等のご請求</h2>
+      <p>ご本人から、ご自身の個人情報の開示、訂正、利用停止、削除等のご請求があった場合は、ご本人であることを確認のうえ、法令に従い速やかに対応いたします。</p>
+
+      <h2>8. お問い合わせ窓口</h2>
+      <p>株式会社Himorogi　個人情報の取扱いに関する窓口<br>〒656-2131　兵庫県淡路市志筑389-1 アーバンエルフ5B<br>電話：090-8239-9810（受付時間 9:00〜17:00）<br>メール：info@himorogi.co.jp<br>代表者：石川 佳宏</p>
+
+      <h2>9. 改定</h2>
+      <p>当社は、必要に応じて本ポリシーを改定することがあります。改定後の内容は、本ページに掲載した時点から効力を生じます。</p>
+
+      <p class="date">制定日：2026年10月　／　株式会社Himorogi</p>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>型紙工房 — オーダーメイド業務アプリ制作　｜　<a href="tokushoho.html">特定商取引法に基づく表記</a>　｜　<a href="terms.html">利用規約</a>　｜　<a href="privacy.html">プライバシーポリシー</a></span>
+    <span>© 2026 株式会社Himorogi All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>
