@@ -107,6 +107,9 @@ table.items input.r{text-align:right}
 .lic{font-size:12px;border:1px solid rgba(255,255,255,.45);padding:2px 12px;border-radius:999px;color:#DCE3EA;white-space:nowrap}
 .app-foot{text-align:center;font-size:12px;color:var(--nezumi);padding:4px 20px 28px;line-height:1.7}
 .ro{background:#F2F4F6!important;color:#6B7480!important;cursor:not-allowed}
+.disc{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:flex-end;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.disc label{width:190px}
+.disc input.r{text-align:right}
 .start .choices{display:flex;flex-direction:column;gap:10px;margin-top:24px}
 .warn{background:#FFF6E5;border:1px solid #F0D9A8;padding:12px 14px;border-radius:4px;font-size:14px}
 
@@ -218,6 +221,7 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const num = v => { const n = parseFloat(String(v ?? "").replace(/,/g, "")); return isFinite(n) ? n : 0; };
 const fmt = n => Math.round(n).toLocaleString("ja-JP");
 const yen = n => "¥" + fmt(n);
+const fmtS = n => n < 0 ? "▲" + fmt(-n) : fmt(n);
 const fmtQty = q => num(q).toLocaleString("ja-JP", {maximumFractionDigits: 2});
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 const iso = d => d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
@@ -254,12 +258,17 @@ function calc(d) {
     const r = Number(it.rate);
     m.set(r, (m.get(r) || 0) + a); subtotal += a;
   }
+  const discount = Math.max(0, Math.round(num(d.discount)));
+  let dr = Number(d.discountRate ?? 10);
+  if (discount && !m.has(dr) && m.size) dr = [...m.keys()][0];
+  if (discount) m.set(dr, (m.get(dr) || 0) - discount);
   const groups = [10, 8, 0].filter(r => m.has(r) && m.get(r) !== 0).map(r => ({
     rate: r, base: m.get(r), tax: r ? Math.trunc(m.get(r) * r / 100) : 0,
     label: r === 10 ? "10%対象" : r === 8 ? "8%対象（軽減税率）" : "消費税対象外"
   }));
   const tax = groups.reduce((s, g) => s + g.tax, 0);
-  return {subtotal, groups, tax, total: subtotal + tax};
+  const net = subtotal - discount;
+  return {subtotal, discount, discountLabel: d.discountLabel || "出精値引き", net, groups, tax, total: net + tax};
 }
 
 function nextNo(type, date, exceptId) {
@@ -467,6 +476,7 @@ function newDoc(type) {
   return {id:uid(), type, no:nextNo(type, date), date,
     due: type === "estimate" ? addDays(date, 30) : endOfNextMonth(date),
     client:"", honorific:"御中", subject:"", items:[blankItem()], note:"",
+    discount:0, discountLabel:"出精値引き", discountRate:10,
     createdAt:Date.now(), updatedAt:Date.now()};
 }
 function startEdit(doc, isNew) {
@@ -509,6 +519,12 @@ function viewEdit() {
         <tbody id="itemRows"></tbody>
       </table></div>
       <div class="actions" style="margin-top:8px"><button class="btn small" data-act="addItem">＋ 行を追加</button></div>
+      <div class="disc">
+        <label>値引きの名目<input data-f="discountLabel" value="${esc(d.discountLabel ?? "出精値引き")}"></label>
+        <label>値引き額（税抜）<input data-f="discount" type="number" min="0" step="1" class="r" value="${esc(d.discount || "")}" placeholder="0"></label>
+        <label>値引きする税率<select data-f="discountRate">${[10, 8].map(r => `<option value="${r}" ${Number(d.discountRate ?? 10) === r ? "selected" : ""}>${r}%</option>`).join("")}</select></label>
+        <button class="btn small" data-act="reverseCalc">税込合計から逆算</button>
+      </div>
       <div id="totals"></div>
     </section>
 
@@ -534,7 +550,7 @@ function renderItems() {
     <td><input data-i="${i}" data-k="unit" value="${esc(it.unit)}" aria-label="単位"></td>
     <td><input data-i="${i}" data-k="price" class="r" type="number" step="any" value="${esc(it.price)}" aria-label="単価"></td>
     <td><select data-i="${i}" data-k="rate" aria-label="税率">${RATES.map(r => `<option value="${r.v}" ${Number(it.rate) === r.v ? "selected" : ""}>${r.l}</option>`).join("")}</select></td>
-    <td class="amt" id="amt${i}">${fmt(num(it.qty) * num(it.price))}</td>
+    <td class="amt" id="amt${i}">${fmtS(num(it.qty) * num(it.price))}</td>
     <td><button class="x" data-act="delItem" data-i="${i}" title="この行を削除" aria-label="この行を削除">×</button></td>
   </tr>`).join("");
   renderTotals();
@@ -543,6 +559,7 @@ function renderTotals() {
   const t = calc(S.edit);
   $("#totals").innerHTML = `<dl class="totals">
     <div><dt>小計（税抜）</dt><dd>${yen(t.subtotal)}</dd></div>
+    ${t.discount ? `<div><dt>${esc(t.discountLabel)}</dt><dd>▲${yen(t.discount)}</dd></div><div><dt>値引き後（税抜）</dt><dd>${yen(t.net)}</dd></div>` : ""}
     ${t.groups.map(g => `<div class="sub"><dt>${g.label}</dt><dd>${yen(g.base)}${g.rate ? `　税 ${yen(g.tax)}` : ""}</dd></div>`).join("")}
     <div><dt>消費税</dt><dd>${yen(t.tax)}</dd></div>
     <div class="grand"><dt>合計（税込）</dt><dd>${yen(t.total)}</dd></div>
@@ -588,7 +605,7 @@ function docHTML(d, opt = {}) {
   let rows = items.map(it => `<tr>
     <td>${esc(it.name)}${Number(it.rate) === 8 ? "　※" : ""}</td>
     <td class="n">${fmtQty(it.qty)}</td><td class="c">${esc(it.unit)}</td>
-    <td class="n">${fmt(num(it.price))}</td><td class="n">${fmt(num(it.qty) * num(it.price))}</td></tr>`).join("");
+    <td class="n">${fmtS(num(it.price))}</td><td class="n">${fmtS(num(it.qty) * num(it.price))}</td></tr>`).join("");
   for (let i = items.length; i < minRows; i++) rows += `<tr><td></td><td></td><td></td><td></td><td></td></tr>`;
   const hasReduced = items.some(it => Number(it.rate) === 8);
   return `<div class="doc ${opt.half ? "half" : ""}">
@@ -623,6 +640,7 @@ function docHTML(d, opt = {}) {
       </div>
       <table>
         <tr><th>小計（税抜）</th><td class="n">${yen(t.subtotal)}</td></tr>
+        ${t.discount ? `<tr><th>${esc(t.discountLabel)}</th><td class="n">▲${yen(t.discount)}</td></tr><tr><th>値引き後（税抜）</th><td class="n">${yen(t.net)}</td></tr>` : ""}
         ${t.groups.map(g => `<tr><th>${g.label}</th><td class="n">${yen(g.base)}${g.rate ? `${opt.half ? "　税 " : "<br>消費税 "}${yen(g.tax)}` : ""}</td></tr>`).join("")}
         <tr><th>消費税合計</th><td class="n">${yen(t.tax)}</td></tr>
         <tr class="gt"><th>合計（税込）</th><td class="n">${yen(t.total)}</td></tr>
@@ -674,6 +692,27 @@ const actions = {
   printId: b => { const d = S.data.docs.find(x => x.id === b.id); if (d) printDoc(d); },
   print: () => printDoc(S.edit),
   saveDoc,
+  reverseCalc: () => {
+    const d = S.edit, before = calc({...d, discount: 0});
+    if (!before.groups.length) { alert("先に明細を入力してください。"); return; }
+    const v = prompt(`税込合計をいくらにしますか？\n（値引き前の税込合計：${yen(before.total)}）`, "");
+    if (v === null) return;
+    const T = Math.round(num(v)); if (!T) return;
+    const g = before.groups.find(x => x.rate === Number(d.discountRate ?? 10)) || before.groups[0];
+    const r = g.rate, target = T - (before.total - (g.base + g.tax));
+    const f = X => X + (r ? Math.trunc(X * r / 100) : 0);
+    let X = Math.floor(target * 100 / (100 + r));
+    while (f(X) > target) X--;
+    while (f(X + 1) <= target) X++;
+    const D = g.base - X;
+    if (D < 0) { alert("値引き前の合計より大きい金額は指定できません。"); return; }
+    d.discount = D; d.discountRate = r; S.editDirty = true;
+    const inp = document.querySelector('[data-f="discount"]'); if (inp) inp.value = D;
+    const sel = document.querySelector('[data-f="discountRate"]'); if (sel) sel.value = String(r);
+    renderTotals();
+    const got = calc(d).total;
+    toast(got === T ? `値引き ${yen(D)}（税抜）で、税込合計 ${yen(T)} になりました` : `端数の関係で、税込合計は ${yen(got)} になります`);
+  },
   addItem: () => { S.edit.items.push(blankItem()); S.editDirty = true; renderItems();
     const ins = document.querySelectorAll('#itemRows input[data-k="name"]'); ins[ins.length - 1].focus(); },
   delItem: b => { S.edit.items.splice(+b.i, 1); if (!S.edit.items.length) S.edit.items.push(blankItem()); S.editDirty = true; renderItems(); },
@@ -718,12 +757,16 @@ document.addEventListener("input", e => {
     return;
   }
   if (!S.edit) return;
-  if (el.dataset.f) { S.edit[el.dataset.f] = el.value; S.editDirty = true; }
+  if (el.dataset.f) {
+    S.edit[el.dataset.f] = el.dataset.f === "discountRate" ? Number(el.value) : el.value;
+    S.editDirty = true;
+    if (el.dataset.f.startsWith("discount")) renderTotals();
+  }
   else if (el.dataset.i !== undefined && el.dataset.k) {
     const it = S.edit.items[+el.dataset.i]; if (!it) return;
     it[el.dataset.k] = el.dataset.k === "rate" ? Number(el.value) : el.value;
     S.editDirty = true;
-    const a = $("#amt" + el.dataset.i); if (a) a.textContent = fmt(num(it.qty) * num(it.price));
+    const a = $("#amt" + el.dataset.i); if (a) a.textContent = fmtS(num(it.qty) * num(it.price));
     renderTotals();
   }
 });
@@ -756,7 +799,7 @@ function demoData() {
   const it = (name, qty, unit, price) => ({name, qty, unit, price, rate:10});
   d.docs = [
     {id:uid(), type:"estimate", no:"EST-2026-0001", date:"2026-09-08", due:"2026-10-08", client:"淡路 太郎", honorific:"様",
-      subject:"給湯器交換工事", note:"工事時間は半日程度です。当日はお湯が使えない時間があります。",
+      subject:"給湯器交換工事", discount:3000, discountLabel:"出精値引き", discountRate:10, note:"工事時間は半日程度です。当日はお湯が使えない時間があります。",
       items:[it("ガス給湯器本体（24号）",1,"台",158000), it("既存給湯器の撤去・処分",1,"式",15000), it("配管接続工事",1,"式",25000), it("出張費",1,"回",5000)]},
     {id:uid(), type:"invoice", no:"INV-2026-0001", date:"2026-09-15", due:"2026-10-31", client:"株式会社サンプル商店", honorific:"御中",
       subject:"給水管修理", note:"振込手数料はご負担願います。",
