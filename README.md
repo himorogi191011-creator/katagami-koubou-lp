@@ -24,6 +24,10 @@
 - お問い合わせフォーム: Formspree(`index.html` の `#contact-form`)
 - 導入申し込み: Stripe の決済リンク
 - フォント: Google Fonts
+- アクセス解析: Google アナリティクス(`G-RLGEBXPWVR`、全ページ)
+  - `generate_lead`: お問い合わせフォームの送信
+  - `begin_checkout`: 「導入を申し込む」ボタンのクリック(33,000円)
+  - 計測のコードは `index.html` の末尾の `<script>` にあります
 
 ## 更新するときの注意
 
