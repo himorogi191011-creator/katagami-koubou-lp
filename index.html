@@ -118,7 +118,13 @@
   .brand { display: flex; align-items: baseline; gap: 10px; font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
   .brand small { font-family: var(--font-mono); font-size: .6rem; color: var(--ink-faint); letter-spacing: .12em; }
   nav.site-nav { display: flex; align-items: center; gap: 28px; }
-  nav.site-nav a { font-size: .88rem; color: var(--ink-soft); text-decoration: none; }
+  nav.site-nav a { font-size: .88rem; color: var(--ink-soft); text-decoration: none; white-space: nowrap; }
+  @media (max-width: 560px) {
+    .site-header .wrap { flex-wrap: wrap; row-gap: 6px; padding-top: 12px; padding-bottom: 12px; }
+    .brand small { display: none; }
+    nav.site-nav { gap: 18px; }
+    nav.site-nav a { font-size: .82rem; }
+  }
   nav.site-nav a:hover { color: var(--ink); }
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -317,6 +323,23 @@
     padding: 26px; font-size: .9rem; color: var(--ink);
   }
   .pricing-note strong { display: block; font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 10px; }
+  .price-guide { margin-top: 40px; }
+  .price-guide h3, .price-incl h3 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 14px; }
+  .tiers { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 820px) { .tiers { grid-template-columns: repeat(3, 1fr); } }
+  .tier { background: var(--paper-card); border: 1px solid var(--line); padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+  .tier-name { font-family: var(--font-display); font-size: 1rem; }
+  .tier-yen { font-family: var(--font-display); font-size: 1.9rem; line-height: 1.2; }
+  .tier-yen small { font-size: .85rem; color: var(--ink-soft); margin-left: 4px; }
+  .tier p { color: var(--ink-soft); font-size: .9rem; }
+  .tier .tier-ex { font-size: .85rem; color: var(--ink-faint); border-top: 1px dashed var(--line-strong); padding-top: 10px; margin-top: auto; }
+  .price-incl { margin-top: 32px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 820px) { .price-incl { grid-template-columns: 1fr 1fr; } }
+  .price-incl > div { background: var(--paper-card); border: 1px solid var(--line); padding: 24px; }
+  .price-incl ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: .92rem; color: var(--ink-soft); }
+  .price-incl li::before { content: "・"; }
+  .price-incl .yen { font-family: var(--font-display); font-size: 1.4rem; color: var(--ink); margin-bottom: 8px; }
+  .price-small { margin-top: 18px; font-size: .85rem; color: var(--ink-faint); }
 
   /* ---------- contact form ---------- */
   .contact-form { max-width: 720px; }
@@ -655,6 +678,52 @@
           今お使いのソフトや紙の運用、困りごとを教えていただくだけで構いません。仕様書やご準備は不要です。
         </div>
       </div>
+
+      <div class="price-guide">
+        <h3>料金の目安（税込・買い切り）</h3>
+        <div class="tiers">
+          <div class="tier">
+            <span class="tier-name">小さなアプリ</span>
+            <span class="tier-yen">33,000円<small>〜</small></span>
+            <p>1つの業務だけを、手軽にアプリにしたい方に。</p>
+            <span class="tier-ex">例：見積書・請求書を作るアプリ</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">標準</span>
+            <span class="tier-yen">100,000円<small>〜</small></span>
+            <p>いくつかの業務をつなげて、1つのアプリにまとめたい方に。</p>
+            <span class="tier-ex">例：在庫の記録から発注書の作成まで</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">複数拠点・連携</span>
+            <span class="tier-yen">300,000円<small>〜</small></span>
+            <p>複数の事業所で使う、ほかのシステムとつなぐなど、規模の大きいものに。</p>
+            <span class="tier-ex">例：複数の店舗で使う予約・在庫の管理、会計ソフトとの連携</span>
+          </div>
+        </div>
+        <p class="price-small">※ 金額は目安です。実際の料金は、お話を伺ったうえでお見積りします（お見積りは無料です）。</p>
+      </div>
+
+      <div class="price-incl">
+        <div>
+          <h3>料金に含まれるもの</h3>
+          <ul>
+            <li>現場のヒアリングと、動く画面を見ながらの調整</li>
+            <li>使い方の説明（1回）</li>
+            <li>納品後3か月間の不具合修正（無料）</li>
+          </ul>
+        </div>
+        <div>
+          <h3>保守サポート（任意）</h3>
+          <p class="yen">月5,000円<small style="font-size:.85rem;color:var(--ink-soft)">（税込）</small></p>
+          <ul>
+            <li>項目の追加・表示の変更</li>
+            <li>不具合の修正、操作のご質問への対応</li>
+            <li>必要なときだけ。いつでも解約できます</li>
+          </ul>
+        </div>
+      </div>
+      <p class="price-small">※ 買い切りなので、保守サポートに入らなくてもアプリはそのまま使い続けられます。未加入の場合の修正・変更は、その都度お見積りします。</p>
     </div>
   </section>
 
