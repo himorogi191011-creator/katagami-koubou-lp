@@ -248,6 +248,19 @@
   }
   .case-quote span { color: var(--ink-faint); font-family: var(--font-mono); font-size: .72rem; display: block; margin-top: 10px; }
 
+  /* ---------- ご依頼（事例の始まり） ---------- */
+  .case-request {
+    margin-top: 22px; background: var(--paper-card-2); border-left: 3px solid var(--thread);
+    padding: 20px clamp(16px, 3vw, 28px);
+  }
+  .req-label { display: inline-block; font-family: var(--font-mono); font-size: .68rem; letter-spacing: .1em; color: var(--thread); margin-bottom: 8px; }
+  .case-request ul { margin: 0; padding-left: 1.2em; color: var(--ink-soft); font-size: .93rem; }
+  .case-request li + li { margin-top: 4px; }
+  .req-want { margin-top: 14px; font-family: var(--font-display); font-size: 1.08rem; color: var(--ink); line-height: 1.6; }
+  .req-want b { font-weight: 700; }
+  .case-answer { margin-top: 20px; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; color: var(--accent); }
+  .case-panel .case-answer + .case-lede { margin-top: 6px; }
+
   /* ---------- UI mockups (sample, not real client data) ---------- */
   .ui-mockups { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
   .mock-label { display: block; font-family: var(--font-mono); font-size: .65rem; color: var(--ink-faint); letter-spacing: .06em; margin-bottom: 8px; }
@@ -517,13 +530,23 @@
       <div class="section-head">
         <span class="section-label">Case</span>
         <h2>制作事例</h2>
-        <p>クライアント様のお名前は伏せておりますが、実際に稼働しているアプリの一例です。</p>
+        <p>「市販のソフトでは、思うとおりにならない」——そんなご相談から仕立てた、実際に稼働しているアプリの一例です。<br>どんなご依頼から始まり、どんな形になったのかをご紹介します（クライアント様のお名前は伏せています）。</p>
       </div>
       <div class="case-panel">
         <span class="case-tag">CASE 01 ・ 福祉施設</span>
         <h3>とある福祉施設様の「勤怠・給与管理アプリ」</h3>
+        <div class="case-request">
+          <span class="req-label">ご依頼の内容</span>
+          <ul>
+            <li>複数の施設を運営していて、スタッフの多くが日によって別の施設に入る</li>
+            <li>同じ人でも、施設が変われば業務の内容も金額も変わる</li>
+            <li>月末のたびに、記録を施設ごと・業務ごとに手で数え直してから、ひとりずつ給与を計算している</li>
+          </ul>
+          <p class="req-want">この記録と月末の集計を、<b>もっと楽に、間違いなく</b>できるようにしたい。</p>
+        </div>
+        <p class="case-answer">そこで、こう仕立てました ↓</p>
         <p class="case-lede">
-          複数の施設を掛け持ちするスタッフの勤怠を、施設ごと・業務ごとに記録し、そのまま給与明細まで作成できる仕組みを仕立てました。
+          カレンダーで日付を選び、施設と業務を選ぶだけで勤怠を記録。毎日の記録がそのまま月の集計になり、給与明細まで作成できる仕組みです。
         </p>
         <dl class="spec-grid">
           <div class="spec-row"><dt>記録</dt><dd>施設・業務内容を複数選んで、まとめて登録できる</dd></div>
@@ -565,13 +588,30 @@
           「完成度が素晴らしく、当初のイメージ通りのものができました。」
           <span>— ご利用者様より</span>
         </p>
+
+        <div class="demo-cta">
+          <a class="btn btn-solid" href="https://kintai.himorogi.co.jp/" target="_blank" rel="noopener">このアプリの料金・体験版を見る
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+          <p>この事例をもとにした「勤怠・給与管理アプリ」の専用ページです。スマホで触れる体験版もあります。</p>
+        </div>
       </div>
 
       <div class="case-panel">
         <span class="case-tag">CASE 02 ・ 水道工事</span>
         <h3>とある水道工事店様の「見積・請求アプリ」</h3>
+        <div class="case-request">
+          <span class="req-label">ご依頼の内容</span>
+          <ul>
+            <li>事務所のパソコンは、インターネットにつながっていない</li>
+            <li>Excel のような表計算ソフトも入っていない</li>
+            <li>見積書のためだけに、パソコンを入れ替えたりネット回線を引いたりするのは大げさ</li>
+          </ul>
+          <p class="req-want">それでも、お客様に出す見積書と請求書は、<b>きちんとした書式で</b>作りたい。</p>
+        </div>
+        <p class="case-answer">そこで、こう仕立てました ↓</p>
         <p class="case-lede">
-          事務所のパソコンはインターネットにつながっておらず、Excelも入っていない。それでも見積書と請求書をきちんと作りたい——そんなご要望に、ファイルを1つ置くだけで動く専用アプリを仕立てました。
+          今の事務所のパソコンに、ファイルを1つ置くだけで動く専用アプリ。データはそのパソコンの中だけに残り、見積書から同じ内容のまま請求書が作れます。
         </p>
         <dl class="spec-grid">
           <div class="spec-row"><dt>動作</dt><dd>インターネット不要。ファイルを1つ置くだけで起動</dd></div>
